@@ -1,4 +1,18 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["src/lib/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/types/*": ["src/types/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/modules/*": ["src/modules/*"],
+      "@/layouts/*": ["src/layouts/*"],
+      "@/components/*": ["src/components/*"],
+      "@/validations/*": ["src/validations/*"]
+    }
+  },
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "lib": ["esnext"],
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"]
+}

@@ -1,7 +1,10 @@
 {
   "name": "ui",
-  "version": "1.0.0",
-  "main": "./Button.tsx",
-  "types": "./Button.tsx",
-  "license": "MIT"
+  "version": "0.0.0",
+  "main": "./src",
+  "types": "./src",
+  "license": "MIT",
+  "dependencies": {
+    "@stitches/react": "^1.2.6"
+  }
 }

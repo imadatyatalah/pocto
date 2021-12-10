@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  name     String
+  username String @unique
+  email    String @unique
+  password String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  role Role @default(USER)
+
+  posts      Post[]
+  comments   Comment[]
+  categories Category[]
+  profile    Profile?
+
+  @@map("users")
+}
+
+model Profile {
+  id Int @id @default(autoincrement())
+
+  bio       String?
+  location  String?
+  website   String?
+  avatarUrl String? @map("avatar_url")
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @unique
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("profiles")
+}
+
+model Post {
+  id String @id @default(cuid())
+
+  title   String
+  content String
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  comments Comment[]
+
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+
+  @@map("posts")
+}
+
+model Category {
+  id Int @id @default(autoincrement())
+
+  name String @unique
+
+  title       String
+  description String
+
+  posts Post[]
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  @@map("categories")
+}
+
+model Comment {
+  id String @id @default(cuid())
+
+  content String
+
+  post   Post   @relation(fields: [postId], references: [id])
+  postId String
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("comments")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
