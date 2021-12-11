@@ -2,9 +2,9 @@ import { useMutation } from "react-query";
 
 import { instance } from "@/lib/axios";
 
-import type { SignUpData } from "@/types/auth/signUp";
+import type { TSignUpData } from "@/types/auth/signUp";
 
 const useSignUp = () =>
-  useMutation((data: SignUpData) => instance.post(`/auth/signup`, data));
+  useMutation((data: TSignUpData) => instance.post(`/auth/signup`, data));
 
 export default useSignUp;
