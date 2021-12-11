@@ -18,6 +18,7 @@
     "react-dom": "17.0.2",
     "react-hook-form": "^7.21.2",
     "react-query": "^3.34.1",
+    "ui": "*",
     "zod": "^3.11.6"
   },
   "devDependencies": {
