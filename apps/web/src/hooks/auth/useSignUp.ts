@@ -1,5 +1,5 @@
 import { useMutation } from "react-query";
-import  Router  from "next/router";
+import Router from "next/router";
 
 import { instance } from "@/lib/axios";
 

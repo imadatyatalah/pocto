@@ -25,7 +25,11 @@ const useUser = create<BearState>(
         try {
           const { data: user } = await instance.get<User>("/me");
 
-          set({ user, logged_in: true });
+          if (user) {
+            set({ user, logged_in: true });
+          } else {
+            set({ user: null, logged_in: false });
+          }
         } catch (err) {
           set({ user: null, logged_in: false });
         }

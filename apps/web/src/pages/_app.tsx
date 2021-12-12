@@ -11,6 +11,7 @@ import GlobalLayout from "@/layouts/Global";
 import SEO from "next-seo.config";
 
 import "@/styles/globals.css";
+import "@/styles/resets.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = useState(() => new QueryClient());

@@ -2,8 +2,9 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-import { prisma } from "../config/prisma";
+import { prisma, Prisma } from "../config/prisma";
 import { credentials } from "../config/credentials";
+import { createUser, findUserByEmail } from "../helpers/users";
 
 export const signUp = async (req: Request, res: Response) => {
   try {
@@ -15,12 +16,7 @@ export const signUp = async (req: Request, res: Response) => {
 
     // Create a new user with the given data.
     const user = await prisma.user.create({
-      data: {
-        email,
-        name,
-        username,
-        password: hashedPassword,
-      },
+      data: createUser(email, hashedPassword, name, username),
     });
 
     // Create a JWT token that is valid for 30 days.
@@ -44,7 +40,9 @@ export const signUp = async (req: Request, res: Response) => {
       .status(201)
       .send({ success: true, message: "You have signed up successfully" });
   } catch (err) {
-    res.send({ success: false, message: "Something went wrong", error: err });
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
   }
 };
 
@@ -54,7 +52,7 @@ export const login = async (req: Request, res: Response) => {
 
     // Get user by email.
     const user = await prisma.user.findUnique({
-      where: { email },
+      where: findUserByEmail(email),
     });
 
     // Return 401 error if user is not found.
@@ -95,7 +93,9 @@ export const login = async (req: Request, res: Response) => {
       .status(201)
       .send({ success: true, message: "You have logged in successfully" });
   } catch (err) {
-    res.send({ success: false, message: "Something went wrong", error: err });
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
   }
 };
 
