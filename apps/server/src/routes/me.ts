@@ -1,10 +1,10 @@
 import { Router } from "express";
-import verifyToken from "../middlewares/verifyToken";
+import requireUser from "../middlewares/requireUser";
 
 const router = Router();
 
-router.get("/", verifyToken, (req: any, res) => {
-  res.status(200).send(req?.user);
+router.get("/", requireUser, (req: any, res) => {
+  res.status(200).send(req.user);
 });
 
 export default router;

@@ -33,7 +33,7 @@ export const signUp = async (req: Request, res: Response) => {
     );
 
     // Send the JWT token as a cookies.
-    res.cookie("rania_token", token, {
+    res.cookie("pocto_token", token, {
       secure: true,
       httpOnly: true,
       maxAge: 60 * 60 * 24 * 1000 * 30,
@@ -84,7 +84,7 @@ export const login = async (req: Request, res: Response) => {
     );
 
     // Send the JWT token as a cookies.
-    res.cookie("rania_token", token, {
+    res.cookie("pocto_token", token, {
       secure: true,
       httpOnly: true,
       maxAge: 60 * 60 * 24 * 1000 * 30,
@@ -97,4 +97,12 @@ export const login = async (req: Request, res: Response) => {
   } catch (err) {
     res.send({ success: false, message: "Something went wrong", error: err });
   }
+};
+
+export const logout = async (req: Request, res: Response) => {
+  // Remove pocto_token cookie
+  res.clearCookie("pocto_token");
+
+  // Redirect to client homepage
+  res.redirect(credentials.client_base_url);
 };

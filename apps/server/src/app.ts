@@ -4,6 +4,7 @@ import cors from "cors";
 
 import { corsOptions } from "./config/cors";
 import routes from "./routes/index";
+import deserializeUser from "./middlewares/deserializeUser";
 
 // Create Express server
 const app = express();
@@ -13,6 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors(corsOptions));
+
+app.use(deserializeUser);
 
 // Routes
 app.use("/", routes);
