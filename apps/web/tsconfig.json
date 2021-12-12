@@ -6,6 +6,7 @@
       "@/pages/*": ["src/pages/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/types/*": ["src/types/*"],
+      "@/stores/*": ["src/stores/*"],
       "@/styles/*": ["src/styles/*"],
       "@/modules/*": ["src/modules/*"],
       "@/layouts/*": ["src/layouts/*"],

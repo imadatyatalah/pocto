@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 
 import { DefaultSeo } from "next-seo";
@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
 
+import useUser from "@/stores/useUser";
 import GlobalLayout from "@/layouts/Global";
 import SEO from "next-seo.config";
 
@@ -13,6 +14,12 @@ import "@/styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = useState(() => new QueryClient());
+
+  const fetchUser = useUser((state) => state.fetchUser);
+
+  useEffect(() => {
+    fetchUser();
+  });
 
   return (
     <>
