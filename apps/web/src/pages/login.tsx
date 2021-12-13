@@ -8,6 +8,7 @@ import { Button, Input, Label } from "ui";
 
 import { loginSchema } from "@/validations/index";
 import { useLogin } from "@/hooks/index";
+import InputErrorMessage from "@/components/InputErrorMessage";
 
 import type { TLoginData } from "@/types/auth/login";
 
@@ -53,7 +54,9 @@ const Login: NextPage = () => {
               </Label>
 
               <Input type={type} id={id} {...register(id)} />
-              {errors[id] && <p>{errors[id].message}</p>}
+              {errors[id] && (
+                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
+              )}
             </div>
           ))}
 

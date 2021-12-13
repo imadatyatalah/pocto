@@ -1,25 +1,32 @@
 import Link from "next/link";
 
-import { Button } from "ui";
+import { Button, Flex } from "ui";
 
 import useUser from "@/stores/useUser";
 import { apiBaseUrl } from "@/lib/constants";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const logged_in = useUser((state) => state.logged_in);
+
+  useEffect(() => {
+    setIsLoggedIn(logged_in);
+  }, [logged_in]);
 
   return (
     <header>
-      <div>{/* Logo */}</div>
-
       <nav>
-        <ul>
-          {logged_in ? (
-            <a href={`${apiBaseUrl}/auth/logout`}>
-              <Button size="sm" type="button">
-                Logout
-              </Button>
-            </a>
+        <Flex as="ul">
+          {isLoggedIn ? (
+            <li>
+              <a href={`${apiBaseUrl}/auth/logout`}>
+                <Button size="sm" type="button">
+                  Logout
+                </Button>
+              </a>
+            </li>
           ) : (
             <>
               <li>
@@ -27,6 +34,7 @@ const Header = () => {
                   <a>Login</a>
                 </Link>
               </li>
+              <li style={{ margin: "0 5px 0 5px" }}>/</li>
               <li>
                 <Link href="/signup">
                   <a>Sign Up</a>
@@ -34,7 +42,7 @@ const Header = () => {
               </li>
             </>
           )}
-        </ul>
+        </Flex>
       </nav>
     </header>
   );

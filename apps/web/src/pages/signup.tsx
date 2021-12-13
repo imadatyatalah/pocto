@@ -8,6 +8,7 @@ import { Button, Input, Label } from "ui";
 
 import { signupSchema } from "@/validations/index";
 import { useSignUp } from "@/hooks/index";
+import InputErrorMessage from "@/components/InputErrorMessage";
 
 import type { TSignUpData } from "@/types/auth/signUp";
 
@@ -54,7 +55,9 @@ const SignUp: NextPage = () => {
                 placeholder={placeholder}
                 {...register(id)}
               />
-              {errors[id] && <p>{errors[id].message}</p>}
+              {errors[id] && (
+                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
+              )}
             </div>
           ))}
 
@@ -70,7 +73,9 @@ const SignUp: NextPage = () => {
             </Label>
 
             {errors.user_agree_to_terms && (
-              <p>{errors.user_agree_to_terms.message}</p>
+              <InputErrorMessage>
+                {errors.user_agree_to_terms.message}
+              </InputErrorMessage>
             )}
           </div>
 
