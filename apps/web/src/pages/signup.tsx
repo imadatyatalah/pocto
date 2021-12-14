@@ -5,7 +5,7 @@ import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
-import { Button, Flex, Input, Label } from "ui";
+import { Button, Flex, Input, Label, Heading, Link as StyledLink } from "ui";
 
 import { signupSchema } from "@/validations/index";
 import { useSignUp } from "@/hooks/index";
@@ -48,7 +48,9 @@ const SignUp: NextPage = () => {
         as="section"
         css={{ flexDirection: "column", alignItems: "center" }}
       >
-        <h1 style={{ float: "left", width: 400 }}>Sign Up to Pocto</h1>
+        <Heading as="h1" css={{ float: "left", width: 400 }}>
+          Sign Up to Pocto
+        </Heading>
 
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, placeholder }) => (
@@ -76,12 +78,12 @@ const SignUp: NextPage = () => {
           <div>
             <p style={{ fontSize: 14 }}>
               By clicking Create Account, You agree to our{" "}
-              <Link href="/">
-                <a>Terms of Service</a>
+              <Link href="/" passHref>
+                <StyledLink>Terms of Service</StyledLink>
               </Link>{" "}
               and{" "}
-              <Link href="/">
-                <a>Privacy Policy</a>
+              <Link href="/" passHref>
+                <StyledLink>Privacy Policy</StyledLink>
               </Link>
               .
             </p>
@@ -97,8 +99,8 @@ const SignUp: NextPage = () => {
         <div>
           <p>
             Already a member?{" "}
-            <Link href="/signin">
-              <a>Sign In</a>
+            <Link href="/signin" passHref>
+              <StyledLink>Sign In</StyledLink>
             </Link>
           </p>
         </div>

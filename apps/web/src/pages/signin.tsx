@@ -5,7 +5,7 @@ import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
-import { Button, Flex, Input, Label } from "ui";
+import { Button, Flex, Heading, Input, Label, Link as StyledLink } from "ui";
 
 import { signinSchema } from "@/validations/index";
 import { useSignIn } from "@/hooks/index";
@@ -46,7 +46,9 @@ const SignIn: NextPage = () => {
         as="section"
         css={{ flexDirection: "column", alignItems: "center" }}
       >
-        <h1 style={{ float: "left", width: 400 }}>Sign In to Pocto</h1>
+        <Heading as="h1" css={{ float: "left", width: 400 }}>
+          Sign In to Pocto
+        </Heading>
 
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, additionalLink }) => (
@@ -58,10 +60,10 @@ const SignIn: NextPage = () => {
                 {name}
 
                 {additionalLink && (
-                  <Link href={additionalLink.path}>
-                    <a style={{ fontWeight: "500", float: "right" }}>
+                  <Link href={additionalLink.path} passHref>
+                    <StyledLink css={{ fontWeight: "500", float: "right" }}>
                       {additionalLink.title}
-                    </a>
+                    </StyledLink>
                   </Link>
                 )}
               </Label>
@@ -83,8 +85,8 @@ const SignIn: NextPage = () => {
         <div>
           <p>
             Not a member?{" "}
-            <Link href="/signup">
-              <a>Sign up now</a>
+            <Link href="/signup" passHref>
+              <StyledLink>Sign up now</StyledLink>
             </Link>
           </p>
         </div>
