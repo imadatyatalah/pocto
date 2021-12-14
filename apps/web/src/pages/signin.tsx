@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { NextPage } from "next";
 
+import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
-import { Button, Input, Label } from "ui";
+import { Button, Flex, Input, Label } from "ui";
 
 import { signinSchema } from "@/validations/index";
 import { useSignIn } from "@/hooks/index";
@@ -22,6 +23,10 @@ const Inputs = [
   },
 ];
 
+const StyledForm = styled("form", {
+  width: 400,
+});
+
 const SignIn: NextPage = () => {
   const { mutate: signIn, isLoading } = useSignIn();
 
@@ -37,35 +42,43 @@ const SignIn: NextPage = () => {
     <>
       <NextSeo title="Sign In" />
 
-      <section>
-        <h1>Sign In to Pocto</h1>
+      <Flex
+        as="section"
+        css={{ flexDirection: "column", alignItems: "center" }}
+      >
+        <h1 style={{ float: "left", width: 400 }}>Sign In to Pocto</h1>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, additionalLink }) => (
-            <div key={id}>
-              <Label css={{ display: "block", fontWeight: "600" }} htmlFor={id}>
+            <div style={{ margin: "20px 0 20px 0" }} key={id}>
+              <Label
+                css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
+                htmlFor={id}
+              >
                 {name}
 
                 {additionalLink && (
                   <Link href={additionalLink.path}>
-                    <a style={{ fontWeight: "500" }}>{additionalLink.title}</a>
+                    <a style={{ fontWeight: "500", float: "right" }}>
+                      {additionalLink.title}
+                    </a>
                   </Link>
                 )}
               </Label>
 
-              <Input type={type} id={id} {...register(id)} />
+              <Input isFullWidth type={type} id={id} {...register(id)} />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}
             </div>
           ))}
 
-          <div>
-            <Button disabled={isLoading} type="submit">
+          <div style={{ margin: "20px 0 20px 0" }}>
+            <Button isFullWidth disabled={isLoading} type="submit">
               Sign In
             </Button>
           </div>
-        </form>
+        </StyledForm>
 
         <div>
           <p>
@@ -75,7 +88,7 @@ const SignIn: NextPage = () => {
             </Link>
           </p>
         </div>
-      </section>
+      </Flex>
     </>
   );
 };

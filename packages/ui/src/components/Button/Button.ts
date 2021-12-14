@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 
-const Button = styled("button", {
+const StyledButton = styled("button", {
   fontFamily: "inherit",
   position: "relative",
   display: "inline-flex",
@@ -47,9 +47,14 @@ const Button = styled("button", {
         fontSize: 18,
       },
     },
+    isFullWidth: {
+      true: {
+        width: "100%",
+      },
+    },
   },
 
   defaultVariants: { size: "md", variant: "default" },
 });
 
-export default Button;
+export default StyledButton;

@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { NextPage } from "next";
 
+import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
-import { Button, Input, Label } from "ui";
+import { Button, Flex, Input, Label } from "ui";
 
 import { signupSchema } from "@/validations/index";
 import { useSignUp } from "@/hooks/index";
@@ -24,6 +25,10 @@ const Inputs = [
   },
 ];
 
+const StyledForm = styled("form", {
+  width: 400,
+});
+
 const SignUp: NextPage = () => {
   const { mutate: signUp, isLoading } = useSignUp();
 
@@ -39,17 +44,24 @@ const SignUp: NextPage = () => {
     <>
       <NextSeo title="Sign Up" />
 
-      <section>
-        <h1>Sign Up to Pocto</h1>
+      <Flex
+        as="section"
+        css={{ flexDirection: "column", alignItems: "center" }}
+      >
+        <h1 style={{ float: "left", width: 400 }}>Sign Up to Pocto</h1>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, placeholder }) => (
-            <div key={id}>
-              <Label css={{ display: "block", fontWeight: "600" }} htmlFor={id}>
+            <div style={{ margin: "20px 0 20px 0" }} key={id}>
+              <Label
+                css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
+                htmlFor={id}
+              >
                 {name}
               </Label>
 
               <Input
+                isFullWidth
                 type={type}
                 id={id}
                 placeholder={placeholder}
@@ -62,29 +74,25 @@ const SignUp: NextPage = () => {
           ))}
 
           <div>
-            <Input
-              type="checkbox"
-              id="user_agree_to_terms"
-              {...register("user_agree_to_terms")}
-            />
-            <Label htmlFor="user_agree_to_terms">
-              Creating an account means you’re okay with our Terms of Service,
-              Privacy Policy, and our default Notification Settings.
-            </Label>
-
-            {errors.user_agree_to_terms && (
-              <InputErrorMessage>
-                {errors.user_agree_to_terms.message}
-              </InputErrorMessage>
-            )}
+            <p style={{ fontSize: 14 }}>
+              By clicking Create Account, You agree to our{" "}
+              <Link href="/">
+                <a>Terms of Service</a>
+              </Link>{" "}
+              and{" "}
+              <Link href="/">
+                <a>Privacy Policy</a>
+              </Link>
+              .
+            </p>
           </div>
 
-          <div>
-            <Button disabled={isLoading} type="submit">
+          <div style={{ margin: "20px 0 20px 0" }}>
+            <Button isFullWidth disabled={isLoading} type="submit">
               Create Account
             </Button>
           </div>
-        </form>
+        </StyledForm>
 
         <div>
           <p>
@@ -94,7 +102,7 @@ const SignUp: NextPage = () => {
             </Link>
           </p>
         </div>
-      </section>
+      </Flex>
     </>
   );
 };
