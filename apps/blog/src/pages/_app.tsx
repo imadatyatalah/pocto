@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 
-import GlobalLayout from "../layouts/Global";
+import GlobalLayout from "@/layouts/Global";
 
 import "@/styles/globals.css";
 

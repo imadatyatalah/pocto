@@ -1,7 +1,7 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
-const Web: NextPage = () => {
+const Home: NextPage = () => {
   return <section></section>;
 };
 
-export default Web;
+export default Home;

@@ -3,27 +3,22 @@ import { persist } from "zustand/middleware";
 
 import { instance } from "@/lib/axios";
 
-type User = {
-  id: number;
-  role: "USER" | "ADMIN";
-  iat: number;
-  exp: number;
-};
+import type { TUser } from "@/types/index";
 
-type BearState = {
-  user: null | User;
+type UserState = {
+  user: null | TUser;
   logged_in: boolean;
   fetchUser: () => Promise<void>;
 };
 
-const useUser = create<BearState>(
+const useUser = create<UserState>(
   persist(
     (set) => ({
       user: null,
       logged_in: false,
       fetchUser: async () => {
         try {
-          const { data: user } = await instance.get<User>("/me");
+          const { data: user } = await instance.get<TUser>("/me");
 
           if (user) {
             set({ user, logged_in: true });

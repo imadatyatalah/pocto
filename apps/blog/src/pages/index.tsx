@@ -1,8 +1,8 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 import { Button } from "ui";
 
-const Blog: NextPage = () => {
+const Home: NextPage = () => {
   return (
     <section>
       <h1>Blog</h1>
@@ -12,4 +12,4 @@ const Blog: NextPage = () => {
   );
 };
 
-export default Blog;
+export default Home;

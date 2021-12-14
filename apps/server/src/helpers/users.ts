@@ -32,3 +32,9 @@ export const findUserByEmail = (email: string) => {
     email,
   });
 };
+
+export const findUserById = (id: number) => {
+  return Prisma.validator<Prisma.UserWhereInput>()({
+    id,
+  });
+};

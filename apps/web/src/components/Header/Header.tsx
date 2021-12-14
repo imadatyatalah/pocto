@@ -21,11 +21,9 @@ const Header = () => {
         <Flex as="ul">
           {isLoggedIn ? (
             <li>
-              <a href={`${apiBaseUrl}/auth/logout`}>
-                <Button size="sm" type="button">
-                  Logout
-                </Button>
-              </a>
+              <Link href="/confirm-signout">
+                <a>Sign Out</a>
+              </Link>
             </li>
           ) : (
             <>

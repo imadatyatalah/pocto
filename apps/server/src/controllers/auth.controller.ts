@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-import { prisma, Prisma } from "../config/prisma";
+import { prisma } from "../config/prisma";
 import { credentials } from "../config/credentials";
 import { createUser, findUserByEmail } from "../helpers/users";
 
@@ -99,7 +99,7 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
-export const logout = async (req: Request, res: Response) => {
+export const signout = async (req: Request, res: Response) => {
   // Remove pocto_token cookie
   res.clearCookie("pocto_token");
 
