@@ -10,7 +10,7 @@ import { signupSchema } from "@/validations/index";
 import { useSignUp } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 
-import type { TSignUpData } from "@/types/auth/signUp";
+import type { TSignUpData } from "@/types/index";
 
 const Inputs = [
   { type: "text", id: "name", name: "Name" },
@@ -89,8 +89,8 @@ const SignUp: NextPage = () => {
         <div>
           <p>
             Already a member?{" "}
-            <Link href="/login">
-              <a>Login</a>
+            <Link href="/signin">
+              <a>Sign In</a>
             </Link>
           </p>
         </div>

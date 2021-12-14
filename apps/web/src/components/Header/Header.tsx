@@ -28,8 +28,8 @@ const Header = () => {
           ) : (
             <>
               <li>
-                <Link href="/login">
-                  <a>Login</a>
+                <Link href="/signin">
+                  <a>Sign In</a>
                 </Link>
               </li>
               <li style={{ margin: "0 5px 0 5px" }}>/</li>

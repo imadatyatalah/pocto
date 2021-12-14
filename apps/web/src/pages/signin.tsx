@@ -6,11 +6,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
 import { Button, Input, Label } from "ui";
 
-import { loginSchema } from "@/validations/index";
-import { useLogin } from "@/hooks/index";
+import { signinSchema } from "@/validations/index";
+import { useSignIn } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 
-import type { TLoginData } from "@/types/auth/login";
+import type { TSignInData } from "@/types/index";
 
 const Inputs = [
   { type: "email", id: "email", name: "Email" },
@@ -22,23 +22,23 @@ const Inputs = [
   },
 ];
 
-const Login: NextPage = () => {
-  const { mutate: login, isLoading } = useLogin();
+const SignIn: NextPage = () => {
+  const { mutate: signIn, isLoading } = useSignIn();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(loginSchema) });
+  } = useForm({ resolver: zodResolver(signinSchema) });
 
-  const onSubmit = (data: TLoginData) => login(data);
+  const onSubmit = (data: TSignInData) => signIn(data);
 
   return (
     <>
-      <NextSeo title="Login" />
+      <NextSeo title="Sign In" />
 
       <section>
-        <h1>Login to Pocto</h1>
+        <h1>Sign In to Pocto</h1>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, additionalLink }) => (
@@ -62,7 +62,7 @@ const Login: NextPage = () => {
 
           <div>
             <Button disabled={isLoading} type="submit">
-              Login
+              Sign In
             </Button>
           </div>
         </form>
@@ -80,4 +80,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default SignIn;
