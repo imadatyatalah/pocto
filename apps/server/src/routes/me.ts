@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { getCurrentUser } from "../controllers/users.controller";
+import { getCurrentUser } from "../controllers/users.controllers";
 import requireUser from "../middlewares/requireUser";
 
 const router = Router();

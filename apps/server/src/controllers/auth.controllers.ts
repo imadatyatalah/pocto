@@ -58,6 +58,7 @@ export const signin = async (req: Request, res: Response) => {
     // Return 401 error if user is not found.
     if (!user) {
       return res.status(401).json({
+        success: false,
         message: "Invalid email or password!",
       });
     }
@@ -68,6 +69,7 @@ export const signin = async (req: Request, res: Response) => {
     // Return 401 error if the password is wrong.
     if (!passwordMatch) {
       return res.status(401).json({
+        success: false,
         message: "Invalid email or password!",
       });
     }
