@@ -3,7 +3,7 @@ import { Router } from "express";
 import health from "./health";
 import users from "./users";
 import auth from "./auth";
-import me from "./me";
+import currentUser from "./currentUser";
 
 const routes = Router();
 
@@ -14,7 +14,7 @@ routes.use("/health", health);
 routes.use("/auth", auth);
 
 // Current User
-routes.use("/me", me);
+routes.use("/current_user", currentUser);
 
 // Users
 routes.use("/users", users);

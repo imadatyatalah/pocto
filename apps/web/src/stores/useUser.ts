@@ -18,7 +18,7 @@ const useUser = create<UserState>(
       logged_in: false,
       fetchUser: async () => {
         try {
-          const { data: user } = await instance.get<TUser>("/me");
+          const { data: user } = await instance.get<TUser>("/current_user/me");
 
           if (user) {
             set({ user, logged_in: true });

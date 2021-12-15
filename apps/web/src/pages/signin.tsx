@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Flex, Heading, Input, Label, Link as StyledLink } from "ui";
 
 import { signinSchema } from "@/validations/index";
@@ -19,7 +19,7 @@ const Inputs = [
     type: "password",
     id: "password",
     name: "Password",
-    additionalLink: { title: "Forgot password?", path: "/" },
+    additionalLink: { title: "Forgot password?", path: "/password_reset" },
   },
 ];
 

@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod/dist/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Flex, Input, Label, Heading, Link as StyledLink } from "ui";
 
 import { signupSchema } from "@/validations/index";
