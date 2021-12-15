@@ -5,7 +5,7 @@ import { findUserById, findUserByUsername, userData } from "../helpers/users";
 
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {
-    const currentUser = await prisma?.user.findUnique({
+    const currentUser = await prisma.user.findUnique({
       // @ts-ignore
       where: findUserById(req.user.id),
       select: userData,

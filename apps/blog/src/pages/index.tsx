@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 
-import { Button } from "ui";
+import { Button, Heading } from "ui";
 
 const Home: NextPage = () => {
   return (
     <section>
-      <h1>Blog</h1>
+      <Heading as="h1">Blog</Heading>
 
       <Button>Click me</Button>
     </section>
