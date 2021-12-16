@@ -13,7 +13,6 @@ const deserializeUser = (req: Request, res: Response, next: NextFunction) => {
 
   jwt.verify(pocto_token, credentials.jwt_key as string, (err, data) => {
     if (!err) {
-      // @ts-ignore
       req.user = data;
       return next();
     }

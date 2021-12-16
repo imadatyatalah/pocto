@@ -6,5 +6,6 @@
     "lib": ["esnext"],
     "noImplicitAny": false
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "files": ["custom.d.ts"]
 }
