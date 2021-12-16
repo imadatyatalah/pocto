@@ -1,9 +1,8 @@
 import Link from "next/link";
 
-import { Button, Flex } from "ui";
+import { Flex } from "ui";
 
 import useUser from "@/stores/useUser";
-import { apiBaseUrl } from "@/lib/constants";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -21,7 +20,7 @@ const Header = () => {
         <Flex as="ul">
           {isLoggedIn ? (
             <li>
-              <Link href="/confirm-signout">
+              <Link href="/confirm_signout">
                 <a>Sign Out</a>
               </Link>
             </li>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { NextPage } from "next";
 
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
@@ -8,6 +9,7 @@ import { Button, Input, Label, Heading, Link as StyledLink } from "ui";
 import { changePasswordSchema } from "@/validations/index";
 import { useUpdatePassword } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
+import WithAuth from "@/hocs/withAuth";
 
 import type { TChangePasswordData } from "@/types/index";
 
@@ -17,7 +19,7 @@ const Inputs = [
   { type: "password", id: "confirmNewPassword", name: "Confirm new password" },
 ];
 
-const Security = () => {
+const Security: NextPage = () => {
   const { mutate: updatePassword, isLoading } = useUpdatePassword();
 
   const {
@@ -67,4 +69,4 @@ const Security = () => {
   );
 };
 
-export default Security;
+export default WithAuth(Security);
