@@ -4,7 +4,14 @@ import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Input, Label, Heading, Link as StyledLink } from "ui";
+import {
+  Button,
+  Input,
+  Label,
+  Heading,
+  Link as StyledLink,
+  Separator,
+} from "ui";
 
 import { changePasswordSchema } from "@/validations/index";
 import { useUpdatePassword } from "@/hooks/index";
@@ -34,9 +41,11 @@ const Security: NextPage = () => {
     <>
       <NextSeo title="Account security" />
 
-      <section>
+      <section style={{ margin: "0 20px" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading>Change password</Heading>
+
+          <Separator css={{ margin: "10px 0" }} />
 
           {Inputs.map(({ id, name, type }) => (
             <div style={{ margin: "20px 0 20px 0" }} key={id}>

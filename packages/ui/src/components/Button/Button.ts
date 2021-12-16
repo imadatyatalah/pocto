@@ -18,19 +18,30 @@ const StyledButton = styled("button", {
   padding: "0 15px 0 15px",
   transition: "all 250ms ease",
 
-  "&:hover, &:focus": {
-    backgroundColor: "transparent",
-    color: "#757bc8",
-    border: "2px solid #757bc8",
-  },
-
   variants: {
     variant: {
       default: {
         // https://coolors.co/757bc8-8187dc-8e94f2-9fa0ff-ada7ff-bbadff-cbb2fe-dab6fc-ddbdfc-e0c3fc
-        border: "2px solid #757bc8",
+        border: "1px solid #757bc8",
         backgroundColor: "#757bc8",
         color: "White",
+
+        "&:hover, &:focus": {
+          backgroundColor: "transparent",
+          color: "#757bc8",
+          border: "1px solid #757bc8",
+        },
+      },
+      danger: {
+        border: "1px solid #EF4444",
+        backgroundColor: "#EF4444",
+        color: "White",
+
+        "&:hover, &:focus": {
+          backgroundColor: "transparent",
+          color: "#EF4444",
+          border: "1px solid #EF4444",
+        },
       },
     },
     size: {
