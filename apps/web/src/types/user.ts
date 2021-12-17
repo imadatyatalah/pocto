@@ -3,4 +3,9 @@ export type TUser = {
   name: string;
   username: string;
   email: string;
+  profile?: {
+    bio: string;
+    website: string;
+    location: string;
+  };
 };

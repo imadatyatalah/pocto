@@ -2,13 +2,17 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 
 import { prisma } from "../config/prisma";
-import { findUserById, findUserByUsername, userData } from "../helpers/users";
+import {
+  findUserById,
+  findUserByUsername,
+  updateUser,
+  userData,
+} from "../helpers/users";
 
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {
     const currentUser = await prisma.user.findUnique({
-      // @ts-ignore
-      where: findUserById(req.user.id),
+      where: findUserById(req.user?.id),
       select: userData,
     });
 
@@ -41,8 +45,7 @@ export const changePassword = async (req: Request, res: Response) => {
 
     // Get current user by id.
     const currentUser = await prisma.user.findUnique({
-      // @ts-ignore
-      where: findUserById(req.user.id),
+      where: findUserById(req.user?.id),
     });
 
     // Check is password correct.
@@ -64,8 +67,7 @@ export const changePassword = async (req: Request, res: Response) => {
 
     // Change the password
     await prisma.user.update({
-      // @ts-ignore
-      where: findUserById(req.user.id),
+      where: findUserById(req.user?.id),
       data: { password: hashedPassword },
       select: userData,
     });
@@ -81,13 +83,35 @@ export const changePassword = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteAccount = async (req: Request, res: Response) => {
+export const updateProfile = async (req: Request, res: Response) => {
   try {
-    await prisma.user.delete({
-      // @ts-ignore
-      where: findUserById(req.user.id),
+    const { name, bio, website, location } = req.body;
+
+    const updatedUser = await prisma.user.update({
+      where: findUserById(req.user?.id),
+      data: updateUser(name, bio, website, location),
       select: userData,
     });
+
+    res.status(200).send(updatedUser);
+  } catch (err) {
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
+  }
+};
+
+export const deleteAccount = async (req: Request, res: Response) => {
+  try {
+    const deleteProfile = prisma.profile.delete({
+      where: findUserById(req.user?.id),
+    });
+
+    const deleteUser = prisma.user.delete({
+      where: findUserById(req.user?.id),
+    });
+
+    await prisma.$transaction([deleteProfile, deleteUser]);
 
     res.status(200).send({
       success: true,

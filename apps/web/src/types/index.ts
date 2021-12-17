@@ -7,3 +7,4 @@ export type { TSignUpData } from "./auth/signUp";
 
 // Settings
 export type { TChangePasswordData } from "./settings/changePassword";
+export type { TUpdateProfileData } from "./settings/updateProfile";
