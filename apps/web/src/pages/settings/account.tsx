@@ -17,6 +17,7 @@ import {
 } from "ui";
 
 import { useDeleteAccount } from "@/hooks/index";
+import WithAuth from "@/hocs/withAuth";
 
 const Account = () => {
   const { mutate } = useDeleteAccount();
@@ -77,4 +78,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default WithAuth(Account);

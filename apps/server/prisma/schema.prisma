@@ -36,8 +36,8 @@ model Profile {
   website   String?
   avatarUrl String? @map("avatar_url")
 
-  user   User @relation(fields: [userId], references: [id])
-  userId Int  @unique
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?  @unique
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -51,8 +51,8 @@ model Post {
   title   String
   content String
 
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -75,8 +75,8 @@ model Category {
 
   posts Post[]
 
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?
 
   @@map("categories")
 }
@@ -89,8 +89,8 @@ model Comment {
   post   Post   @relation(fields: [postId], references: [id])
   postId String
 
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")

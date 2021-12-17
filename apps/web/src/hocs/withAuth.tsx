@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import shallow from "zustand/shallow";
 
 import useUser from "@/stores/useUser";
+import Loading from "@/components/Loading";
 
 const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
   function WithAuthWrapper(props: any) {
@@ -23,7 +24,7 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
     return isLoggedInState ? (
       <WrappedComponent user={user} {...props} />
     ) : (
-      "Loading..."
+      <Loading />
     );
   };
 
