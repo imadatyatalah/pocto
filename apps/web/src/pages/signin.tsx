@@ -5,7 +5,15 @@ import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Flex, Heading, Input, Label, Link as StyledLink } from "ui";
+import {
+  Button,
+  Flex,
+  Heading,
+  Input,
+  Label,
+  Box,
+  Link as StyledLink,
+} from "ui";
 
 import { signinSchema } from "@/validations/index";
 import { useSignIn } from "@/hooks/index";
@@ -52,7 +60,7 @@ const SignIn: NextPage = () => {
 
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, additionalLink }) => (
-            <div style={{ margin: "20px 0 20px 0" }} key={id}>
+            <Box css={{ margin: "20px 0 20px 0" }} key={id}>
               <Label
                 css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
                 htmlFor={id}
@@ -72,14 +80,14 @@ const SignIn: NextPage = () => {
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}
-            </div>
+            </Box>
           ))}
 
-          <div style={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ margin: "20px 0 20px 0" }}>
             <Button isFullWidth disabled={isLoading} type="submit">
               Sign In
             </Button>
-          </div>
+          </Box>
         </StyledForm>
 
         <div>

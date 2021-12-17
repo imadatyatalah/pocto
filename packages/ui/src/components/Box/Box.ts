@@ -1,5 +1,5 @@
 import { styled } from "@stitches/react";
 
-const Box = styled("div");
+const StyledBox = styled("div");
 
-export default Box;
+export default StyledBox;

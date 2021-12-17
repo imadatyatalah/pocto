@@ -9,8 +9,9 @@ import {
   Input,
   Label,
   Heading,
-  Link as StyledLink,
   Separator,
+  Box,
+  Link as StyledLink,
 } from "ui";
 
 import { changePasswordSchema } from "@/validations/index";
@@ -41,14 +42,14 @@ const Security: NextPage = () => {
     <>
       <NextSeo title="Account security" />
 
-      <section style={{ margin: "0 20px" }}>
+      <Box as="section" css={{ margin: "0 20px" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading>Change password</Heading>
 
           <Separator css={{ margin: "10px 0" }} />
 
           {Inputs.map(({ id, name, type }) => (
-            <div style={{ margin: "20px 0 20px 0" }} key={id}>
+            <Box css={{ margin: "20px 0 20px 0" }} key={id}>
               <Label
                 css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
                 htmlFor={id}
@@ -60,10 +61,10 @@ const Security: NextPage = () => {
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}
-            </div>
+            </Box>
           ))}
 
-          <div style={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ margin: "20px 0 20px 0" }}>
             <Button disabled={isLoading} type="submit">
               Update password
             </Button>
@@ -71,9 +72,9 @@ const Security: NextPage = () => {
             <Link href="/password_reset" passHref>
               <StyledLink>I forgot my password</StyledLink>
             </Link>
-          </div>
+          </Box>
         </form>
-      </section>
+      </Box>
     </>
   );
 };

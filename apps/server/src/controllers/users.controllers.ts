@@ -80,3 +80,22 @@ export const changePassword = async (req: Request, res: Response) => {
       .send({ success: false, message: "Something went wrong", error: err });
   }
 };
+
+export const deleteAccount = async (req: Request, res: Response) => {
+  try {
+    await prisma.user.delete({
+      // @ts-ignore
+      where: findUserById(req.user.id),
+      select: userData,
+    });
+
+    res.status(200).send({
+      success: true,
+      message: "You have deleted your account successfully",
+    });
+  } catch (err) {
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
+  }
+};

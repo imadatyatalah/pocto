@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { NextSeo } from "next-seo";
-import { Button, Flex, Heading } from "ui";
+import { Box, Button, Flex, Heading } from "ui";
 
 const Custom404 = () => {
   return (
@@ -16,11 +16,11 @@ const Custom404 = () => {
           minHeight: "100vh",
         }}
       >
-        <div style={{ marginBottom: 20 }}>
+        <Box css={{ marginBottom: 20 }}>
           <Heading as="h1" size="3xl" css={{ fontWeight: "700" }}>
             404 - Page Not Found
           </Heading>
-        </div>
+        </Box>
 
         <div>
           <Link href="/" passHref>

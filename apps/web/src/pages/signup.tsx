@@ -5,7 +5,16 @@ import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Flex, Input, Label, Heading, Link as StyledLink } from "ui";
+import {
+  Button,
+  Flex,
+  Input,
+  Label,
+  Heading,
+  Box,
+  Text,
+  Link as StyledLink,
+} from "ui";
 
 import { signupSchema } from "@/validations/index";
 import { useSignUp } from "@/hooks/index";
@@ -54,7 +63,7 @@ const SignUp: NextPage = () => {
 
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, placeholder }) => (
-            <div style={{ margin: "20px 0 20px 0" }} key={id}>
+            <Box css={{ margin: "20px 0 20px 0" }} key={id}>
               <Label
                 css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
                 htmlFor={id}
@@ -72,11 +81,11 @@ const SignUp: NextPage = () => {
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}
-            </div>
+            </Box>
           ))}
 
           <div>
-            <p style={{ fontSize: 14 }}>
+            <Text css={{ fontSize: 14 }}>
               By clicking Create Account, You agree to our{" "}
               <Link href="/" passHref>
                 <StyledLink>Terms of Service</StyledLink>
@@ -86,14 +95,14 @@ const SignUp: NextPage = () => {
                 <StyledLink>Privacy Policy</StyledLink>
               </Link>
               .
-            </p>
+            </Text>
           </div>
 
-          <div style={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ margin: "20px 0 20px 0" }}>
             <Button isFullWidth disabled={isLoading} type="submit">
               Create Account
             </Button>
-          </div>
+          </Box>
         </StyledForm>
 
         <div>
