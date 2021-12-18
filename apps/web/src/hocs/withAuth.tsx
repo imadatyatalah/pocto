@@ -10,7 +10,7 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
   function WithAuthWrapper(props: any) {
     const [isLoggedInState, setIsLoggedInState] = useState(false);
 
-    const { push } = useRouter();
+    const { replace } = useRouter();
 
     const { user, logged_in } = useUser(
       ({ user, logged_in }) => ({ user, logged_in }),
@@ -18,8 +18,8 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
     );
 
     useEffect(() => {
-      logged_in ? setIsLoggedInState(logged_in) : push("/");
-    }, [logged_in, push]);
+      logged_in ? setIsLoggedInState(logged_in) : replace("/");
+    }, [logged_in, replace]);
 
     return isLoggedInState ? (
       <WrappedComponent user={user} {...props} />

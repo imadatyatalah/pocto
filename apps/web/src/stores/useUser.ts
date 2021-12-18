@@ -6,7 +6,7 @@ import { instance } from "@/lib/axios";
 import type { TUser } from "@/types/index";
 
 type UserState = {
-  user: null | TUser;
+  user?: TUser;
   logged_in: boolean;
   fetchUser: () => Promise<void>;
 };
