@@ -6,7 +6,12 @@ import { prisma } from "../config/prisma";
 import { credentials } from "../config/credentials";
 import { createUser, findUserByEmail } from "../helpers/users";
 
-export const signUp = async (req: Request, res: Response) => {
+import type { SignupInput, SigninInput } from "../validations";
+
+export const signUp = async (
+  req: Request<{}, {}, SignupInput["body"]>,
+  res: Response
+) => {
   try {
     const { email, password, name, username } = req.body;
 
@@ -46,7 +51,10 @@ export const signUp = async (req: Request, res: Response) => {
   }
 };
 
-export const signin = async (req: Request, res: Response) => {
+export const signin = async (
+  req: Request<{}, {}, SigninInput["body"]>,
+  res: Response
+) => {
   try {
     const { email, password } = req.body;
 

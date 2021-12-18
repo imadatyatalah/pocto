@@ -9,6 +9,8 @@ import {
   userData,
 } from "../helpers/users";
 
+import type { ChangePasswordInput, UpdateProfileInput } from "../validations";
+
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {
     const currentUser = await prisma.user.findUnique({
@@ -39,7 +41,10 @@ export const getUserByUsername = async (req: Request, res: Response) => {
   }
 };
 
-export const changePassword = async (req: Request, res: Response) => {
+export const changePassword = async (
+  req: Request<{}, {}, ChangePasswordInput["body"]>,
+  res: Response
+) => {
   try {
     const { oldPassword, newPassword } = req.body;
 
@@ -83,7 +88,10 @@ export const changePassword = async (req: Request, res: Response) => {
   }
 };
 
-export const updateProfile = async (req: Request, res: Response) => {
+export const updateProfile = async (
+  req: Request<{}, {}, UpdateProfileInput["body"]>,
+  res: Response
+) => {
   try {
     const { name, bio, website, location } = req.body;
 

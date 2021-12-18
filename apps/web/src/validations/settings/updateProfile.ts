@@ -1,9 +1,9 @@
-import { z } from "zod";
+import { object, string } from "zod";
 
-export const updateProfileSchema = z.object({
-  name: z.string().nonempty("Name is required"),
-  bio: z.string(),
+export const updateProfileSchema = object({
+  name: string().nonempty("Name is required"),
+  bio: string(),
   // FIXME: website field should be aptional and a valid URL
-  website: z.string(),
-  location: z.string(),
+  website: string(),
+  location: string(),
 });
