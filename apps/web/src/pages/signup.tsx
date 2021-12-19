@@ -53,10 +53,7 @@ const SignUp: NextPage = () => {
     <>
       <NextSeo title="Sign Up" />
 
-      <Flex
-        as="section"
-        css={{ flexDirection: "column", alignItems: "center" }}
-      >
+      <Flex as="section" direction="column" align="center">
         <Heading as="h1" css={{ float: "left", width: 400 }}>
           Sign Up to Pocto
         </Heading>

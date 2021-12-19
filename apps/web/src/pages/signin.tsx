@@ -50,10 +50,7 @@ const SignIn: NextPage = () => {
     <>
       <NextSeo title="Sign In" />
 
-      <Flex
-        as="section"
-        css={{ flexDirection: "column", alignItems: "center" }}
-      >
+      <Flex direction="column" align="center" as="section">
         <Heading as="h1" css={{ float: "left", width: 400 }}>
           Sign In to Pocto
         </Heading>

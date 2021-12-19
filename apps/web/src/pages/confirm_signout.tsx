@@ -10,12 +10,10 @@ const ConfirmSignOut: NextPage = () => {
 
       <Flex
         as="section"
-        css={{
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100vh",
-        }}
+        direction="column"
+        align="center"
+        justify="center"
+        css={{ minHeight: "100vh" }}
       >
         <Heading size="3xl" css={{ marginBottom: 20 }} as="h1">
           Are you sure you want to Sign Out?

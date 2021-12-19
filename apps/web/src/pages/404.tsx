@@ -9,12 +9,10 @@ const Custom404 = () => {
       <NextSeo title="Page Not Found" />
 
       <Flex
-        css={{
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100vh",
-        }}
+        direction="column"
+        align="center"
+        justify="center"
+        css={{ minHeight: "100vh" }}
       >
         <Box css={{ marginBottom: 20 }}>
           <Heading as="h1" size="3xl" css={{ fontWeight: "700" }}>

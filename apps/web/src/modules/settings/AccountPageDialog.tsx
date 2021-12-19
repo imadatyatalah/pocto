@@ -32,7 +32,7 @@ const AccountPageDialog = () => {
           includes all of your posts, Comments, And categories.
         </DialogDescription>
 
-        <Flex css={{ marginTop: 25, justifyContent: "flex-end" }}>
+        <Flex justify="end" css={{ marginTop: 25 }}>
           <DialogClose asChild>
             <Button
               onClick={handleDeleteAccount}
