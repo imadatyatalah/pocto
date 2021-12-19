@@ -42,7 +42,7 @@ const Security: NextPage = () => {
     <>
       <NextSeo title="Account security" />
 
-      <Box as="section" css={{ margin: "0 20px" }}>
+      <Box as="section" css={{ margin: "0 40px" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading>Change password</Heading>
 

@@ -44,7 +44,7 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
     <>
       <NextSeo title="Profile settings" />
 
-      <Box as="section" css={{ margin: "0 20px" }}>
+      <Box as="section" css={{ margin: "0 40px" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading>Update profile</Heading>
 

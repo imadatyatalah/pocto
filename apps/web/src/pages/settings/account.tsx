@@ -9,7 +9,7 @@ const Account = () => {
     <>
       <NextSeo title="Account settings" />
 
-      <Box as="section" css={{ margin: "0 20px" }}>
+      <Box as="section" css={{ margin: "0 40px" }}>
         <div>
           <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
 
