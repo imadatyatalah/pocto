@@ -1,4 +1,5 @@
 {
+  "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -7,7 +8,6 @@
       "@/layouts/*": ["src/layouts/*"]
     }
   },
-  "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

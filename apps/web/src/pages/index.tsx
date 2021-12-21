@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
 
+import { NextSeo } from "next-seo";
+
 const Home: NextPage = () => {
-  return <section></section>;
+  return (
+    <>
+      <NextSeo />
+
+      <section></section>
+    </>
+  );
 };
 
 export default Home;

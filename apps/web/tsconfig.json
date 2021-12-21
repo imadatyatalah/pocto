@@ -1,8 +1,10 @@
 {
+  "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/lib/*": ["src/lib/*"],
+      "@/api/*": ["src/api/*"],
       "@/hocs/*": ["src/hocs/*"],
       "@/pages/*": ["src/pages/*"],
       "@/hooks/*": ["src/hooks/*"],
@@ -15,7 +17,6 @@
       "@/validations/*": ["src/validations/*"]
     }
   },
-  "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
