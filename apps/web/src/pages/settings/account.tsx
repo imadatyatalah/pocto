@@ -19,9 +19,9 @@ const Account = () => {
             Once you delete your account, there is no going back. Please be
             certain.
           </Text>
-        </div>
 
-        <AccountPageDialog />
+          <AccountPageDialog />
+        </div>
       </Box>
     </>
   );

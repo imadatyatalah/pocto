@@ -1,5 +1,6 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
 
+import { NextSeo } from "next-seo";
 import { pick } from "@contentlayer/client";
 import { allBlogs } from ".contentlayer/data";
 import { Button, Heading } from "ui";
@@ -8,11 +9,15 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ posts }) => {
   return (
-    <section>
-      <Heading as="h1">Blog</Heading>
+    <>
+      <NextSeo title="Home" />
 
-      <Button>Click me</Button>
-    </section>
+      <section>
+        <Heading as="h1">Blog</Heading>
+
+        <Button>Click me</Button>
+      </section>
+    </>
   );
 };
 

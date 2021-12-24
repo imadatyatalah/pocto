@@ -1,6 +1,6 @@
 const { withContentlayer } = require("next-contentlayer");
 const withTM = require("next-transpile-modules")(["ui"]);
-const withPlugins = require('next-compose-plugins');
+const withPlugins = require("next-compose-plugins");
 
 // @ts-check
 
