@@ -20,10 +20,10 @@ model User {
 
   role Role @default(USER)
 
-  posts      Post[]
-  comments   Comment[]
-  categories Category[]
-  profile    Profile?
+  posts       Post[]
+  comments    Comment[]
+  communities Community[]
+  profile     Profile?
 
   @@map("users")
 }
@@ -59,13 +59,13 @@ model Post {
 
   comments Comment[]
 
-  category   Category @relation(fields: [categoryId], references: [id])
-  categoryId Int
+  community   Community @relation(fields: [communityId], references: [id])
+  communityId Int
 
   @@map("posts")
 }
 
-model Category {
+model Community {
   id Int @id @default(autoincrement())
 
   name String @unique

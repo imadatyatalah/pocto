@@ -5,7 +5,7 @@ import { NextSeo } from "next-seo";
 const Home: NextPage = () => {
   return (
     <>
-      <NextSeo />
+      <NextSeo title="Home" />
 
       <section></section>
     </>
