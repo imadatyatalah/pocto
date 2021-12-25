@@ -6,3 +6,6 @@ export { passwordResetSchema } from "./auth/passwordReset";
 // Settings
 export { changePasswordSchema } from "./settings/changePassword";
 export { updateProfileSchema } from "./settings/updateProfile";
+
+// Community
+export { createCommunitySchema } from "./community/createCommunity";
