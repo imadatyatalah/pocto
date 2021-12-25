@@ -51,7 +51,7 @@ const PasswordReset: NextPage = () => {
               Email
             </Label>
 
-            <Input isFullWidth type="text" id="email" {...register("email")} />
+            <Input isFullWidth type="email" id="email" {...register("email")} />
             {errors["email"] && (
               <InputErrorMessage>{errors["email"].message}</InputErrorMessage>
             )}

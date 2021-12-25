@@ -5,3 +5,6 @@ export * from "./auth/signup";
 // Settings
 export * from "./settings/changePassword";
 export * from "./settings/updateProfile";
+
+// Community
+export * from "./community/createCommunity";

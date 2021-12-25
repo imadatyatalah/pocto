@@ -18,7 +18,7 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
     );
 
     useEffect(() => {
-      logged_in ? setIsLoggedInState(logged_in) : replace("/");
+      logged_in ? setIsLoggedInState(logged_in) : replace("/signin");
     }, [logged_in, replace]);
 
     return isLoggedInState ? (

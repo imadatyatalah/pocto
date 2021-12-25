@@ -7,7 +7,7 @@ const withPlugins = require("next-compose-plugins");
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = withPlugins([withContentlayer, withTM], {
+module.exports = withPlugins([withContentlayer(), withTM], {
   reactStrictMode: true,
   swcMinify: true,
 });

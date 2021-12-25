@@ -1,14 +1,9 @@
 import { Router } from "express";
 
-import { getUsers } from "../controllers/admin/users.controllers";
 import { getUserByUsername } from "../controllers/users.controllers";
-import isAdmin from "../middlewares/isAdmin";
-import requireUser from "../middlewares/requireUser";
 
 const router = Router();
 
 router.get("/:username", getUserByUsername);
-
-router.get("/", [requireUser, isAdmin], getUsers);
 
 export default router;
