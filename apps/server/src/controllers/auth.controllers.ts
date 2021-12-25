@@ -6,7 +6,7 @@ import { prisma } from "../config/prisma";
 import { credentials } from "../config/credentials";
 import { createUser, findUserByEmail } from "../helpers/users";
 
-import type { SignupInput, SigninInput } from "../validations";
+import type { SignupInput, SigninInput } from "shared";
 
 export const signUp = async (
   req: Request<{}, {}, SignupInput["body"]>,

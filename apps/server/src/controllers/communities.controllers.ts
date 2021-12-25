@@ -6,7 +6,8 @@ import {
   createCommunity as createCommunityHelper,
   findCommunityByName,
 } from "../helpers/communities";
-import { CreateCommunityInput } from "../validations/community/createCommunity";
+
+import type { CreateCommunityInput } from "shared";
 
 export const createCommunity = async (
   req: Request<{}, {}, CreateCommunityInput["body"]>,

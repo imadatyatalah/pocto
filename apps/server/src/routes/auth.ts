@@ -1,14 +1,14 @@
 import { Router } from "express";
 
 import { signUp, signin, signout } from "../controllers/auth.controllers";
-import { signupSchema, signinSchema } from "../validations";
+import { signupSchemaServer, signinSchemaServer } from "shared";
 import validateResource from "../middlewares/validateResource";
 
 const router = Router();
 
-router.post("/signup", validateResource(signupSchema), signUp);
+router.post("/signup", validateResource(signupSchemaServer), signUp);
 
-router.post("/signin", validateResource(signinSchema), signin);
+router.post("/signin", validateResource(signinSchemaServer), signin);
 
 router.get("/signout", signout);
 

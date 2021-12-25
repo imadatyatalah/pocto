@@ -5,6 +5,7 @@ import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signupSchema } from "shared";
 import {
   Button,
   Flex,
@@ -16,7 +17,6 @@ import {
   Link as StyledLink,
 } from "ui";
 
-import { signupSchema } from "@/validations/index";
 import { useSignUp } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 

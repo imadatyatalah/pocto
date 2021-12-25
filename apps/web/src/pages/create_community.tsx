@@ -5,8 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { NextSeo } from "next-seo";
 import { styled } from "@stitches/react";
 import { Button, Flex, Heading, Input, Label, Box } from "ui";
+import { createCommunitySchema } from "shared";
 
-import { createCommunitySchema } from "@/validations/community/createCommunity";
 import { useCreateCommunity } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";

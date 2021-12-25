@@ -9,7 +9,7 @@ import {
   userData,
 } from "../helpers/users";
 
-import type { ChangePasswordInput, UpdateProfileInput } from "../validations";
+import type { ChangePasswordInput, UpdateProfileInput } from "shared";
 
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {

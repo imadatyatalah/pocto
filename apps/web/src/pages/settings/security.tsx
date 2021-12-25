@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { changePasswordSchema } from "shared";
 import {
   Button,
   Input,
@@ -14,7 +15,6 @@ import {
   Link as StyledLink,
 } from "ui";
 
-import { changePasswordSchema } from "@/validations/index";
 import { useUpdatePassword } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";

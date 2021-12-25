@@ -1,4 +1,4 @@
-import { object, string } from "zod";
+import { object, string, TypeOf } from "zod";
 
 export const updateProfileSchema = object({
   name: string().nonempty("Name is required").min(3),
@@ -7,3 +7,7 @@ export const updateProfileSchema = object({
   website: string(),
   location: string(),
 });
+
+export const updateProfileSchemaServer = object({ body: updateProfileSchema });
+
+export type UpdateProfileInput = TypeOf<typeof updateProfileSchemaServer>;

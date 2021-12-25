@@ -6,9 +6,9 @@ import {
   deleteAccount,
   updateProfile,
 } from "../controllers/users.controllers";
+import { changePasswordSchemaServer, updateProfileSchemaServer } from "shared";
 import requireUser from "../middlewares/requireUser";
 import validateResource from "../middlewares/validateResource";
-import { changePasswordSchema, updateProfileSchema } from "../validations";
 
 const router = Router();
 
@@ -18,13 +18,13 @@ router.delete("/delete_account", requireUser, deleteAccount);
 
 router.put(
   "/change_password",
-  [requireUser, validateResource(changePasswordSchema)],
+  [requireUser, validateResource(changePasswordSchemaServer)],
   changePassword
 );
 
 router.put(
   "/update_profile",
-  [requireUser, validateResource(updateProfileSchema)],
+  [requireUser, validateResource(updateProfileSchemaServer)],
   updateProfile
 );
 

@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { styled } from "@stitches/react";
 import { NextSeo } from "next-seo";
 import { Heading, Flex, Box, Label, Input, Button } from "ui";
+import { passwordResetSchema } from "shared";
 
-import { passwordResetSchema } from "@/validations/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 
 const StyledForm = styled("form", {

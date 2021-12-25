@@ -4,8 +4,8 @@ import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Heading, Separator, Label, Input, Button } from "ui";
+import { updateProfileSchema } from "shared";
 
-import { updateProfileSchema } from "@/validations/index";
 import { useUpdateProfile } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";

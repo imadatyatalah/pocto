@@ -4,7 +4,7 @@ import {
   getCommunityByName,
   createCommunity,
 } from "../controllers/communities.controllers";
-import { createCommunitySchema } from "../validations/index";
+import { createCommunitySchemaServer } from "shared";
 import requireUser from "../middlewares/requireUser";
 import validateResource from "../middlewares/validateResource";
 
@@ -14,7 +14,7 @@ router.get("/:name", getCommunityByName);
 
 router.post(
   "/",
-  [requireUser, validateResource(createCommunitySchema)],
+  [requireUser, validateResource(createCommunitySchemaServer)],
   createCommunity
 );
 

@@ -1,4 +1,4 @@
-import { object, string } from "zod";
+import { object, string, TypeOf } from "zod";
 
 export const changePasswordSchema = object({
   oldPassword: string().nonempty("Old password is required.").min(6),
@@ -10,3 +10,9 @@ export const changePasswordSchema = object({
   message: "Passwords don't match",
   path: ["confirmNewPassword"],
 });
+
+export const changePasswordSchemaServer = object({
+  body: changePasswordSchema,
+});
+
+export type ChangePasswordInput = TypeOf<typeof changePasswordSchemaServer>;
