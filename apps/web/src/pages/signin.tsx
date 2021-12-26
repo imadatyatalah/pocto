@@ -16,10 +16,10 @@ import {
   Link as StyledLink,
 } from "ui";
 
+import type { SigninInput } from "shared";
+
 import { useSignIn } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
-
-import type { SigninInput } from "shared";
 
 const Inputs = [
   { type: "email", id: "email", name: "Email" },

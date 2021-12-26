@@ -7,9 +7,9 @@ import { NextSeo } from "next-seo";
 import { Heading, Flex, Box, Label, Input, Button } from "ui";
 import { passwordResetSchema } from "shared";
 
-import InputErrorMessage from "@/components/InputErrorMessage";
-
 import type { PasswordResetInput } from "shared";
+
+import InputErrorMessage from "@/components/InputErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,

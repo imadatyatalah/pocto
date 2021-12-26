@@ -17,10 +17,10 @@ import {
   Link as StyledLink,
 } from "ui";
 
+import type { SignupInput } from "shared";
+
 import { useSignUp } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
-
-import type { SignupInput } from "shared";
 
 const Inputs = [
   { type: "text", id: "name", name: "Name" },

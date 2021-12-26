@@ -6,12 +6,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Heading, Separator, Label, Input, Button } from "ui";
 import { updateProfileSchema } from "shared";
 
+import type { UpdateProfileInput } from "shared";
+
 import { useUpdateProfile } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
 import type { TUser } from "@/types/index";
-import type { UpdateProfileInput } from "shared";
 
 const Profile: NextPage<{ user: TUser }> = ({ user }) => {
   const { mutate: updateProfile, isLoading } = useUpdateProfile();
@@ -26,18 +27,18 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
 
   const Inputs = [
     { type: "text", id: "name", name: "Name", defaultValue: user.name },
-    { type: "text", id: "bio", name: "Bio", defaultValue: user.profile.bio },
+    { type: "text", id: "bio", name: "Bio", defaultValue: user.profile?.bio },
     {
       type: "text",
       id: "website",
       name: "Website",
-      defaultValue: user.profile.website,
+      defaultValue: user.profile?.website,
     },
     {
       type: "text",
       id: "location",
       name: "Location",
-      defaultValue: user.profile.location,
+      defaultValue: user.profile?.location,
     },
   ];
 

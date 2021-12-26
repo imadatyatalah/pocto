@@ -10,6 +10,7 @@ export const createCommunity = (
     name,
     description,
     title,
+    type: "PUBLIC",
     user: { connect: { id: userId } },
   });
 };

@@ -15,11 +15,11 @@ import {
   Link as StyledLink,
 } from "ui";
 
+import type { ChangePasswordInput } from "shared";
+
 import { useUpdatePassword } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";
-
-import type { ChangePasswordInput } from "shared";
 
 const Inputs = [
   { type: "password", id: "oldPassword", name: "Old password" },

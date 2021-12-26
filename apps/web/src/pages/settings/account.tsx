@@ -1,10 +1,12 @@
+import type { NextPage } from "next";
+
 import { NextSeo } from "next-seo";
 import { Box, Heading, Text, Separator } from "ui";
 
 import WithAuth from "@/hocs/withAuth";
 import AccountPageDialog from "@/modules/settings/AccountPageDialog";
 
-const Account = () => {
+const Account: NextPage = () => {
   return (
     <>
       <NextSeo title="Account settings" />

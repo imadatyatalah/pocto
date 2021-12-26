@@ -7,11 +7,11 @@ import { styled } from "@stitches/react";
 import { Button, Flex, Heading, Input, Label, Box } from "ui";
 import { createCommunitySchema } from "shared";
 
+import type { CreateCommunityInput } from "shared";
+
 import { useCreateCommunity } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";
-
-import type { CreateCommunityInput } from "shared";
 
 const StyledForm = styled("form", {
   width: 400,
