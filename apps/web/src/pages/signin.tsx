@@ -19,7 +19,7 @@ import {
 import { useSignIn } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 
-import type { TSignInData } from "@/types/index";
+import type { SigninInput } from "shared";
 
 const Inputs = [
   { type: "email", id: "email", name: "Email" },
@@ -44,7 +44,7 @@ const SignIn: NextPage = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(signinSchema) });
 
-  const onSubmit = (data: TSignInData) => signIn(data);
+  const onSubmit = (data: SigninInput) => signIn(data);
 
   return (
     <>

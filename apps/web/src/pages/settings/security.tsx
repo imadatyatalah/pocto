@@ -19,7 +19,7 @@ import { useUpdatePassword } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
-import type { TChangePasswordData } from "@/types/index";
+import type { ChangePasswordInput } from "shared";
 
 const Inputs = [
   { type: "password", id: "oldPassword", name: "Old password" },
@@ -36,7 +36,7 @@ const Security: NextPage = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(changePasswordSchema) });
 
-  const onSubmit = (data: TChangePasswordData) => updatePassword(data);
+  const onSubmit = (data: ChangePasswordInput) => updatePassword(data);
 
   return (
     <>

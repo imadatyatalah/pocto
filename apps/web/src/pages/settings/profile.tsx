@@ -10,7 +10,8 @@ import { useUpdateProfile } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
-import type { TUpdateProfileData, TUser } from "@/types/index";
+import type { TUser } from "@/types/index";
+import type { UpdateProfileInput } from "shared";
 
 const Profile: NextPage<{ user: TUser }> = ({ user }) => {
   const { mutate: updateProfile, isLoading } = useUpdateProfile();
@@ -21,7 +22,7 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(updateProfileSchema) });
 
-  const onSubmit = (data: TUpdateProfileData) => updateProfile(data);
+  const onSubmit = (data: UpdateProfileInput) => updateProfile(data);
 
   const Inputs = [
     { type: "text", id: "name", name: "Name", defaultValue: user.name },

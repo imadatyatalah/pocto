@@ -2,10 +2,10 @@ import { useMutation } from "react-query";
 
 import { instance } from "@/lib/axios";
 
-import type { TCreateCommunityData } from "@/types/index";
+import type { CreateCommunityInput } from "shared";
 
 const useCreateCommunity = () =>
-  useMutation((data: TCreateCommunityData) =>
+  useMutation((data: CreateCommunityInput) =>
     instance.post(`/communities`, data)
   );
 

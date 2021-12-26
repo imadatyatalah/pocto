@@ -20,7 +20,7 @@ import {
 import { useSignUp } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 
-import type { TSignUpData } from "@/types/index";
+import type { SignupInput } from "shared";
 
 const Inputs = [
   { type: "text", id: "name", name: "Name" },
@@ -47,7 +47,7 @@ const SignUp: NextPage = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(signupSchema) });
 
-  const onSubmit = (data: TSignUpData) => signUp(data);
+  const onSubmit = (data: SignupInput) => signUp(data);
 
   return (
     <>

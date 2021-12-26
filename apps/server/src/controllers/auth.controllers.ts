@@ -6,10 +6,10 @@ import { prisma } from "../config/prisma";
 import { credentials } from "../config/credentials";
 import { createUser, findUserByEmail } from "../helpers/users";
 
-import type { SignupInput, SigninInput } from "shared";
+import type { SignupInputServer, SigninInputServer } from "shared";
 
 export const signUp = async (
-  req: Request<{}, {}, SignupInput["body"]>,
+  req: Request<{}, {}, SignupInputServer["body"]>,
   res: Response
 ) => {
   try {
@@ -52,7 +52,7 @@ export const signUp = async (
 };
 
 export const signin = async (
-  req: Request<{}, {}, SigninInput["body"]>,
+  req: Request<{}, {}, SigninInputServer["body"]>,
   res: Response
 ) => {
   try {
@@ -100,7 +100,7 @@ export const signin = async (
     });
 
     res
-      .status(201)
+      .status(200)
       .send({ success: true, message: "You have logged in successfully" });
   } catch (err) {
     res

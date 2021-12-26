@@ -11,7 +11,7 @@ import { useCreateCommunity } from "@/hooks/index";
 import InputErrorMessage from "@/components/InputErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
-import type { TCreateCommunityData } from "@/types/index";
+import type { CreateCommunityInput } from "shared";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -32,7 +32,7 @@ const CreateCommunity: NextPage = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(createCommunitySchema) });
 
-  const onSubmit = (data: TCreateCommunityData) => createCommunity(data);
+  const onSubmit = (data: CreateCommunityInput) => createCommunity(data);
 
   return (
     <>

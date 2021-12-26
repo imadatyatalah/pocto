@@ -9,13 +9,11 @@ import { passwordResetSchema } from "shared";
 
 import InputErrorMessage from "@/components/InputErrorMessage";
 
+import type { PasswordResetInput } from "shared";
+
 const StyledForm = styled("form", {
   width: 400,
 });
-
-type TPasswordResetData = {
-  email: string;
-};
 
 const PasswordReset: NextPage = () => {
   const {
@@ -24,7 +22,7 @@ const PasswordReset: NextPage = () => {
     formState: { errors },
   } = useForm({ resolver: zodResolver(passwordResetSchema) });
 
-  const onSubmit = (data: TPasswordResetData) => console.log(data);
+  const onSubmit = (data: PasswordResetInput) => console.log(data);
 
   return (
     <>

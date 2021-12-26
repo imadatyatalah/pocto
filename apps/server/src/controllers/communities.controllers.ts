@@ -7,10 +7,10 @@ import {
   findCommunityByName,
 } from "../helpers/communities";
 
-import type { CreateCommunityInput } from "shared";
+import type { CreateCommunityInputServer } from "shared";
 
 export const createCommunity = async (
-  req: Request<{}, {}, CreateCommunityInput["body"]>,
+  req: Request<{}, {}, CreateCommunityInputServer["body"]>,
   res: Response
 ) => {
   try {
@@ -21,7 +21,7 @@ export const createCommunity = async (
       select: communityData,
     });
 
-    res.status(200).send(community);
+    res.status(201).send(community);
   } catch (err) {
     res
       .status(500)

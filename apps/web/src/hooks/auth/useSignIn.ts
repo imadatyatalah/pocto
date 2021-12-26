@@ -4,10 +4,10 @@ import { useMutation } from "react-query";
 
 import { instance } from "@/lib/axios";
 
-import type { TSignInData } from "@/types/index";
+import type { SigninInput } from "shared";
 
 const useSignIn = () =>
-  useMutation((data: TSignInData) => instance.post(`/auth/signin`, data), {
+  useMutation((data: SigninInput) => instance.post(`/auth/signin`, data), {
     onSuccess: () => Router.push("/"),
   });
 
