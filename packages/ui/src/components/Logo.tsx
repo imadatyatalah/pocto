@@ -33,7 +33,16 @@ const Logo = ({ text, ...props }: { text?: string }, ref: any) => {
       </svg>
 
       {text ? (
-        <Text as="span" css={{ fontSize: 20, fontWeight: 600, marginLeft: 10 }}>
+        <Text
+          as="span"
+          css={{
+            fontSize: 22,
+            fontWeight: 700,
+            marginLeft: 10,
+            color: "#757BC8",
+            userSelect: "none",
+          }}
+        >
           {text}
         </Text>
       ) : null}

@@ -6,6 +6,7 @@ import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signinSchema } from "shared";
+import { CLIENT_ROUTES } from "shared/routes";
 import {
   Button,
   Flex,
@@ -90,7 +91,7 @@ const SignIn: NextPage = () => {
         <div>
           <p>
             Not a member?{" "}
-            <Link href="/signup" passHref>
+            <Link href={CLIENT_ROUTES.SIGN_UP} passHref>
               <StyledLink>Sign up now</StyledLink>
             </Link>
           </p>

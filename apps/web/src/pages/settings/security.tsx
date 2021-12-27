@@ -5,6 +5,7 @@ import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { changePasswordSchema } from "shared";
+import { CLIENT_ROUTES } from "shared/routes";
 import {
   Button,
   Input,
@@ -69,7 +70,7 @@ const Security: NextPage = () => {
               Update password
             </Button>
 
-            <Link href="/password_reset" passHref>
+            <Link href={CLIENT_ROUTES.PASSWORD_RESET} passHref>
               <StyledLink>I forgot my password</StyledLink>
             </Link>
           </Box>
