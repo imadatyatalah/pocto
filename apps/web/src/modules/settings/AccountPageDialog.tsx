@@ -14,9 +14,9 @@ import {
 import { useDeleteAccount } from "@/hooks/index";
 
 const AccountPageDialog = () => {
-  const { mutate } = useDeleteAccount();
+  const { mutate: deleteAccount } = useDeleteAccount();
 
-  const handleDeleteAccount = () => mutate();
+  const handleDeleteAccount = () => deleteAccount();
 
   return (
     <Dialog>

@@ -1,8 +1,7 @@
 import { styled } from "@stitches/react";
-import { cyan } from "@radix-ui/colors";
 
 const StyledLink = styled("a", {
-  color: cyan.cyan10,
+  color: "#0645AD",
 
   "&:hover": {
     textDecoration: "underline",

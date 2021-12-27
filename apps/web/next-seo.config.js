@@ -1,6 +1,6 @@
 const NextSeo = {
   defaultTitle: "Pocto",
-  titleTemplate: "%s / Pocto",
+  titleTemplate: "%s - Pocto",
   description: "",
   openGraph: {
     type: "website",

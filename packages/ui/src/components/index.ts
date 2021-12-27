@@ -6,6 +6,9 @@ export { default as Text } from "./Text";
 export { default as Heading } from "./Heading";
 export { default as Separator } from "./Separator";
 
+// Logo
+export { default as Logo } from "./Logo";
+
 // Button
 export { default as Button } from "./Button";
 
