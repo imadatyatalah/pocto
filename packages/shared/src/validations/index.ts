@@ -7,5 +7,8 @@ export * from "./auth/passwordReset";
 export * from "./settings/changePassword";
 export * from "./settings/updateProfile";
 
-// Community
-export * from "./community/createCommunity";
+// Communities
+export * from "./communities/createCommunity";
+
+// Posts
+export * from "./posts/createPost";

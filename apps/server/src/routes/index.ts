@@ -2,10 +2,13 @@ import { Router } from "express";
 
 import currentUser from "./currentUser";
 import communities from "./communities";
+import posts from "./posts";
 import health from "./health";
 import users from "./users";
-import adminUsers from "./admin/users";
 import auth from "./auth";
+
+// Admin
+import adminUsers from "./admin/users";
 
 const routes = Router();
 
@@ -24,5 +27,8 @@ routes.use("/admin/users", adminUsers);
 
 // Communities
 routes.use("/communities", communities);
+
+// Posts
+routes.use("/posts", posts);
 
 export default routes;

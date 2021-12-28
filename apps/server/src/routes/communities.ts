@@ -10,12 +10,12 @@ import validateResource from "../middlewares/validateResource";
 
 const router = Router();
 
-router.get("/:name", getCommunityByName);
-
 router.post(
   "/",
   [requireUser, validateResource(createCommunitySchemaServer)],
   createCommunity
 );
+
+router.get("/:name", getCommunityByName);
 
 export default router;
