@@ -7,5 +7,8 @@ export { default as useUpdatePassword } from "./settings/useUpdatePassword";
 export { default as useDeleteAccount } from "./settings/useDeleteAccount";
 export { default as useUpdateProfile } from "./settings/useUpdateProfile";
 
-// Community
-export { default as useCreateCommunity } from "./community/useCreateCommunity";
+// Communities
+export { default as useCreateCommunity } from "./communities/useCreateCommunity";
+
+// Posts
+export { default as useCreatePost } from "./posts/useCreatePost";
