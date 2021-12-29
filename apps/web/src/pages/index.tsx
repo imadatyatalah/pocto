@@ -1,15 +1,25 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 
-import { NextSeo } from "next-seo";
+import { QueryClient } from "react-query";
+
+import { getPosts, useGetPosts } from "@/api/index";
+import HomePage from "@/modules/home/HomePage";
 
 const Home: NextPage = () => {
-  return (
-    <>
-      <NextSeo title="Home" />
+  const { data: posts } = useGetPosts();
 
-      <section></section>
-    </>
-  );
+  return <HomePage posts={posts} />;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  const posts = await queryClient.fetchQuery(["posts"], () => getPosts());
+
+  return {
+    props: { posts },
+    revalidate: 1,
+  };
 };
 
 export default Home;

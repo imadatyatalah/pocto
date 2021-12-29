@@ -1,6 +1,7 @@
 import { Prisma } from "../config/prisma";
 
 export const postData = Prisma.validator<Prisma.PostSelect>()({
+  id: true,
   title: true,
   content: true,
   userId: true,

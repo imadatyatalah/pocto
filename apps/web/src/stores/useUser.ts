@@ -20,11 +20,7 @@ const useUser = create<UserState>(
         try {
           const { data: user } = await instance.get<TUser>("/current_user/me");
 
-          if (user) {
-            set({ user, logged_in: true });
-          } else {
-            set({ user: null, logged_in: false });
-          }
+          set({ user, logged_in: true });
         } catch (err) {
           set({ user: null, logged_in: false });
         }

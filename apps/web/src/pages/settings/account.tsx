@@ -15,7 +15,7 @@ const Account: NextPage = () => {
         <div>
           <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
 
-          <Separator orientation="horizontal" css={{ margin: "10px 0" }} />
+          <Separator css={{ margin: "10px 0" }} />
 
           <Text css={{ margin: "10px 0" }}>
             Once you delete your account, there is no going back. Please be
