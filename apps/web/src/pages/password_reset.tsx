@@ -20,7 +20,9 @@ const PasswordReset: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(passwordResetSchema) });
+  } = useForm<PasswordResetInput>({
+    resolver: zodResolver(passwordResetSchema),
+  });
 
   const onSubmit = (data: PasswordResetInput) => console.log(data);
 

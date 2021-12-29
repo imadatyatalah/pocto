@@ -43,7 +43,7 @@ const SignIn: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(signinSchema) });
+  } = useForm<SigninInput>({ resolver: zodResolver(signinSchema) });
 
   const onSubmit = (data: SigninInput) => signIn(data);
 
@@ -74,7 +74,12 @@ const SignIn: NextPage = () => {
                 )}
               </Label>
 
-              <Input isFullWidth type={type} id={id} {...register(id)} />
+              <Input
+                isFullWidth
+                type={type}
+                id={id}
+                {...register(id as keyof SigninInput)}
+              />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}

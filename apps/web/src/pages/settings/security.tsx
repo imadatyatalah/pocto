@@ -35,7 +35,9 @@ const Security: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(changePasswordSchema) });
+  } = useForm<ChangePasswordInput>({
+    resolver: zodResolver(changePasswordSchema),
+  });
 
   const onSubmit = (data: ChangePasswordInput) => updatePassword(data);
 
@@ -58,7 +60,11 @@ const Security: NextPage = () => {
                 {name}
               </Label>
 
-              <Input type={type} id={id} {...register(id)} />
+              <Input
+                type={type}
+                id={id}
+                {...register(id as keyof ChangePasswordInput)}
+              />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}

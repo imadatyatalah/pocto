@@ -46,7 +46,7 @@ const SignUp: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(signupSchema) });
+  } = useForm<SignupInput>({ resolver: zodResolver(signupSchema) });
 
   const onSubmit = (data: SignupInput) => signUp(data);
 
@@ -74,7 +74,7 @@ const SignUp: NextPage = () => {
                 type={type}
                 id={id}
                 placeholder={placeholder}
-                {...register(id)}
+                {...register(id as keyof SignupInput)}
               />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>

@@ -30,7 +30,9 @@ const CreateCommunity: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(createCommunitySchema) });
+  } = useForm<CreateCommunityInput>({
+    resolver: zodResolver(createCommunitySchema),
+  });
 
   const onSubmit = (data: CreateCommunityInput) => createCommunity(data);
 
@@ -53,7 +55,12 @@ const CreateCommunity: NextPage = () => {
                 {name}
               </Label>
 
-              <Input isFullWidth type={type} id={id} {...register(id)} />
+              <Input
+                isFullWidth
+                type={type}
+                id={id}
+                {...register(id as keyof CreateCommunityInput)}
+              />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}

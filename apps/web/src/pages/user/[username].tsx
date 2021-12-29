@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-import { NextSeo } from "next-seo";
 import { QueryClient } from "react-query";
 
-import { getUser, useGetUser } from "@/api/user/getUser";
+import { getUser, useGetUser } from "@/api/index";
 import Loading from "@/components/Loading";
+import UserPage from "@/modules/user/UserPage";
 
 const User: NextPage = () => {
   const { isFallback, query } = useRouter();
@@ -14,17 +14,7 @@ const User: NextPage = () => {
 
   if (isFallback) return <Loading />;
 
-  return (
-    <>
-      <NextSeo title={user?.name} />
-
-      <section>
-        <code>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
-        </code>
-      </section>
-    </>
-  );
+  return <UserPage user={user} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({

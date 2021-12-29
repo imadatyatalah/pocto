@@ -28,7 +28,7 @@ const CreatePost: NextPage = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(createPostSchema) });
+  } = useForm<CreatePostInput>({ resolver: zodResolver(createPostSchema) });
 
   const onSubmit = (data: CreatePostInput) => createPost(data);
 
@@ -51,7 +51,12 @@ const CreatePost: NextPage = () => {
                 {name}
               </Label>
 
-              <Input isFullWidth type={type} id={id} {...register(id)} />
+              <Input
+                isFullWidth
+                type={type}
+                id={id}
+                {...register(id as keyof CreatePostInput)}
+              />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
               )}

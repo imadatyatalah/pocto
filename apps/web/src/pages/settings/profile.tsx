@@ -21,7 +21,9 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(updateProfileSchema) });
+  } = useForm<UpdateProfileInput>({
+    resolver: zodResolver(updateProfileSchema),
+  });
 
   const onSubmit = (data: UpdateProfileInput) => updateProfile(data);
 
@@ -65,7 +67,7 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
                 defaultValue={defaultValue}
                 type={type}
                 id={id}
-                {...register(id)}
+                {...register(id as keyof UpdateProfileInput)}
               />
               {errors[id] && (
                 <InputErrorMessage>{errors[id].message}</InputErrorMessage>
