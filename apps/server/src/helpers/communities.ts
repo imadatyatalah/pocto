@@ -19,6 +19,7 @@ export const communityData = Prisma.validator<Prisma.CommunitySelect>()({
   name: true,
   title: true,
   description: true,
+  type: true,
 });
 
 export const findCommunityByName = (name: string) => {

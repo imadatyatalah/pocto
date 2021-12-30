@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 
-import { QueryClient } from "react-query";
+import { dehydrate, QueryClient } from "react-query";
 
 import { getPosts, useGetPosts } from "@/api/index";
 import HomePage from "@/modules/home/HomePage";
@@ -14,10 +14,10 @@ const Home: NextPage = () => {
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
-  const posts = await queryClient.fetchQuery(["posts"], () => getPosts());
+  await queryClient.prefetchQuery(["posts"], () => getPosts());
 
   return {
-    props: { posts },
+    props: { dehydratedState: dehydrate(queryClient) },
     revalidate: 1,
   };
 };

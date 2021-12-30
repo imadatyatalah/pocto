@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Heading } from "ui";
 
 import type { TPost } from "@/types/index";
@@ -9,7 +11,11 @@ type Props = {
 const Post = ({ post }: Props) => {
   return (
     <div>
-      <Heading size="xl">{post.title}</Heading>
+      <Link href={`/post/${post.id}`} passHref>
+        <Heading as="a" size="xl">
+          {post.title}
+        </Heading>
+      </Link>
 
       <p>{post.content}</p>
     </div>
