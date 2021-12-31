@@ -19,7 +19,8 @@ import {
 import type { ChangePasswordInput } from "shared";
 
 import { useUpdatePassword } from "@/hooks/index";
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
 const Inputs = [
@@ -65,9 +66,13 @@ const Security: NextPage = () => {
                 id={id}
                 {...register(id as keyof ChangePasswordInput)}
               />
-              {errors[id] && (
-                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
-              )}
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
           ))}
 

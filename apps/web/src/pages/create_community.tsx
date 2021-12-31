@@ -10,7 +10,8 @@ import { createCommunitySchema } from "shared";
 import type { CreateCommunityInput } from "shared";
 
 import { useCreateCommunity } from "@/hooks/index";
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
 const StyledForm = styled("form", {
@@ -61,9 +62,13 @@ const CreateCommunity: NextPage = () => {
                 id={id}
                 {...register(id as keyof CreateCommunityInput)}
               />
-              {errors[id] && (
-                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
-              )}
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
           ))}
 

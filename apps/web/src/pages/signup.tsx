@@ -21,7 +21,8 @@ import {
 import type { SignupInput } from "shared";
 
 import { useSignUp } from "@/hooks/index";
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const Inputs = [
   { type: "text", id: "name", name: "Name" },
@@ -76,9 +77,13 @@ const SignUp: NextPage = () => {
                 placeholder={placeholder}
                 {...register(id as keyof SignupInput)}
               />
-              {errors[id] && (
-                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
-              )}
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
           ))}
 

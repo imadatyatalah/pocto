@@ -20,7 +20,8 @@ import {
 import type { SigninInput } from "shared";
 
 import { useSignIn } from "@/hooks/index";
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const Inputs = [
   { type: "email", id: "email", name: "Email" },
@@ -80,9 +81,13 @@ const SignIn: NextPage = () => {
                 id={id}
                 {...register(id as keyof SigninInput)}
               />
-              {errors[id] && (
-                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
-              )}
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
           ))}
 

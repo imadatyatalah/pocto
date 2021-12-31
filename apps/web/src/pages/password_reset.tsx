@@ -9,7 +9,8 @@ import { passwordResetSchema } from "shared";
 
 import type { PasswordResetInput } from "shared";
 
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -52,9 +53,14 @@ const PasswordReset: NextPage = () => {
             </Label>
 
             <Input isFullWidth type="email" id="email" {...register("email")} />
-            {errors["email"] && (
-              <InputErrorMessage>{errors["email"].message}</InputErrorMessage>
-            )}
+
+            <ErrorMessage
+              errors={errors}
+              name="email"
+              render={({ message }) => (
+                <StyledErrorMessage>{message}</StyledErrorMessage>
+              )}
+            />
           </Box>
 
           <Box css={{ margin: "20px 0 20px 0" }}>

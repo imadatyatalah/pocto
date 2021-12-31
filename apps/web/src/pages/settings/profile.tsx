@@ -9,7 +9,8 @@ import { updateProfileSchema } from "shared";
 import type { UpdateProfileInput } from "shared";
 
 import { useUpdateProfile } from "@/hooks/index";
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import WithAuth from "@/hocs/withAuth";
 
 import type { TUser } from "@/types/index";
@@ -69,9 +70,13 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
                 id={id}
                 {...register(id as keyof UpdateProfileInput)}
               />
-              {errors[id] && (
-                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
-              )}
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
           ))}
 
