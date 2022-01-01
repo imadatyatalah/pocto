@@ -10,7 +10,8 @@ import { useCreatePost } from "@/hooks/index";
 
 import type { CreatePostInput } from "shared";
 
-import InputErrorMessage from "@/components/InputErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
+import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -57,9 +58,13 @@ const CreatePost: NextPage = () => {
                 id={id}
                 {...register(id as keyof CreatePostInput)}
               />
-              {errors[id] && (
-                <InputErrorMessage>{errors[id].message}</InputErrorMessage>
-              )}
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
           ))}
 
