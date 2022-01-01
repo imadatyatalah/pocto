@@ -6,4 +6,5 @@ export const CLIENT_ROUTES = {
   PASSWORD_RESET: "/password_reset",
 
   USER_PAGE: (username = ":username") => `/user/${username}`,
+  POST_PAGE: (id = ":id") => `/post/${id}`,
 };

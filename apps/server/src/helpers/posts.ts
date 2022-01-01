@@ -4,7 +4,15 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
   id: true,
   title: true,
   content: true,
+  createdAt: true,
   userId: true,
+  user: {
+    select: {
+      id: true,
+      name: true,
+      username: true,
+    },
+  },
 });
 
 export const createPost = (title: string, content: string, userId?: number) => {

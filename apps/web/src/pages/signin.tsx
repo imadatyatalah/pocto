@@ -29,7 +29,10 @@ const Inputs = [
     type: "password",
     id: "password",
     name: "Password",
-    additionalLink: { title: "Forgot password?", path: "/password_reset" },
+    additionalLink: {
+      title: "Forgot password?",
+      path: CLIENT_ROUTES.PASSWORD_RESET,
+    },
   },
 ];
 
