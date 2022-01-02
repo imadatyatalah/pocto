@@ -10,6 +10,7 @@ const Custom404: NextPage = () => {
       <NextSeo title="Page Not Found" />
 
       <Flex
+        as="section"
         direction="column"
         align="center"
         justify="center"

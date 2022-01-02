@@ -11,9 +11,12 @@
     "dev": "yarn turbo run dev --parallel",
     "lint": "yarn turbo run lint",
     "prettier:format": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
@@ -39,5 +42,8 @@
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }

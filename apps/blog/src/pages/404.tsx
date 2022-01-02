@@ -1,14 +1,16 @@
 import Link from "next/link";
+import type { NextPage } from "next";
 
 import { NextSeo } from "next-seo";
 import { Box, Button, Flex, Heading } from "ui";
 
-const Custom404 = () => {
+const Custom404: NextPage = () => {
   return (
     <>
       <NextSeo title="Page Not Found" />
 
       <Flex
+        as="section"
         direction="column"
         align="center"
         justify="center"
