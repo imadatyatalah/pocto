@@ -27,3 +27,6 @@ export {
   DialogTrigger,
   IconButton,
 } from "./Dialog";
+
+// Menu
+export * from "./DropdownMenu";

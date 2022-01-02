@@ -1,5 +1,7 @@
+import React from "react";
+
 import { styled, keyframes } from "@stitches/react";
-import { violet, blackA, mauve } from "@radix-ui/colors";
+import { blackA, mauve } from "@radix-ui/colors";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
 const overlayShow = keyframes({
@@ -40,7 +42,7 @@ const StyledContent = styled(DialogPrimitive.Content, {
   "&:focus": { outline: "none" },
 });
 
-const Content = ({ children, ...props }) => {
+const Content = ({ children, ...props }: { children: React.ReactNode }) => {
   return (
     <DialogPrimitive.Portal>
       <StyledOverlay />
@@ -63,28 +65,9 @@ const StyledDescription = styled(DialogPrimitive.Description, {
   lineHeight: 1.5,
 });
 
-const StyledIconButton = styled("button", {
-  all: "unset",
-  fontFamily: "inherit",
-  borderRadius: "100%",
-  height: 25,
-  width: 25,
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: violet.violet11,
-  position: "absolute",
-  top: 10,
-  right: 10,
-
-  "&:hover": { backgroundColor: violet.violet4 },
-  "&:focus": { boxShadow: `0 0 0 2px ${violet.violet7}` },
-});
-
 export const Dialog = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogContent = Content;
 export const DialogTitle = StyledTitle;
 export const DialogDescription = StyledDescription;
 export const DialogClose = DialogPrimitive.Close;
-export const IconButton = StyledIconButton;

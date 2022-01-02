@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { Flex, Logo, Button, Link as StyledLink } from "ui";
-import { CLIENT_ROUTES } from "shared/routes";
+import { Flex, Logo } from "ui";
 
 import { HeaderStyles } from "./Header.styles";
+import LoggedInNav from "./LoggedInNav";
+import LoggedOutNav from "./LoggedOutNav";
 import useUser from "@/stores/useUser";
 
 const Header = () => {
@@ -24,33 +25,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <nav>
-        <Flex as="ul">
-          {isLoggedIn ? (
-            <li>
-              <Link href={CLIENT_ROUTES.CONFIRM_SIGNUOUT} passHref>
-                <Button size="sm" as="a">
-                  Sign Out
-                </Button>
-              </Link>
-            </li>
-          ) : (
-            <>
-              <li>
-                <Link href={CLIENT_ROUTES.SIGN_IN} passHref>
-                  <StyledLink>Sign In</StyledLink>
-                </Link>
-              </li>
-              <li style={{ margin: "0 5px 0 5px", color: "gray" }}>/</li>
-              <li>
-                <Link href={CLIENT_ROUTES.SIGN_UP} passHref>
-                  <StyledLink>Sign Up</StyledLink>
-                </Link>
-              </li>
-            </>
-          )}
-        </Flex>
-      </nav>
+      {isLoggedIn ? <LoggedInNav /> : <LoggedOutNav />}
     </Flex>
   );
 };
