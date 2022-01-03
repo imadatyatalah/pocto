@@ -5,6 +5,7 @@
   "types": "./src",
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-alert-dialog": "^0.1.5",
     "@radix-ui/react-dialog": "^0.1.5",
     "@radix-ui/react-dropdown-menu": "^0.1.4",
     "@radix-ui/react-icons": "^1.0.3",

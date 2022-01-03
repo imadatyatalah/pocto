@@ -5,5 +5,4 @@ export {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-  IconButton,
 } from "./Dialog";

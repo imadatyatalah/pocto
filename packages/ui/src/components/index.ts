@@ -25,8 +25,21 @@ export {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-  IconButton,
 } from "./Dialog";
+export {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "./AlertDialog";
 
 // Menu
-export * from "./DropdownMenu";
+export {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./DropdownMenu";
