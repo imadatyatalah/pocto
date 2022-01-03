@@ -67,8 +67,15 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   },
 });
 
+const StyledSeparator = styled(DropdownMenuPrimitive.Separator, {
+  height: 1,
+  backgroundColor: violet.violet6,
+  margin: 5,
+});
+
 // Exports
 export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 export const DropdownMenuContent = StyledContent;
 export const DropdownMenuItem = StyledItem;
+export const DropdownMenuSeparator = StyledSeparator;
