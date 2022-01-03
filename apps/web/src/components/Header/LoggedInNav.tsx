@@ -11,7 +11,7 @@ import { styled } from "@stitches/react";
 import { blackA } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
 
-const IconButton = styled("button", {
+const ImageButton = styled("button", {
   all: "unset",
   cursor: "pointer",
   borderRadius: "100%",
@@ -31,13 +31,12 @@ const LoggedInHeader = () => {
     <nav>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <IconButton>
-            {/* TODO: Use current user's image instead */}
+          <ImageButton>
             <StyledImage
               src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
               alt=""
             />
-          </IconButton>
+          </ImageButton>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent sideOffset={5}>

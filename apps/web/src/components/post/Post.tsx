@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 import { styled } from "@stitches/react";
-import { Box, Flex, Text, Heading, Link as StyledLink } from "ui";
+import { Box, Flex, Heading } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
-import dayjs from "dayjs";
+
+import PostHeader from "./PostHeader";
 
 import type { TPost } from "@/types/index";
 
@@ -31,53 +32,18 @@ const Post = ({ post }: Props) => {
           marginRight: 10,
         }}
       >
-        {/* TODO: Use user's image instead */}
-        <StyledImage
-          src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
-          alt=""
-        />
+        <Link href={userLink}>
+          <a>
+            <StyledImage
+              src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
+              alt=""
+            />
+          </a>
+        </Link>
       </Box>
 
       <Box>
-        <Flex as="header">
-          <div>
-            <Link href={userLink} passHref>
-              <StyledLink css={{ fontWeight: 500, color: "Black" }}>
-                Imad Atyat-Alah
-              </StyledLink>
-            </Link>
-
-            <Link href={userLink} passHref>
-              <StyledLink
-                css={{
-                  color: "DimGray",
-                  fontSize: 14,
-                  fontWeight: 500,
-                  marginLeft: 4,
-                  "&:hover": {
-                    textDecoration: "none",
-                  },
-                }}
-              >
-                @{post.user.username}
-              </StyledLink>
-            </Link>
-          </div>
-
-          <Text as="span" css={{ margin: "0 4px" }}>
-            -
-          </Text>
-
-          <div>
-            <Link href={postLink} passHref>
-              <StyledLink
-                css={{ color: "DimGray", fontSize: 14, fontWeight: 500 }}
-              >
-                <span>{dayjs(post.createdAt).format("MMM D, YYYY")}</span>
-              </StyledLink>
-            </Link>
-          </div>
-        </Flex>
+        <PostHeader post={post} postLink={postLink} userLink={userLink} />
 
         <div>
           <Link href={postLink} passHref>
