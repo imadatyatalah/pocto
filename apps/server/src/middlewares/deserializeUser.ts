@@ -11,12 +11,16 @@ const deserializeUser = (req: Request, res: Response, next: NextFunction) => {
     return next();
   }
 
-  jwt.verify(pocto_token, credentials.jwt_key as string, (err, data) => {
-    if (!err) {
-      req.user = data;
-      return next();
+  jwt.verify(
+    pocto_token,
+    credentials.jwt_key as string,
+    (err: any, data: any) => {
+      if (!err) {
+        req.user = data;
+        return next();
+      }
     }
-  });
+  );
 };
 
 export default deserializeUser;

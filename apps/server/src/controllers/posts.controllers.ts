@@ -44,6 +44,7 @@ export const getPosts = async (req: Request, res: Response) => {
   try {
     const posts = await prisma.post.findMany({
       select: postData,
+      orderBy: { createdAt: "desc" },
     });
 
     res.status(200).send(posts);

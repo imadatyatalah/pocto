@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "tsc -w & nodemon ./dist/server.js",
     "start": "tsc & node ./dist/server.js",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "tsc --noEmit && TIMING=1 eslint src --fix"
   },
   "dependencies": {
     "@prisma/client": "^3.7.0",

@@ -14,6 +14,7 @@ import {
 import { styled } from "@stitches/react";
 import { blackA } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
+import { violet } from "@radix-ui/colors";
 
 import type { TUser } from "@/types/user";
 
@@ -30,6 +31,12 @@ const ImageButton = styled("button", {
 
 const StyledImage = styled("img", {
   borderRadius: "100%",
+});
+
+const StyledDropdownLink = styled(StyledLink, {
+  color: "inherit",
+  width: "100%",
+  "&:hover": { textDecoration: "none" },
 });
 
 type Props = {
@@ -59,17 +66,32 @@ const LoggedInHeader = ({ user }: Props) => {
           </DropdownMenuTrigger>
 
           <DropdownMenuContent sideOffset={5}>
+            <DropdownMenuItem
+              css={{
+                "&:focus": {
+                  backgroundColor: "transparent",
+                  color: violet.violet11,
+                },
+              }}
+            >
+              <Link href={currentUserPage} passHref>
+                <StyledDropdownLink>
+                  Signed in as <strong>{user.username}</strong>
+                </StyledDropdownLink>
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+
             <DropdownMenuItem>
               <Link href={currentUserPage} passHref>
-                <StyledLink
-                  css={{
-                    color: "inherit",
-                    width: "100%",
-                    "&:hover": { textDecoration: "none" },
-                  }}
-                >
-                  Your profile
-                </StyledLink>
+                <StyledDropdownLink>Your profile</StyledDropdownLink>
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
+                <StyledDropdownLink>Create Post</StyledDropdownLink>
               </Link>
             </DropdownMenuItem>
 
@@ -77,15 +99,7 @@ const LoggedInHeader = ({ user }: Props) => {
 
             <DropdownMenuItem>
               <Link href={CLIENT_ROUTES.SETTINGS_PROFILE_PAGE} passHref>
-                <StyledLink
-                  css={{
-                    color: "inherit",
-                    width: "100%",
-                    "&:hover": { textDecoration: "none" },
-                  }}
-                >
-                  Settings
-                </StyledLink>
+                <StyledDropdownLink>Settings</StyledDropdownLink>
               </Link>
             </DropdownMenuItem>
 
@@ -93,15 +107,7 @@ const LoggedInHeader = ({ user }: Props) => {
 
             <DropdownMenuItem>
               <Link href={CLIENT_ROUTES.CONFIRM_SIGNUOUT} passHref>
-                <StyledLink
-                  css={{
-                    color: "inherit",
-                    width: "100%",
-                    "&:hover": { textDecoration: "none" },
-                  }}
-                >
-                  Sign Out
-                </StyledLink>
+                <StyledDropdownLink>Sign Out</StyledDropdownLink>
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
