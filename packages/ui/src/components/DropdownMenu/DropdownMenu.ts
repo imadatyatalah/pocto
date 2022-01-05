@@ -55,13 +55,14 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   padding: "0 5px",
   position: "relative",
   userSelect: "none",
+  cursor: "pointer",
 
   "&[data-disabled]": {
     color: mauve.mauve8,
     pointerEvents: "none",
   },
 
-  "&:focus": {
+  "&:hover": {
     backgroundColor: violet.violet9,
     color: violet.violet1,
   },

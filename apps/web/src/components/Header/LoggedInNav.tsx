@@ -9,7 +9,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-  Link as StyledLink,
 } from "ui";
 import { styled } from "@stitches/react";
 import { blackA } from "@radix-ui/colors";
@@ -31,12 +30,6 @@ const ImageButton = styled("button", {
 
 const StyledImage = styled("img", {
   borderRadius: "100%",
-});
-
-const StyledDropdownLink = styled(StyledLink, {
-  color: "inherit",
-  width: "100%",
-  "&:hover": { textDecoration: "none" },
 });
 
 type Props = {
@@ -66,50 +59,42 @@ const LoggedInHeader = ({ user }: Props) => {
           </DropdownMenuTrigger>
 
           <DropdownMenuContent sideOffset={5}>
-            <DropdownMenuItem
-              css={{
-                "&:focus": {
-                  backgroundColor: "transparent",
-                  color: violet.violet11,
-                },
-              }}
-            >
-              <Link href={currentUserPage} passHref>
-                <StyledDropdownLink>
-                  Signed in as <strong>{user.username}</strong>
-                </StyledDropdownLink>
-              </Link>
-            </DropdownMenuItem>
+            <Link href={currentUserPage} passHref>
+              <DropdownMenuItem
+                as="a"
+                css={{
+                  display: "inline-block",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    color: violet.violet11,
+                  },
+                }}
+              >
+                Signed in as <strong> {user.username}</strong>
+              </DropdownMenuItem>
+            </Link>
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuItem>
-              <Link href={currentUserPage} passHref>
-                <StyledDropdownLink>Your profile</StyledDropdownLink>
-              </Link>
-            </DropdownMenuItem>
+            <Link href={currentUserPage} passHref>
+              <DropdownMenuItem as="a">Your profile</DropdownMenuItem>
+            </Link>
 
-            <DropdownMenuItem>
-              <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
-                <StyledDropdownLink>Create Post</StyledDropdownLink>
-              </Link>
-            </DropdownMenuItem>
+            <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
+              <DropdownMenuItem as="a">Create Post</DropdownMenuItem>
+            </Link>
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuItem>
-              <Link href={CLIENT_ROUTES.SETTINGS_PROFILE_PAGE} passHref>
-                <StyledDropdownLink>Settings</StyledDropdownLink>
-              </Link>
-            </DropdownMenuItem>
+            <Link href={CLIENT_ROUTES.SETTINGS_PROFILE_PAGE} passHref>
+              <DropdownMenuItem as="a">Settings</DropdownMenuItem>
+            </Link>
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuItem>
-              <Link href={CLIENT_ROUTES.CONFIRM_SIGNUOUT} passHref>
-                <StyledDropdownLink>Sign Out</StyledDropdownLink>
-              </Link>
-            </DropdownMenuItem>
+            <Link href={CLIENT_ROUTES.CONFIRM_SIGNUOUT} passHref>
+              <DropdownMenuItem as="a">Sign Out</DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       </Box>

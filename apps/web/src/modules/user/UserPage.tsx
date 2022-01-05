@@ -1,5 +1,9 @@
 import { NextSeo } from "next-seo";
 
+import { Heading } from "ui";
+
+import Post from "@/components/post/Post";
+
 import type { TUser } from "@/types/index";
 
 type Props = {
@@ -12,9 +16,15 @@ const UserPage = ({ user }: Props) => {
       <NextSeo title={user?.name} />
 
       <section>
-        <code>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
-        </code>
+        <div>
+          <Heading>{user?.name}</Heading>
+
+          <p>{user?.profile?.bio}</p>
+        </div>
+
+        {user?.posts.map((post) => (
+          <Post post={post} key={post.id} />
+        ))}
       </section>
     </>
   );

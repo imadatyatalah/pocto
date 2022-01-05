@@ -58,6 +58,8 @@ export const signin = async (
   try {
     const { email, password } = req.body;
 
+    const invalidErrorMessage = "Invalid email or password!";
+
     // Get user by email.
     const user = await prisma.user.findUnique({
       where: findUserByEmail(email),
@@ -67,7 +69,7 @@ export const signin = async (
     if (!user) {
       return res.status(401).json({
         success: false,
-        message: "Invalid email or password!",
+        message: invalidErrorMessage,
       });
     }
 
@@ -78,7 +80,7 @@ export const signin = async (
     if (!passwordMatch) {
       return res.status(401).json({
         success: false,
-        message: "Invalid email or password!",
+        message: invalidErrorMessage,
       });
     }
 
