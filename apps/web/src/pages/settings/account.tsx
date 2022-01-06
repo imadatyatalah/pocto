@@ -5,6 +5,7 @@ import { Box, Heading, Text, Separator } from "ui";
 
 import WithAuth from "@/hocs/withAuth";
 import AccountPageDialog from "@/modules/settings/AccountPageDialog";
+import Links from "@/modules/settings/Links";
 
 const Account: NextPage = () => {
   return (
@@ -12,6 +13,8 @@ const Account: NextPage = () => {
       <NextSeo title="Account settings" />
 
       <Box as="section" css={{ margin: "0 40px" }}>
+        <Links />
+
         <div>
           <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
 

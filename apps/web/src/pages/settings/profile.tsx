@@ -11,6 +11,7 @@ import type { UpdateProfileInput } from "shared";
 import { useUpdateProfile } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import Links from "@/modules/settings/Links";
 import WithAuth from "@/hocs/withAuth";
 
 import type { TUser } from "@/types/index";
@@ -50,6 +51,8 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
       <NextSeo title="Profile settings" />
 
       <Box as="section" css={{ margin: "0 40px" }}>
+        <Links />
+
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading>Update profile</Heading>
 

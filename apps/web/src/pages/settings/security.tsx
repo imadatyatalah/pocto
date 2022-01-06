@@ -21,6 +21,7 @@ import type { ChangePasswordInput } from "shared";
 import { useUpdatePassword } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import Links from "@/modules/settings/Links";
 import WithAuth from "@/hocs/withAuth";
 
 const Inputs = [
@@ -47,6 +48,8 @@ const Security: NextPage = () => {
       <NextSeo title="Account security" />
 
       <Box as="section" css={{ margin: "0 40px" }}>
+        <Links />
+
         <form onSubmit={handleSubmit(onSubmit)}>
           <Heading>Change password</Heading>
 
