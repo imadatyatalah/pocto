@@ -71,7 +71,7 @@ const SignIn: NextPage = () => {
 
                 {additionalLink && (
                   <Link href={additionalLink.path} passHref>
-                    <StyledLink css={{ fontWeight: "500", float: "right" }}>
+                    <StyledLink css={{ fontWeight: 400, float: "right" }}>
                       {additionalLink.title}
                     </StyledLink>
                   </Link>

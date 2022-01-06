@@ -38,7 +38,7 @@ const Logo = ({ text, ...props }: { text?: string }, ref: any) => {
           css={{
             fontSize: 22,
             fontWeight: 700,
-            marginLeft: 10,
+            marginLeft: 8,
             color: "#757BC8",
             userSelect: "none",
           }}

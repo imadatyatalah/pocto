@@ -37,7 +37,7 @@ type Props = {
 };
 
 const LoggedInHeader = ({ user }: Props) => {
-  const currentUserPage = CLIENT_ROUTES.USER_PAGE(user.username);
+  const currentUserPage = CLIENT_ROUTES.USER_PAGE(user?.username);
 
   return (
     <Flex as="nav">
@@ -70,7 +70,7 @@ const LoggedInHeader = ({ user }: Props) => {
                   },
                 }}
               >
-                Signed in as <strong> {user.username}</strong>
+                Signed in as <strong> {user?.username}</strong>
               </DropdownMenuItem>
             </Link>
 

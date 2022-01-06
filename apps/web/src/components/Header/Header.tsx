@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { Flex, Logo } from "ui";
+import { Flex, Logo, Text } from "ui";
 
 import { HeaderStyles } from "./Header.styles";
 import LoggedInNav from "./LoggedInNav";
@@ -20,11 +20,15 @@ const Header = () => {
 
   return (
     <Flex as="header" justify="between" align="center" css={HeaderStyles}>
-      <div>
+      <Flex align="end">
         <Link href="/" passHref>
           <Logo text="Pocto" />
         </Link>
-      </div>
+
+        <Text as="sup" css={{ fontWeight: 600, color: "#757bc8" }}>
+          Alpha
+        </Text>
+      </Flex>
 
       {isLoggedIn ? <LoggedInNav user={user} /> : <LoggedOutNav />}
     </Flex>
