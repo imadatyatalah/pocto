@@ -12,10 +12,10 @@ const Account: NextPage = () => {
     <>
       <NextSeo title="Account settings" />
 
-      <Box as="section" css={{ margin: "0 40px" }}>
+      <Box as="section" css={{ mx: 40, "@md": { display: "flex", m: 20 } }}>
         <Links />
 
-        <div>
+        <Box>
           <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
 
           <Separator css={{ margin: "10px 0" }} />
@@ -26,7 +26,7 @@ const Account: NextPage = () => {
           </Text>
 
           <AccountPageDialog />
-        </div>
+        </Box>
       </Box>
     </>
   );

@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "ui";
-import { styled } from "@stitches/react";
+import { styled } from "ui/stitches.config";
 import { blackA } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
 import { violet } from "@radix-ui/colors";

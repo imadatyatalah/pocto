@@ -1,5 +1,6 @@
-import { styled } from "@stitches/react";
 import { gray } from "@radix-ui/colors";
+
+import { styled } from "../../../stitches.config";
 
 const StyledInput = styled("input", {
   variants: {

@@ -50,10 +50,14 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
     <>
       <NextSeo title="Profile settings" />
 
-      <Box as="section" css={{ margin: "0 40px" }}>
+      <Box as="section" css={{ mx: 40, "@md": { display: "flex", m: 20 } }}>
         <Links />
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Box
+          as="form"
+          css={{ width: "100%" }}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <Heading>Update profile</Heading>
 
           <Separator css={{ margin: "10px 0" }} />
@@ -68,6 +72,7 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
               </Label>
 
               <Input
+                css={{ width: 400 }}
                 defaultValue={defaultValue}
                 type={type}
                 id={id}
@@ -88,7 +93,7 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
               Update profile
             </Button>
           </Box>
-        </form>
+        </Box>
       </Box>
     </>
   );

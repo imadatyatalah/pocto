@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NextSeo } from "next-seo";
-import { styled } from "@stitches/react";
+import { styled } from "ui/stitches.config";
 import { Button, Flex, Heading, Input, Label, Box } from "ui";
 import { createCommunitySchema } from "shared";
 

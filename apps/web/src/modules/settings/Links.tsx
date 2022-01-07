@@ -10,7 +10,7 @@ import type * as Stitches from "@stitches/react";
 const LINKS = [
   { title: "Profile", link: CLIENT_ROUTES.SETTINGS_PROFILE_PAGE },
   { title: "Account", link: CLIENT_ROUTES.SETTINGS_ACCOUNT_PAGE },
-  { title: "Security", link: CLIENT_ROUTES.SETTINGS_SECURITY_PAGE },
+  { title: "Account security", link: CLIENT_ROUTES.SETTINGS_SECURITY_PAGE },
 ];
 
 const NavLink = ({ title, link }: { title: string; link: string }) => {
@@ -39,7 +39,13 @@ const NavLink = ({ title, link }: { title: string; link: string }) => {
 
 const Links = () => {
   return (
-    <Box css={{ margin: "10px 0" }}>
+    <Box
+      css={{
+        my: 10,
+        "@md": { mr: 15, minWidth: 250, my: 0 },
+        "@lg": { minWidth: 295 },
+      }}
+    >
       <Flex
         as="nav"
         direction="column"

@@ -1,6 +1,7 @@
 import * as Separator from "@radix-ui/react-separator";
 import { violet } from "@radix-ui/colors";
-import { styled } from "@stitches/react";
+
+import { styled } from "../../../stitches.config";
 
 const StyledSeparator = styled(Separator.Root, {
   backgroundColor: violet.violet6,

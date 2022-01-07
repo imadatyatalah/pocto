@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { styled } from "@stitches/react";
+import { styled } from "ui/stitches.config";
 import { Box, Flex, Heading } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 

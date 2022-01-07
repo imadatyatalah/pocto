@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NextPage } from "next";
 
-import { styled } from "@stitches/react";
+import { styled } from "ui/stitches.config";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

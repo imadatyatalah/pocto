@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { styled } from "@stitches/react";
+import { styled } from "ui/stitches.config";
 import { NextSeo } from "next-seo";
 import { Heading, Flex, Box, Label, Input, Button } from "ui";
 import { passwordResetSchema } from "shared";

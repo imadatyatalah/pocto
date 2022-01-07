@@ -47,10 +47,20 @@ const Security: NextPage = () => {
     <>
       <NextSeo title="Account security" />
 
-      <Box as="section" css={{ margin: "0 40px" }}>
+      <Box
+        as="section"
+        css={{
+          mx: 40,
+          "@md": { display: "flex", m: 20 },
+        }}
+      >
         <Links />
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Box
+          as="form"
+          css={{ width: "100%" }}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <Heading>Change password</Heading>
 
           <Separator css={{ margin: "10px 0" }} />
@@ -65,6 +75,7 @@ const Security: NextPage = () => {
               </Label>
 
               <Input
+                css={{ width: 400 }}
                 type={type}
                 id={id}
                 {...register(id as keyof ChangePasswordInput)}
@@ -79,8 +90,8 @@ const Security: NextPage = () => {
             </Box>
           ))}
 
-          <Box css={{ margin: "20px 0 20px 0" }}>
-            <Button disabled={isLoading} type="submit">
+          <Box css={{ my: 20 }}>
+            <Button disabled={isLoading} type="submit" css={{ mr: 15 }}>
               Update password
             </Button>
 
@@ -88,7 +99,7 @@ const Security: NextPage = () => {
               <StyledLink>I forgot my password</StyledLink>
             </Link>
           </Box>
-        </form>
+        </Box>
       </Box>
     </>
   );
