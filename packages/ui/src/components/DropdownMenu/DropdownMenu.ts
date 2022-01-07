@@ -25,7 +25,7 @@ const slideLeftAndFade = keyframes({
 const StyledContent = styled(DropdownMenuPrimitive.Content, {
   minWidth: 220,
   backgroundColor: "white",
-  borderRadius: 6,
+  borderRadius: 8,
   padding: 5,
   boxShadow:
     "0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)",
@@ -48,7 +48,7 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   fontWeight: 500,
   lineHeight: 1,
   color: violet.violet11,
-  borderRadius: 3,
+  borderRadius: 4,
   display: "flex",
   alignItems: "center",
   height: 25,
