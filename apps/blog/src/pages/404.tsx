@@ -16,7 +16,7 @@ const Custom404: NextPage = () => {
         justify="center"
         css={{ minHeight: "100vh" }}
       >
-        <Box css={{ marginBottom: 20 }}>
+        <Box css={{ mb: 20 }}>
           <Heading as="h1" size="3xl" css={{ fontWeight: "700" }}>
             404 - Page Not Found
           </Heading>

@@ -27,7 +27,7 @@ const PostHeader = ({ post, postLink, userLink }: Props) => {
               color: "DimGray",
               fontSize: 14,
               fontWeight: 500,
-              marginLeft: 4,
+              ml: 4,
               "&:hover": {
                 textDecoration: "none",
               },
@@ -38,7 +38,7 @@ const PostHeader = ({ post, postLink, userLink }: Props) => {
         </Link>
       </div>
 
-      <Text as="span" css={{ margin: "0 4px" }}>
+      <Text as="span" css={{ mx: 4 }}>
         -
       </Text>
 

@@ -22,7 +22,7 @@ const NavLink = ({ title, link }: { title: string; link: string }) => {
     color: "Black",
     background: currentLink && gray.gray3,
     cursor: currentLink && "default",
-    padding: "5px 10px",
+    p: "5px 10px",
 
     "&:hover": {
       textDecoration: "none",
@@ -49,9 +49,9 @@ const Links = () => {
       <Flex
         as="nav"
         direction="column"
-        css={{ border: `1px solid ${violet.violet6}`, borderRadius: 8 }}
+        css={{ border: `1px solid ${violet.violet6}`, rounded: 8 }}
       >
-        <Text as="span" css={{ padding: "5px 10px", fontWeight: 600 }}>
+        <Text as="span" css={{ p: "5px 10px", fontWeight: 600 }}>
           Account settings
         </Text>
 

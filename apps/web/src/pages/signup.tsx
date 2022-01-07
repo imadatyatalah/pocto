@@ -62,9 +62,9 @@ const SignUp: NextPage = () => {
 
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           {Inputs.map(({ id, name, type, placeholder }) => (
-            <Box css={{ margin: "20px 0 20px 0" }} key={id}>
+            <Box css={{ my: 20 }} key={id}>
               <Label
-                css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
+                css={{ display: "block", fontWeight: "600", mb: 4 }}
                 htmlFor={id}
               >
                 {name}
@@ -101,7 +101,7 @@ const SignUp: NextPage = () => {
             </Text>
           </div>
 
-          <Box css={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ my: 20 }}>
             <Button isFullWidth disabled={isLoading} type="submit">
               Create Account
             </Button>

@@ -20,16 +20,15 @@ import type { TUser } from "@/types/user";
 const ImageButton = styled("button", {
   all: "unset",
   cursor: "pointer",
-  borderRadius: "100%",
-  height: 40,
-  width: 40,
+  rounded: "100%",
+  size: 40,
   backgroundColor: "#757bc8",
   boxShadow: `0 2px 10px ${blackA.blackA7}`,
   "&:focus": { boxShadow: `0 0 0 2px black` },
 });
 
 const StyledImage = styled("img", {
-  borderRadius: "100%",
+  rounded: "100%",
 });
 
 type Props = {
@@ -47,7 +46,7 @@ const LoggedInHeader = ({ user }: Props) => {
         </Button>
       </Link>
 
-      <Box css={{ marginLeft: 20 }}>
+      <Box css={{ ml: 20 }}>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <ImageButton>

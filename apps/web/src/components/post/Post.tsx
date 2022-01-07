@@ -13,7 +13,7 @@ type Props = {
 };
 
 const StyledImage = styled("img", {
-  borderRadius: "100%",
+  rounded: "100%",
 });
 
 const Post = ({ post }: Props) => {
@@ -25,11 +25,10 @@ const Post = ({ post }: Props) => {
     <Flex css={{ margin: "20px 0" }} as="article">
       <Box
         css={{
-          height: 47.5,
-          width: 47.5,
+          size: 47.5,
           background: "#757bc8",
-          borderRadius: "100%",
-          marginRight: 10,
+          rounded: "100%",
+          mr: 10,
         }}
       >
         <Link href={userLink}>

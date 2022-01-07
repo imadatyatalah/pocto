@@ -26,7 +26,7 @@ const AccountPageDialog = () => {
       <AlertDialogContent>
         <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
 
-        <AlertDialogDescription css={{ marginTop: 10 }}>
+        <AlertDialogDescription css={{ mt: 10 }}>
           This action <strong>cannot</strong> be undone. This will permanently
           delete your all of your personal information from our database. This
           includes all of your posts, Comments, And categories.
@@ -34,7 +34,7 @@ const AccountPageDialog = () => {
 
         <Flex justify="end">
           <AlertDialogCancel asChild>
-            <Button size="sm" css={{ marginRight: 10 }}>
+            <Button size="sm" css={{ mr: 10 }}>
               Cancel
             </Button>
           </AlertDialogCancel>

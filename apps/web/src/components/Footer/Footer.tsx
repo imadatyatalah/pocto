@@ -9,7 +9,7 @@ const Footer = () => {
       align="center"
       justify="center"
       direction="column"
-      css={{ padding: 20 }}
+      css={{ p: 20 }}
     >
       <div>
         <Link href="/" passHref>
@@ -17,7 +17,7 @@ const Footer = () => {
         </Link>
       </div>
 
-      <Box css={{ marginTop: 10 }}>
+      <Box css={{ mt: 10 }}>
         <Text>
           Made with ❤️ by{" "}
           <StyledLink

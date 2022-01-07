@@ -7,7 +7,7 @@ const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <Box as="main" css={{ padding: "0 20px" }}>
+      <Box as="main" css={{ px: 20 }}>
         {children}
       </Box>
       <Footer />

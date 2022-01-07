@@ -8,7 +8,7 @@ const Header = () => {
       as="header"
       justify="between"
       align="center"
-      css={{ margin: "0 20px", height: 65 }}
+      css={{ mx: 20, height: 65 }}
     >
       <div>
         <Link href="/" passHref>

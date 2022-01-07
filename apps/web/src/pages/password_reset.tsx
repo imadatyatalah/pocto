@@ -33,7 +33,7 @@ const PasswordReset: NextPage = () => {
 
       <Flex direction="column" align="center" as="section">
         <Box css={{ float: "left", width: 400 }}>
-          <Heading as="h1" css={{ marginBottom: 10 }}>
+          <Heading as="h1" css={{ mb: 10 }}>
             Forgot Password?
           </Heading>
 
@@ -44,9 +44,9 @@ const PasswordReset: NextPage = () => {
         </Box>
 
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
-          <Box css={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ my: 20 }}>
             <Label
-              css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
+              css={{ display: "block", fontWeight: "600", mb: 4 }}
               htmlFor="email"
             >
               Email
@@ -63,7 +63,7 @@ const PasswordReset: NextPage = () => {
             />
           </Box>
 
-          <Box css={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ my: 20 }}>
             <Button isFullWidth type="submit">
               Submit
             </Button>

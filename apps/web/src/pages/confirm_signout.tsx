@@ -15,7 +15,7 @@ const ConfirmSignOut: NextPage = () => {
         justify="center"
         css={{ minHeight: "100vh" }}
       >
-        <Heading size="3xl" css={{ marginBottom: 20 }} as="h1">
+        <Heading size="3xl" css={{ mb: 20 }} as="h1">
           Are you sure you want to Sign Out?
         </Heading>
 

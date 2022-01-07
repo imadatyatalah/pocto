@@ -60,12 +60,12 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
         >
           <Heading>Update profile</Heading>
 
-          <Separator css={{ margin: "10px 0" }} />
+          <Separator css={{ m: "10px 0" }} />
 
           {Inputs.map(({ id, name, type, defaultValue }) => (
-            <Box css={{ margin: "20px 0 20px 0" }} key={id}>
+            <Box css={{ my: 20 }} key={id}>
               <Label
-                css={{ display: "block", fontWeight: "600", marginBottom: 4 }}
+                css={{ display: "block", fontWeight: "600", mb: 4 }}
                 htmlFor={id}
               >
                 {name}
@@ -88,7 +88,7 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
             </Box>
           ))}
 
-          <Box css={{ margin: "20px 0 20px 0" }}>
+          <Box css={{ my: 20 }}>
             <Button disabled={isLoading} type="submit">
               Update profile
             </Button>
