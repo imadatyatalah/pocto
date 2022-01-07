@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import type { NextPage } from "next";
 
 import { styled } from "ui/stitches.config";
@@ -22,6 +23,7 @@ import type { SigninInput } from "shared";
 import { useSignIn } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import RedirectLoggedInUsers from "@/hocs/redirectLoggedInUsers";
 
 const Inputs = [
   { type: "email", id: "email", name: "Email" },
@@ -114,4 +116,4 @@ const SignIn: NextPage = () => {
   );
 };
 
-export default SignIn;
+export default RedirectLoggedInUsers(SignIn);

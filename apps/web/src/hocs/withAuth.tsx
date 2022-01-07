@@ -8,7 +8,7 @@ import Loading from "@/components/Loading";
 
 const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
   function WithAuthWrapper(props: any) {
-    const [isLoggedInState, setIsLoggedInState] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const { replace } = useRouter();
 
@@ -18,10 +18,12 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
     );
 
     useEffect(() => {
-      logged_in ? setIsLoggedInState(logged_in) : replace("/signin");
+      setIsLoggedIn(logged_in);
+
+      !logged_in && replace("/signin");
     }, [logged_in, replace]);
 
-    return isLoggedInState ? (
+    return isLoggedIn ? (
       <WrappedComponent user={user} {...props} />
     ) : (
       <Loading />

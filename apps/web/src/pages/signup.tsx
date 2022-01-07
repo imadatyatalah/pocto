@@ -23,6 +23,7 @@ import type { SignupInput } from "shared";
 import { useSignUp } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import RedirectLoggedInUsers from "@/hocs/redirectLoggedInUsers";
 
 const Inputs = [
   { type: "text", id: "name", name: "Name" },
@@ -121,4 +122,4 @@ const SignUp: NextPage = () => {
   );
 };
 
-export default SignUp;
+export default RedirectLoggedInUsers(SignUp);
