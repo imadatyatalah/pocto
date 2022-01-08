@@ -18,14 +18,7 @@ const SettingsHeader = () => {
   return (
     <Box as="header" css={{ mb: 10 }}>
       <Flex align="center">
-        <Box
-          css={{
-            size: 50,
-            background: "#757bc8",
-            rounded: "100%",
-            mr: 10,
-          }}
-        >
+        <Box css={{ size: 50, background: "#757bc8", rounded: "100%", mr: 10 }}>
           <StyledImage
             src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
             alt=""
@@ -39,7 +32,9 @@ const SettingsHeader = () => {
             </Link>
           </Heading>
 
-          <Text>Your personal account</Text>
+          <Text css={{ color: "DimGray", fontSize: 14 }}>
+            Your personal account
+          </Text>
         </Box>
       </Flex>
     </Box>

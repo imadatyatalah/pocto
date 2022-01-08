@@ -1,20 +1,16 @@
 import { styled } from "../../../stitches.config";
 
 const StyledButton = styled("button", {
-  fontFamily: "inherit",
   position: "relative",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   textDecoration: "none",
-  cursor: "pointer",
   verticalAlign: "middle",
   whiteSpace: "nowrap",
   userSelect: "none",
   outline: "none",
-  fontSize: 15,
   fontWeight: "600",
-  borderRadius: 8,
   padding: "0 15px 0 15px",
   transition: "all 250ms ease",
 
@@ -58,6 +54,11 @@ const StyledButton = styled("button", {
         fontSize: 18,
       },
     },
+    shape: {
+      default: {
+        rounded: 8,
+      },
+    },
     isFullWidth: {
       true: {
         width: "100%",
@@ -65,7 +66,7 @@ const StyledButton = styled("button", {
     },
   },
 
-  defaultVariants: { size: "md", variant: "default" },
+  defaultVariants: { size: "md", variant: "default", shape: "default" },
 });
 
 export default StyledButton;

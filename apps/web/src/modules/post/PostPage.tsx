@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { Heading } from "ui";
 
 import type { TPost } from "@/types/post";
 
@@ -12,9 +13,9 @@ const PostPage = ({ post }: Props) => {
       <NextSeo title={post?.title} />
 
       <section>
-        <code>
-          <pre>{JSON.stringify(post, null, 2)}</pre>
-        </code>
+        <Heading>{post?.title}</Heading>
+
+        <p>{post?.content}</p>
       </section>
     </>
   );

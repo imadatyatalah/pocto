@@ -23,14 +23,7 @@ const Post = ({ post }: Props) => {
 
   return (
     <Flex css={{ margin: "20px 0" }} as="article">
-      <Box
-        css={{
-          size: 47.5,
-          background: "#757bc8",
-          rounded: "100%",
-          mr: 10,
-        }}
-      >
+      <Box css={{ size: 47.5, background: "#757bc8", rounded: "100%", mr: 10 }}>
         <Link href={userLink}>
           <a>
             <StyledImage

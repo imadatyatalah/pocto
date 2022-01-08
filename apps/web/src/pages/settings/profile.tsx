@@ -11,8 +11,7 @@ import type { UpdateProfileInput } from "shared";
 import { useUpdateProfile } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
-import SettingsHeader from "@/modules/settings/SettingsHeader";
-import Links from "@/modules/settings/Links";
+import Layout from "@/modules/settings/Layout";
 import WithAuth from "@/hocs/withAuth";
 
 import type { TUser } from "@/types/index";
@@ -51,55 +50,49 @@ const Profile: NextPage<{ user: TUser }> = ({ user }) => {
     <>
       <NextSeo title="Profile settings" />
 
-      <Box as="section" css={{ mx: 40, "@md": { mx: 20, my: 10 } }}>
-        <SettingsHeader />
+      <Layout>
+        <Box
+          as="form"
+          css={{ width: "100%" }}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <Heading>Update profile</Heading>
 
-        <Box css={{ "@md": { display: "flex" } }}>
-          <Links />
+          <Separator css={{ m: "10px 0" }} />
 
-          <Box
-            as="form"
-            css={{ width: "100%" }}
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <Heading>Update profile</Heading>
+          {Inputs.map(({ id, name, type, defaultValue }) => (
+            <Box css={{ my: 20 }} key={id}>
+              <Label
+                css={{ display: "block", fontWeight: "600", mb: 4 }}
+                htmlFor={id}
+              >
+                {name}
+              </Label>
 
-            <Separator css={{ m: "10px 0" }} />
-
-            {Inputs.map(({ id, name, type, defaultValue }) => (
-              <Box css={{ my: 20 }} key={id}>
-                <Label
-                  css={{ display: "block", fontWeight: "600", mb: 4 }}
-                  htmlFor={id}
-                >
-                  {name}
-                </Label>
-
-                <Input
-                  css={{ width: 400 }}
-                  defaultValue={defaultValue}
-                  type={type}
-                  id={id}
-                  {...register(id as keyof UpdateProfileInput)}
-                />
-                <ErrorMessage
-                  errors={errors}
-                  name={id}
-                  render={({ message }) => (
-                    <StyledErrorMessage>{message}</StyledErrorMessage>
-                  )}
-                />
-              </Box>
-            ))}
-
-            <Box css={{ my: 20 }}>
-              <Button disabled={isLoading} type="submit">
-                Update profile
-              </Button>
+              <Input
+                css={{ width: "100%", "@xs": { width: 400 } }}
+                defaultValue={defaultValue}
+                type={type}
+                id={id}
+                {...register(id as keyof UpdateProfileInput)}
+              />
+              <ErrorMessage
+                errors={errors}
+                name={id}
+                render={({ message }) => (
+                  <StyledErrorMessage>{message}</StyledErrorMessage>
+                )}
+              />
             </Box>
+          ))}
+
+          <Box css={{ my: 20 }}>
+            <Button disabled={isLoading} type="submit">
+              Update profile
+            </Button>
           </Box>
         </Box>
-      </Box>
+      </Layout>
     </>
   );
 };

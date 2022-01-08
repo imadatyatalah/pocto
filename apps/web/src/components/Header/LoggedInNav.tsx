@@ -69,7 +69,7 @@ const LoggedInHeader = ({ user }: Props) => {
                   },
                 }}
               >
-                Signed in as <strong> {user?.username}</strong>
+                Signed in as <strong>{user?.username}</strong>
               </DropdownMenuItem>
             </Link>
 
@@ -81,6 +81,10 @@ const LoggedInHeader = ({ user }: Props) => {
 
             <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
               <DropdownMenuItem as="a">Create Post</DropdownMenuItem>
+            </Link>
+
+            <Link href={CLIENT_ROUTES.CREATE_COMMUNITY} passHref>
+              <DropdownMenuItem as="a">Create Community</DropdownMenuItem>
             </Link>
 
             <DropdownMenuSeparator />

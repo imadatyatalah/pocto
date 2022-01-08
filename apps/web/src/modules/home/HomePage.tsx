@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { Heading } from "ui";
 
 import Post from "@/components/post/Post";
 
@@ -14,6 +15,8 @@ const HomePage = ({ posts }: Props) => {
       <NextSeo title="Home" />
 
       <section>
+        <Heading as="h1">Home</Heading>
+
         {posts?.map((post) => (
           <Post post={post} key={post.id} />
         ))}
