@@ -2,11 +2,13 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 
 import { prisma } from "../config/prisma";
+import { findProfileByUserId } from "../helpers/profiles";
 import {
   findUserById,
   findUserByUsername,
   updateUser,
   userData,
+  currentUserData,
 } from "../helpers/users";
 
 import type {
@@ -18,7 +20,7 @@ export const getCurrentUser = async (req: Request, res: Response) => {
   try {
     const currentUser = await prisma.user.findUnique({
       where: findUserById(req.user?.id),
-      select: userData,
+      select: currentUserData,
     });
 
     res.status(200).send(currentUser);
@@ -115,7 +117,7 @@ export const updateProfile = async (
 export const deleteAccount = async (req: Request, res: Response) => {
   try {
     const deleteProfile = prisma.profile.delete({
-      where: findUserById(req.user?.id),
+      where: findProfileByUserId(req.user?.id),
     });
 
     const deleteUser = prisma.user.delete({

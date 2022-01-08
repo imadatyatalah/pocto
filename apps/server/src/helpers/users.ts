@@ -31,6 +31,15 @@ export const updateUser = (
   });
 };
 
+export const currentUserData = Prisma.validator<Prisma.UserSelect>()({
+  id: true,
+  name: true,
+  username: true,
+  profile: {
+    select: { bio: true, website: true, location: true, avatarUrl: true },
+  },
+});
+
 export const userData = Prisma.validator<Prisma.UserSelect>()({
   id: true,
   name: true,
