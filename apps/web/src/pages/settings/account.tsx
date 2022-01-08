@@ -5,6 +5,7 @@ import { Box, Heading, Text, Separator } from "ui";
 
 import WithAuth from "@/hocs/withAuth";
 import AccountPageDialog from "@/modules/settings/AccountPageDialog";
+import SettingsHeader from "@/modules/settings/SettingsHeader";
 import Links from "@/modules/settings/Links";
 
 const Account: NextPage = () => {
@@ -12,20 +13,24 @@ const Account: NextPage = () => {
     <>
       <NextSeo title="Account settings" />
 
-      <Box as="section" css={{ mx: 40, "@md": { display: "flex", m: 20 } }}>
-        <Links />
+      <Box as="section" css={{ mx: 40, "@md": { mx: 20, my: 10 } }}>
+        <SettingsHeader />
 
-        <Box>
-          <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
+        <Box css={{ "@md": { display: "flex" } }}>
+          <Links />
 
-          <Separator css={{ my: 10 }} />
+          <Box>
+            <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
 
-          <Text css={{ my: 10 }}>
-            Once you delete your account, there is no going back. Please be
-            certain.
-          </Text>
+            <Separator css={{ my: 10 }} />
 
-          <AccountPageDialog />
+            <Text css={{ my: 10 }}>
+              Once you delete your account, there is no going back. Please be
+              certain.
+            </Text>
+
+            <AccountPageDialog />
+          </Box>
         </Box>
       </Box>
     </>

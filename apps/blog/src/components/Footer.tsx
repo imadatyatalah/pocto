@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Box, Flex, Logo, Link as StyledLink, Text } from "ui";
+import { Box, Flex, Logo, Text, Link as StyledLink } from "ui";
 
 const Footer = () => {
   return (
