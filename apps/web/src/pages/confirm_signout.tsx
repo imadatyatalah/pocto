@@ -3,6 +3,8 @@ import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { Button, Flex, Heading } from "ui";
 
+import WithAuth from "@/hocs/withAuth";
+
 const ConfirmSignOut: NextPage = () => {
   return (
     <>
@@ -27,4 +29,4 @@ const ConfirmSignOut: NextPage = () => {
   );
 };
 
-export default ConfirmSignOut;
+export default WithAuth(ConfirmSignOut);

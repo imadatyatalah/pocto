@@ -1,3 +1,5 @@
+import { gray } from "@radix-ui/colors";
+
 import { styled } from "../../../stitches.config";
 
 const StyledButton = styled("button", {
@@ -11,32 +13,47 @@ const StyledButton = styled("button", {
   userSelect: "none",
   outline: "none",
   fontWeight: "600",
-  padding: "0 15px 0 15px",
   transition: "all 250ms ease",
+  px: 15,
 
   variants: {
     variant: {
       default: {
-        // https://coolors.co/757bc8-8187dc-8e94f2-9fa0ff-ada7ff-bbadff-cbb2fe-dab6fc-ddbdfc-e0c3fc
-        border: "1px solid #757bc8",
+        borderWidth: 1,
+        borderStyle: "solid",
+
+        "&:hover, &:focus": {
+          backgroundColor: "transparent",
+        },
+      },
+      outline: {
+        border: `1px solid ${gray.gray7}`,
+        backgroundColor: "transparent",
+        color: gray.gray11,
+
+        "&:hover, &:focus": {
+          color: "Black",
+          border: "1px solid Black",
+        },
+      },
+    },
+    colorScheme: {
+      default: {
+        borderColor: "#757bc8",
         backgroundColor: "#757bc8",
         color: "White",
 
         "&:hover, &:focus": {
-          backgroundColor: "transparent",
           color: "#757bc8",
-          border: "1px solid #757bc8",
         },
       },
       danger: {
-        border: "1px solid #EF4444",
+        borderColor: "#EF4444",
         backgroundColor: "#EF4444",
         color: "White",
 
         "&:hover, &:focus": {
-          backgroundColor: "transparent",
           color: "#EF4444",
-          border: "1px solid #EF4444",
         },
       },
     },
@@ -66,7 +83,12 @@ const StyledButton = styled("button", {
     },
   },
 
-  defaultVariants: { size: "md", variant: "default", shape: "default" },
+  defaultVariants: {
+    size: "md",
+    colorScheme: "default",
+    variant: "default",
+    shape: "default",
+  },
 });
 
 export default StyledButton;

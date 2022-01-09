@@ -20,7 +20,7 @@ const AccountPageDialog = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="danger">Delete account</Button>
+        <Button colorScheme="danger">Delete account</Button>
       </AlertDialogTrigger>
 
       <AlertDialogContent>
@@ -43,7 +43,7 @@ const AccountPageDialog = () => {
             <Button
               size="sm"
               onClick={handleDeleteAccount}
-              variant="danger"
+              colorScheme="danger"
               aria-label="Delete account"
             >
               Yes, Delete account

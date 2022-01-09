@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Box, Flex, Text, Heading, Link as StyledLink } from "ui";
+import { Box, Flex, Text, Heading, Button, Link as StyledLink } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 import { styled } from "ui/stitches.config";
 
@@ -16,7 +16,17 @@ const SettingsHeader = () => {
   const currentUserPage = CLIENT_ROUTES.USER_PAGE(user?.username);
 
   return (
-    <Box as="header" css={{ mb: 10 }}>
+    <Box
+      as="header"
+      css={{
+        mb: 10,
+        "@md": {
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        },
+      }}
+    >
       <Flex align="center">
         <Box css={{ size: 50, background: "#757bc8", rounded: "100%", mr: 10 }}>
           <StyledImage
@@ -37,6 +47,14 @@ const SettingsHeader = () => {
           </Text>
         </Box>
       </Flex>
+
+      <Box css={{ mt: 10, "@md": { mt: 0 } }}>
+        <Link href={currentUserPage} passHref>
+          <Button as="a" variant="outline" size="sm">
+            Go to your personal account
+          </Button>
+        </Link>
+      </Box>
     </Box>
   );
 };
