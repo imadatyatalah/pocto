@@ -124,7 +124,20 @@ export const deleteAccount = async (req: Request, res: Response) => {
       where: findUserById(req.user?.id),
     });
 
-    await prisma.$transaction([deleteProfile, deleteUser]);
+    const deletePosts = prisma.post.deleteMany({
+      where: { userId: { equals: req.user?.id } },
+    });
+
+    const deleteCommunities = prisma.community.deleteMany({
+      where: { userId: { equals: req.user?.id } },
+    });
+
+    await prisma.$transaction([
+      deletePosts,
+      deleteCommunities,
+      deleteProfile,
+      deleteUser,
+    ]);
 
     res.status(200).send({
       success: true,

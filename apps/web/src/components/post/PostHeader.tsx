@@ -17,7 +17,7 @@ const PostHeader = ({ post, postLink, userLink }: Props) => {
       <div>
         <Link href={userLink} passHref>
           <StyledLink css={{ fontWeight: 500, color: "Black" }}>
-            Imad Atyat-Alah
+            {post.user.name}
           </StyledLink>
         </Link>
 

@@ -11,6 +11,7 @@ export const createUser = (
     password,
     name,
     username,
+    profile: { create: {} },
   });
 };
 
@@ -23,10 +24,7 @@ export const updateUser = (
   return Prisma.validator<Prisma.UserUpdateInput>()({
     name,
     profile: {
-      upsert: {
-        create: { bio, website, location },
-        update: { bio, website, location },
-      },
+      update: { bio, website, location },
     },
   });
 };
