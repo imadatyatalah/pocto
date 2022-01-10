@@ -18,6 +18,7 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
     select: {
       id: true,
       content: true,
+      createdAt: true,
       user: {
         select: {
           id: true,
