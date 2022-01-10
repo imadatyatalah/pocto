@@ -12,3 +12,6 @@ export * from "./communities/createCommunity";
 
 // Posts
 export * from "./posts/createPost";
+
+// Comments
+export * from "./comments/createComment";

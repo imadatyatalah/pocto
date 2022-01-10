@@ -1,7 +1,7 @@
 import { Router } from "express";
+import { signupSchemaServer, signinSchemaServer } from "shared";
 
 import { signUp, signin, signout } from "../controllers/auth.controllers";
-import { signupSchemaServer, signinSchemaServer } from "shared";
 import validateResource from "../middlewares/validateResource";
 
 const router = Router();

@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { changePasswordSchemaServer, updateProfileSchemaServer } from "shared";
 
 import {
   getCurrentUser,
@@ -6,7 +7,6 @@ import {
   deleteAccount,
   updateProfile,
 } from "../controllers/users.controllers";
-import { changePasswordSchemaServer, updateProfileSchemaServer } from "shared";
 import requireUser from "../middlewares/requireUser";
 import validateResource from "../middlewares/validateResource";
 

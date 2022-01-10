@@ -13,6 +13,20 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
       username: true,
     },
   },
+  comments: {
+    orderBy: { createdAt: "desc" },
+    select: {
+      id: true,
+      content: true,
+      user: {
+        select: {
+          id: true,
+          name: true,
+          username: true,
+        },
+      },
+    },
+  },
 });
 
 export const createPost = (title: string, content: string, userId?: number) => {
