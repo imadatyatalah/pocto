@@ -16,14 +16,25 @@ const StyledButton = styled("button", {
   transition: "all 250ms ease",
   px: 15,
 
+  "&:disabled": {
+    cursor: "not-allowed",
+  },
+
   variants: {
     variant: {
       default: {
-        borderWidth: 1,
-        borderStyle: "solid",
+        border: "1px solid #757bc8",
+        backgroundColor: "#757bc8",
+        color: "White",
 
         "&:hover, &:focus": {
+          color: "#757bc8",
           backgroundColor: "transparent",
+        },
+        "&:disabled": {
+          color: "White",
+          backgroundColor: "$primary4",
+          border: "1px solid $primary4",
         },
       },
       outline: {
@@ -35,28 +46,28 @@ const StyledButton = styled("button", {
           color: "Black",
           border: "1px solid Black",
         },
-      },
-    },
-    colorScheme: {
-      default: {
-        borderColor: "#757bc8",
-        backgroundColor: "#757bc8",
-        color: "White",
-
-        "&:hover, &:focus": {
-          color: "#757bc8",
+        "&:disabled": {
+          color: gray.gray11,
+          border: `1px solid ${gray.gray7}`,
         },
       },
       danger: {
-        borderColor: "#EF4444",
+        border: "1px solid #EF4444",
         backgroundColor: "#EF4444",
         color: "White",
 
         "&:hover, &:focus": {
           color: "#EF4444",
+          backgroundColor: "transparent",
+        },
+        "&:disabled": {
+          color: "White",
+          backgroundColor: "#F87171",
+          border: "1px solid #F87171",
         },
       },
     },
+
     size: {
       sm: {
         height: 38,
@@ -85,7 +96,6 @@ const StyledButton = styled("button", {
 
   defaultVariants: {
     size: "md",
-    colorScheme: "default",
     variant: "default",
     shape: "default",
   },

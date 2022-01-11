@@ -15,7 +15,7 @@ import { blackA } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
 import { violet } from "@radix-ui/colors";
 
-import type { TUser } from "@/types/user";
+import type { TCurrentUser } from "@/types/user";
 
 const ImageButton = styled("button", {
   all: "unset",
@@ -32,7 +32,7 @@ const StyledImage = styled("img", {
 });
 
 type Props = {
-  user: TUser;
+  user: TCurrentUser;
 };
 
 const LoggedInHeader = ({ user }: Props) => {

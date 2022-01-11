@@ -14,9 +14,9 @@ import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";
 import WithAuth from "@/hocs/withAuth";
 
-import type { TUser } from "@/types/index";
+import type { TCurrentUser } from "@/types/index";
 
-const Profile: NextPage<{ user: TUser }> = ({ user }) => {
+const Profile: NextPage<{ user: TCurrentUser }> = ({ user }) => {
   const { mutate: updateProfile, isLoading } = useUpdateProfile();
 
   const {

@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Box, Button, Input } from "ui";
+import { Box, Button, Input, Flex } from "ui";
 import { createCommentSchema } from "shared";
 import { useForm } from "react-hook-form";
 
@@ -26,9 +26,10 @@ const CommentForm = ({ postId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Box css={{ my: 20 }}>
+    <Flex align="center" as="form" onSubmit={handleSubmit(onSubmit)}>
+      <Box css={{ my: 20, width: "100%" }}>
         <Input
+          css={{ height: 38 }}
           isFullWidth
           type="text"
           id="content"
@@ -37,12 +38,17 @@ const CommentForm = ({ postId }) => {
         />
       </Box>
 
-      <Box css={{ my: 20 }}>
-        <Button isFullWidth disabled={!isValid || isLoading} type="submit">
+      <Box>
+        <Button
+          size="sm"
+          disabled={!isValid || isLoading}
+          type="submit"
+          css={{ ml: 20 }}
+        >
           Submit
         </Button>
       </Box>
-    </form>
+    </Flex>
   );
 };
 
