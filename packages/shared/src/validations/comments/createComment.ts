@@ -1,8 +1,10 @@
-import { object, string, TypeOf } from "zod";
+import { object, preprocess, string, TypeOf } from "zod";
+
+import { trimString } from "../trimString";
 
 // Client
 export const createCommentSchema = object({
-  content: string().nonempty("Content is required"),
+  content: preprocess(trimString, string().nonempty("Content is required")),
 });
 
 export type CreateCommentInput = TypeOf<typeof createCommentSchema>;
