@@ -3,10 +3,10 @@ import { persist } from "zustand/middleware";
 
 import { instance } from "@/lib/axios";
 
-import type { TUser } from "@/types/index";
+import type { TCurrentUser } from "@/types/index";
 
 type UserState = {
-  user?: TUser;
+  user?: TCurrentUser;
   logged_in: boolean;
   fetchUser: () => Promise<void>;
 };
@@ -18,7 +18,9 @@ const useUser = create<UserState>(
       logged_in: false,
       fetchUser: async () => {
         try {
-          const { data: user } = await instance.get<TUser>("/current_user/me");
+          const { data: user } = await instance.get<TCurrentUser>(
+            "/current_user/me"
+          );
 
           set({ user, logged_in: true });
         } catch (err) {

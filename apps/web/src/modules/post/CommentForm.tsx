@@ -38,7 +38,7 @@ const CommentForm = ({ postId }) => {
       </Box>
 
       <Box css={{ my: 20 }}>
-        <Button isFullWidth disabled={!isValid} type="submit">
+        <Button isFullWidth disabled={!isValid || isLoading} type="submit">
           Submit
         </Button>
       </Box>

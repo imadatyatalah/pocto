@@ -6,7 +6,7 @@ import useUser from "@/stores/useUser";
 import CommentForm from "./CommentForm";
 import Comment from "@/components/comment/Comment";
 
-import type { TPost } from "@/types/post";
+import type { TPost } from "@/types/index";
 
 type Props = {
   post?: TPost;
@@ -35,7 +35,6 @@ const PostPage = ({ post }: Props) => {
         {isLoggedIn ? <CommentForm postId={post?.id} /> : null}
 
         <div>
-          {/* @ts-ignore */}
           {post?.comments.map((comment) => (
             <Comment comment={comment} key={comment.id} />
           ))}

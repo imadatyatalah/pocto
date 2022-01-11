@@ -56,9 +56,6 @@ export const userData = Prisma.validator<Prisma.UserSelect>()({
           username: true,
         },
       },
-      community: {
-        select: { name: true, title: true, description: true, type: true },
-      },
     },
   },
   profile: {

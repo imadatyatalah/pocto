@@ -1,15 +1,10 @@
-import { TComment } from "./comment";
-
-export type TPost = {
+export type TComment = {
   id: string;
-  title: string;
   content: string;
   createdAt: string;
-  userId: number;
   user: {
     id: number;
     name: string;
     username: string;
   };
-  comments: TComment[];
 };

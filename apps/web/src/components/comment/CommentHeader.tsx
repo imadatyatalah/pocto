@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Flex, Text, Link as StyledLink } from "ui";
 import dayjs from "dayjs";
 
+import type { TComment } from "@/types/index";
+
 type Props = {
-  comment: any;
+  comment: TComment;
   commentLink: string;
   userLink: string;
 };

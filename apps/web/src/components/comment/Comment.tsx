@@ -6,8 +6,10 @@ import { CLIENT_ROUTES } from "shared/routes";
 
 import CommentHeader from "./CommentHeader";
 
+import type { TComment } from "@/types/index";
+
 type Props = {
-  comment: any;
+  comment: TComment;
 };
 
 const StyledImage = styled("img", {
