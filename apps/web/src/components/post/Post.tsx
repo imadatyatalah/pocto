@@ -22,7 +22,7 @@ const Post = ({ post }: Props) => {
   const userLink = CLIENT_ROUTES.USER_PAGE(post.user.username);
 
   return (
-    <Flex css={{ margin: "20px 0" }} as="article">
+    <Flex css={{ my: 20 }} as="article">
       <Box css={{ size: 47.5, background: "#757bc8", rounded: "100%", mr: 10 }}>
         <Link href={userLink}>
           <a>

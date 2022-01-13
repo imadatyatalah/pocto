@@ -58,7 +58,7 @@ const Profile: NextPage<{ user: TCurrentUser }> = ({ user }) => {
         >
           <Heading>Update profile</Heading>
 
-          <Separator css={{ m: "10px 0" }} />
+          <Separator css={{ my: 10 }} />
 
           {Inputs.map(({ id, name, type, defaultValue }) => (
             <Box css={{ my: 20 }} key={id}>

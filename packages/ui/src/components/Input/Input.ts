@@ -15,7 +15,7 @@ const StyledInput = styled("input", {
         backgroundColor: gray.gray3,
         borderRadius: 6,
         height: 35,
-        padding: "0 12px 0 12px",
+        px: 12,
 
         "&:hover": {
           boxShadow: "0 0 8px #ADA7FF",

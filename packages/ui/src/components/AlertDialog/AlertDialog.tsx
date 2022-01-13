@@ -58,7 +58,7 @@ const StyledTitle = styled(AlertDialogPrimitive.Title, {
 });
 
 const StyledDescription = styled(AlertDialogPrimitive.Description, {
-  marginBottom: 20,
+  mb: 20,
   color: mauve.mauve11,
   fontSize: 15,
   lineHeight: 1.5,

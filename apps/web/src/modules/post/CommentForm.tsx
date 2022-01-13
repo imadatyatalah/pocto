@@ -26,8 +26,13 @@ const CommentForm = ({ postId }) => {
   };
 
   return (
-    <Flex align="center" as="form" onSubmit={handleSubmit(onSubmit)}>
-      <Box css={{ my: 20, width: "100%" }}>
+    <Flex
+      align="center"
+      as="form"
+      onSubmit={handleSubmit(onSubmit)}
+      css={{ mt: 20 }}
+    >
+      <Box css={{ width: "100%" }}>
         <Input
           css={{ height: 38 }}
           isFullWidth

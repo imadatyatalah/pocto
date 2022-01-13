@@ -9,7 +9,7 @@ const Footer = () => {
       align="center"
       justify="center"
       direction="column"
-      css={{ p: 20 }}
+      css={{ padding: 20 }}
     >
       <div>
         <Link href="/" passHref>
