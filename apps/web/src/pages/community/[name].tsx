@@ -3,18 +3,18 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 import { dehydrate, QueryClient } from "react-query";
 
-import { getUser, useGetUser } from "@/api/index";
+import { getCommunity, useGetCommunity } from "@/api/index";
+import CommunityPage from "@/modules/community/CommunityPage";
 import Loading from "@/components/Loading";
-import UserPage from "@/modules/user/UserPage";
 
-const User: NextPage = () => {
+const Community: NextPage = () => {
   const { isFallback, query } = useRouter();
 
-  const { data: user } = useGetUser(query.username as string);
+  const { data: community } = useGetCommunity(query.name as string);
 
   if (isFallback) return <Loading />;
 
-  return <UserPage user={user} />;
+  return <CommunityPage community={community} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({
@@ -25,8 +25,8 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["users", params?.username], () =>
-    getUser(params?.username as string)
+  await queryClient.prefetchQuery(["communities", params?.name], () =>
+    getCommunity(params?.name as string)
   );
 
   return {
@@ -35,4 +35,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default User;
+export default Community;

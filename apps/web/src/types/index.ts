@@ -7,3 +7,6 @@ export type { TPost } from "./post";
 
 // Comments
 export type { TComment } from "./comment";
+
+// Communities
+export type { TCommunity } from "./community";

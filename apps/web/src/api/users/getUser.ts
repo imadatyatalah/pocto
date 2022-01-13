@@ -11,4 +11,4 @@ export const getUser = async (username: string): Promise<TUser> => {
 };
 
 export const useGetUser = (username: string) =>
-  useQuery<TUser, Error>(["user", username], () => getUser(username));
+  useQuery<TUser, Error>(["users", username], () => getUser(username));

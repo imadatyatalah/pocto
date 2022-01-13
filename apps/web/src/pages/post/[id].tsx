@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["user", params?.id], () =>
+  await queryClient.prefetchQuery(["posts", params?.id], () =>
     getPost(params?.id as string)
   );
 

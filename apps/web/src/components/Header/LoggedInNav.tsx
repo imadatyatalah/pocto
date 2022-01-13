@@ -11,9 +11,8 @@ import {
   DropdownMenuSeparator,
 } from "ui";
 import { styled } from "ui/stitches.config";
-import { blackA } from "@radix-ui/colors";
+import { blackA, violet } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
-import { violet } from "@radix-ui/colors";
 
 import type { TCurrentUser } from "@/types/user";
 
