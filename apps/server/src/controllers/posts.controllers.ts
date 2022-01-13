@@ -92,12 +92,23 @@ export const deletePostById = async (req: Request, res: Response) => {
 
     // Check if the current user is the owner of the post
     if (post?.userId === req.user?.id) {
-      const deletedPost = await prisma.post.delete({
+      const deletedComments = prisma.comment.deleteMany({
+        where: { postId: { equals: post?.id } },
+      });
+
+      const deletedPost = prisma.post.delete({
         where: findPostById(req.params.id),
         select: postData,
       });
 
-      res.status(200).send(deletedPost);
+      await prisma.$transaction([deletedComments, deletedPost]);
+
+      res
+        .status(200)
+        .send({
+          success: true,
+          message: "You have deleted your post successfully",
+        });
     } else {
       res.status(403).send({ success: false, message: "Forbidden" });
     }

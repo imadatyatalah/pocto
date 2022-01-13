@@ -1,7 +1,10 @@
 import Link from "next/link";
 
-import { Flex, Text, Link as StyledLink } from "ui";
+import { styled } from "ui/stitches.config";
+import { Flex, Link as StyledLink, Box } from "ui";
 import dayjs from "dayjs";
+
+import PostMenu from "./PostMenu";
 
 import type { TPost } from "@/types/index";
 
@@ -11,46 +14,67 @@ type Props = {
   userLink: string;
 };
 
+const StyledImage = styled("img", {
+  rounded: "100%",
+});
+
 const PostHeader = ({ post, postLink, userLink }: Props) => {
   return (
-    <Flex as="header">
-      <div>
-        <Link href={userLink} passHref>
-          <StyledLink css={{ fontWeight: 500, color: "Black" }}>
-            {post.user.name}
-          </StyledLink>
-        </Link>
+    <Flex as="header" justify="between" css={{ width: 500 }}>
+      <Flex>
+        <Box
+          css={{ size: 47.5, background: "#757bc8", rounded: "100%", mr: 10 }}
+        >
+          <Link href={userLink}>
+            <a>
+              <StyledImage
+                src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
+                alt=""
+              />
+            </a>
+          </Link>
+        </Box>
 
-        <Link href={userLink} passHref>
-          <StyledLink
-            css={{
-              color: "DimGray",
-              fontSize: 14,
-              fontWeight: 500,
-              ml: 4,
-              "&:hover": {
-                textDecoration: "none",
-              },
-            }}
-          >
-            @{post.user.username}
-          </StyledLink>
-        </Link>
-      </div>
+        <div>
+          <Link href={userLink} passHref>
+            <StyledLink css={{ fontWeight: 500, color: "Black" }}>
+              {post.user.name}
+            </StyledLink>
+          </Link>
 
-      <Text as="span" css={{ mx: 4 }}>
-        -
-      </Text>
+          <Link href={userLink} passHref>
+            <StyledLink
+              css={{
+                color: "DimGray",
+                fontSize: 14,
+                fontWeight: 500,
+                ml: 4,
+                "&:hover": {
+                  textDecoration: "none",
+                },
+              }}
+            >
+              @{post.user.username}
+            </StyledLink>
+          </Link>
 
-      <div>
-        <Link href={postLink} passHref>
-          <StyledLink css={{ color: "DimGray", fontSize: 14, fontWeight: 500 }}>
-            <span title={dayjs(post.createdAt).format("h:mm A MMM D, YYYY")}>
-              {dayjs(post.createdAt).format("MMM D, YYYY")}
-            </span>
-          </StyledLink>
-        </Link>
-      </div>
+          <div>
+            <Link href={postLink} passHref>
+              <StyledLink
+                css={{ color: "DimGray", fontSize: 14, fontWeight: 500 }}
+              >
+                <span
+                  title={dayjs(post.createdAt).format("h:mm A MMM D, YYYY")}
+                >
+                  {dayjs(post.createdAt).format("MMM D, YYYY")}
+                </span>
+              </StyledLink>
+            </Link>
+          </div>
+        </div>
+      </Flex>
+
+      <PostMenu post={post} />
     </Flex>
   );
 };
