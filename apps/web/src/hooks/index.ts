@@ -16,3 +16,4 @@ export { default as useDeletePost } from "./posts/useDeletePost";
 
 // Comments
 export { default as useCreateComment } from "./comments/useCreateComment";
+export { default as useDeleteComment } from "./comments/useDeleteComment";

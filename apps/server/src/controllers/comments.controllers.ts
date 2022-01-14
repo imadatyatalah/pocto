@@ -1,8 +1,14 @@
 import { Request, Response } from "express";
 
-import { prisma } from "../config/prisma";
+import type { CreateCommentInputServer } from "shared";
 
-export const createComment = async (req: Request, res: Response) => {
+import { prisma } from "../config/prisma";
+import { commentData } from "../helpers/comments";
+
+export const createComment = async (
+  req: Request<{ postId: string }, {}, CreateCommentInputServer["body"]>,
+  res: Response
+) => {
   try {
     const { content } = req.body;
 
@@ -12,6 +18,7 @@ export const createComment = async (req: Request, res: Response) => {
         user: { connect: { id: req.user?.id } },
         post: { connect: { id: req.params.postId } },
       },
+      select: commentData,
     });
 
     res.status(201).send(comment);
@@ -26,6 +33,7 @@ export const getCommentById = async (req: Request, res: Response) => {
   try {
     const comment = await prisma.comment.findUnique({
       where: { id: req.params.commentId },
+      select: commentData,
     });
 
     res.status(200).send(comment);
@@ -46,6 +54,7 @@ export const deleteCommentById = async (req: Request, res: Response) => {
     if (comment?.userId === req.user?.id) {
       const deletedComment = await prisma.comment.delete({
         where: { id: req.params.commentId },
+        select: commentData,
       });
 
       res.status(200).send(deletedComment);
