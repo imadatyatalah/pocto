@@ -1,11 +1,9 @@
-import type { NextPage } from "next";
-
 import { NextSeo } from "next-seo";
 import { Button, Flex, Heading } from "ui";
 
-import WithAuth from "@/hocs/withAuth";
+import type { PoctoPage } from "@/types/index";
 
-const ConfirmSignOut: NextPage = () => {
+const ConfirmSignOut: PoctoPage = () => {
   return (
     <>
       <NextSeo title="Confirm Sign Out" />
@@ -29,4 +27,6 @@ const ConfirmSignOut: NextPage = () => {
   );
 };
 
-export default WithAuth(ConfirmSignOut);
+ConfirmSignOut.authenticate = true;
+
+export default ConfirmSignOut;

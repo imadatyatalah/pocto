@@ -1,3 +1,5 @@
+//! Not used anymore!
+
 import { ComponentType, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 

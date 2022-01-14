@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NextSeo } from "next-seo";
@@ -12,7 +10,8 @@ import type { CreateCommunityInput } from "shared";
 import { useCreateCommunity } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
-import WithAuth from "@/hocs/withAuth";
+
+import type { PoctoPage } from "@/types/PoctoPage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -24,7 +23,7 @@ const Inputs = [
   { type: "text", id: "title", name: "Title" },
 ];
 
-const CreateCommunity: NextPage = () => {
+const CreateCommunity: PoctoPage = () => {
   const { mutate: createCommunity, isLoading } = useCreateCommunity();
 
   const {
@@ -83,4 +82,6 @@ const CreateCommunity: NextPage = () => {
   );
 };
 
-export default WithAuth(CreateCommunity);
+CreateCommunity.authenticate = true;
+
+export default CreateCommunity;

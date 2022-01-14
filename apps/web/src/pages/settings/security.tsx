@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { NextPage } from "next";
 
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
@@ -22,7 +21,8 @@ import { useUpdatePassword } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";
-import WithAuth from "@/hocs/withAuth";
+
+import type { PoctoPage } from "@/types/index";
 
 const Inputs = [
   { type: "password", id: "oldPassword", name: "Old password" },
@@ -30,7 +30,7 @@ const Inputs = [
   { type: "password", id: "confirmNewPassword", name: "Confirm new password" },
 ];
 
-const Security: NextPage = () => {
+const Security: PoctoPage = () => {
   const { mutate: updatePassword, isLoading } = useUpdatePassword();
 
   const {
@@ -47,54 +47,51 @@ const Security: NextPage = () => {
     <>
       <NextSeo title="Account security" />
 
-      <Layout>
-        <Box
-          as="form"
-          css={{ width: "100%" }}
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <Heading>Change password</Heading>
+      <Box as="form" css={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
+        <Heading>Change password</Heading>
 
-          <Separator css={{ my: 10 }} />
+        <Separator css={{ my: 10 }} />
 
-          {Inputs.map(({ id, name, type }) => (
-            <Box css={{ my: 20 }} key={id}>
-              <Label
-                css={{ display: "block", fontWeight: "600", mb: 4 }}
-                htmlFor={id}
-              >
-                {name}
-              </Label>
+        {Inputs.map(({ id, name, type }) => (
+          <Box css={{ my: 20 }} key={id}>
+            <Label
+              css={{ display: "block", fontWeight: "600", mb: 4 }}
+              htmlFor={id}
+            >
+              {name}
+            </Label>
 
-              <Input
-                css={{ width: "100%", "@xs": { width: 400 } }}
-                type={type}
-                id={id}
-                {...register(id as keyof ChangePasswordInput)}
-              />
-              <ErrorMessage
-                errors={errors}
-                name={id}
-                render={({ message }) => (
-                  <StyledErrorMessage>{message}</StyledErrorMessage>
-                )}
-              />
-            </Box>
-          ))}
-
-          <Box css={{ my: 20 }}>
-            <Button disabled={isLoading} type="submit" css={{ mr: 15 }}>
-              Update password
-            </Button>
-
-            <Link href={CLIENT_ROUTES.PASSWORD_RESET} passHref>
-              <StyledLink>I forgot my password</StyledLink>
-            </Link>
+            <Input
+              css={{ width: "100%", "@xs": { width: 400 } }}
+              type={type}
+              id={id}
+              {...register(id as keyof ChangePasswordInput)}
+            />
+            <ErrorMessage
+              errors={errors}
+              name={id}
+              render={({ message }) => (
+                <StyledErrorMessage>{message}</StyledErrorMessage>
+              )}
+            />
           </Box>
+        ))}
+
+        <Box css={{ my: 20 }}>
+          <Button disabled={isLoading} type="submit" css={{ mr: 15 }}>
+            Update password
+          </Button>
+
+          <Link href={CLIENT_ROUTES.PASSWORD_RESET} passHref>
+            <StyledLink>I forgot my password</StyledLink>
+          </Link>
         </Box>
-      </Layout>
+      </Box>
     </>
   );
 };
 
-export default WithAuth(Security);
+Security.authenticate = true;
+Security.getLayout = (page) => <Layout>{page}</Layout>;
+
+export default Security;

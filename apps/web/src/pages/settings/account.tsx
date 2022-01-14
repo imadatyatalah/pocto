@@ -1,33 +1,33 @@
-import type { NextPage } from "next";
-
 import { NextSeo } from "next-seo";
 import { Box, Heading, Text, Separator } from "ui";
 
 import AccountPageDialog from "@/modules/settings/AccountPageDialog";
 import Layout from "@/modules/settings/Layout";
-import WithAuth from "@/hocs/withAuth";
 
-const Account: NextPage = () => {
+import type { PoctoPage } from "@/types/index";
+
+const Account: PoctoPage = () => {
   return (
     <>
       <NextSeo title="Account settings" />
 
-      <Layout>
-        <Box>
-          <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
+      <Box>
+        <Heading css={{ color: "#EF4444" }}>Delete account</Heading>
 
-          <Separator css={{ my: 10 }} />
+        <Separator css={{ my: 10 }} />
 
-          <Text css={{ my: 10 }}>
-            Once you delete your account, there is no going back. Please be
-            certain.
-          </Text>
+        <Text css={{ my: 10 }}>
+          Once you delete your account, there is no going back. Please be
+          certain.
+        </Text>
 
-          <AccountPageDialog />
-        </Box>
-      </Layout>
+        <AccountPageDialog />
+      </Box>
     </>
   );
 };
 
-export default WithAuth(Account);
+Account.authenticate = true;
+Account.getLayout = (page) => <Layout>{page}</Layout>;
+
+export default Account;

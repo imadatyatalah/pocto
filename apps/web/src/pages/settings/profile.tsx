@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,11 +10,10 @@ import { useUpdateProfile } from "@/hooks/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";
-import WithAuth from "@/hocs/withAuth";
 
-import type { TCurrentUser } from "@/types/index";
+import type { TCurrentUser, PoctoPage } from "@/types/index";
 
-const Profile: NextPage<{ user: TCurrentUser }> = ({ user }) => {
+const Profile: PoctoPage<{ currentUser: TCurrentUser }> = ({ currentUser }) => {
   const { mutate: updateProfile, isLoading } = useUpdateProfile();
 
   const {
@@ -30,19 +27,24 @@ const Profile: NextPage<{ user: TCurrentUser }> = ({ user }) => {
   const onSubmit = (data: UpdateProfileInput) => updateProfile(data);
 
   const Inputs = [
-    { type: "text", id: "name", name: "Name", defaultValue: user.name },
-    { type: "text", id: "bio", name: "Bio", defaultValue: user.profile?.bio },
+    { type: "text", id: "name", name: "Name", defaultValue: currentUser.name },
+    {
+      type: "text",
+      id: "bio",
+      name: "Bio",
+      defaultValue: currentUser.profile?.bio,
+    },
     {
       type: "text",
       id: "website",
       name: "Website",
-      defaultValue: user.profile?.website,
+      defaultValue: currentUser.profile?.website,
     },
     {
       type: "text",
       id: "location",
       name: "Location",
-      defaultValue: user.profile?.location,
+      defaultValue: currentUser.profile?.location,
     },
   ];
 
@@ -50,51 +52,48 @@ const Profile: NextPage<{ user: TCurrentUser }> = ({ user }) => {
     <>
       <NextSeo title="Profile settings" />
 
-      <Layout>
-        <Box
-          as="form"
-          css={{ width: "100%" }}
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <Heading>Update profile</Heading>
+      <Box as="form" css={{ width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
+        <Heading>Update profile</Heading>
 
-          <Separator css={{ my: 10 }} />
+        <Separator css={{ my: 10 }} />
 
-          {Inputs.map(({ id, name, type, defaultValue }) => (
-            <Box css={{ my: 20 }} key={id}>
-              <Label
-                css={{ display: "block", fontWeight: "600", mb: 4 }}
-                htmlFor={id}
-              >
-                {name}
-              </Label>
+        {Inputs.map(({ id, name, type, defaultValue }) => (
+          <Box css={{ my: 20 }} key={id}>
+            <Label
+              css={{ display: "block", fontWeight: "600", mb: 4 }}
+              htmlFor={id}
+            >
+              {name}
+            </Label>
 
-              <Input
-                css={{ width: "100%", "@xs": { width: 400 } }}
-                defaultValue={defaultValue}
-                type={type}
-                id={id}
-                {...register(id as keyof UpdateProfileInput)}
-              />
-              <ErrorMessage
-                errors={errors}
-                name={id}
-                render={({ message }) => (
-                  <StyledErrorMessage>{message}</StyledErrorMessage>
-                )}
-              />
-            </Box>
-          ))}
-
-          <Box css={{ my: 20 }}>
-            <Button disabled={isLoading} type="submit">
-              Update profile
-            </Button>
+            <Input
+              css={{ width: "100%", "@xs": { width: 400 } }}
+              defaultValue={defaultValue}
+              type={type}
+              id={id}
+              {...register(id as keyof UpdateProfileInput)}
+            />
+            <ErrorMessage
+              errors={errors}
+              name={id}
+              render={({ message }) => (
+                <StyledErrorMessage>{message}</StyledErrorMessage>
+              )}
+            />
           </Box>
+        ))}
+
+        <Box css={{ my: 20 }}>
+          <Button disabled={isLoading} type="submit">
+            Update profile
+          </Button>
         </Box>
-      </Layout>
+      </Box>
     </>
   );
 };
 
-export default WithAuth(Profile);
+Profile.authenticate = true;
+Profile.getLayout = (page) => <Layout>{page}</Layout>;
+
+export default Profile;

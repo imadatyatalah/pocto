@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-
 import { NextSeo } from "next-seo";
 import { styled } from "ui/stitches.config";
 import { useForm } from "react-hook-form";
@@ -12,7 +10,8 @@ import type { CreatePostInput } from "shared";
 
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
-import WithAuth from "@/hocs/withAuth";
+
+import type { PoctoPage } from "@/types/PoctoPage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -23,7 +22,7 @@ const Inputs = [
   { type: "text", id: "content", name: "Content" },
 ];
 
-const CreatePost: NextPage = () => {
+const CreatePost: PoctoPage = () => {
   const { mutate: createPost, isLoading } = useCreatePost();
 
   const {
@@ -80,4 +79,6 @@ const CreatePost: NextPage = () => {
   );
 };
 
-export default WithAuth(CreatePost);
+CreatePost.authenticate = true;
+
+export default CreatePost;

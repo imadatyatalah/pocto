@@ -11,9 +11,9 @@ const StyledImage = styled("img", {
 });
 
 const SettingsHeader = () => {
-  const user = useUser((state) => state.user);
+  const currentUser = useUser((state) => state.user);
 
-  const currentUserPage = CLIENT_ROUTES.USER_PAGE(user?.username);
+  const currentUserPage = CLIENT_ROUTES.USER_PAGE(currentUser?.username);
 
   return (
     <Box
@@ -38,7 +38,9 @@ const SettingsHeader = () => {
         <Box>
           <Heading as="h1" size="xl">
             <Link href={currentUserPage} passHref>
-              <StyledLink css={{ color: "inherit" }}>{user?.name}</StyledLink>
+              <StyledLink css={{ color: "inherit" }}>
+                {currentUser?.name}
+              </StyledLink>
             </Link>
           </Heading>
 
