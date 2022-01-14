@@ -17,8 +17,8 @@ const Post = ({ post }: Props) => {
   const userLink = CLIENT_ROUTES.USER_PAGE(post.user.username);
 
   return (
-    <Flex css={{ my: 20 }} as="article">
-      <Box>
+    <Flex css={{ my: 20, width: 500 }} as="article">
+      <Box css={{ width: "100%" }}>
         <PostHeader post={post} postLink={postLink} userLink={userLink} />
 
         <Box css={{ ml: 57.5 }}>

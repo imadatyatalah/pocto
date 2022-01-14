@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import type { CreatePostInputServer } from "shared";
 
 import { prisma } from "../config/prisma";
 import {
@@ -8,7 +9,10 @@ import {
   createPost as createPostHelper,
 } from "../helpers/posts";
 
-export const createPost = async (req: Request, res: Response) => {
+export const createPost = async (
+  req: Request<{}, {}, CreatePostInputServer["body"]>,
+  res: Response
+) => {
   try {
     const { title, content } = req.body;
 
@@ -103,12 +107,10 @@ export const deletePostById = async (req: Request, res: Response) => {
 
       await prisma.$transaction([deletedComments, deletedPost]);
 
-      res
-        .status(200)
-        .send({
-          success: true,
-          message: "You have deleted your post successfully",
-        });
+      res.status(200).send({
+        success: true,
+        message: "You have deleted your post successfully",
+      });
     } else {
       res.status(403).send({ success: false, message: "Forbidden" });
     }

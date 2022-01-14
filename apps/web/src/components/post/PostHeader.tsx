@@ -20,7 +20,7 @@ const StyledImage = styled("img", {
 
 const PostHeader = ({ post, postLink, userLink }: Props) => {
   return (
-    <Flex as="header" justify="between" css={{ width: 500 }}>
+    <Flex as="header" align="center" justify="between">
       <Flex>
         <Box
           css={{ size: 47.5, background: "#757bc8", rounded: "100%", mr: 10 }}

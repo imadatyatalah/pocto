@@ -19,6 +19,6 @@ router.post(
   createComment
 );
 
-router.delete("/:commentId", [requireUser], deleteCommentById);
+router.delete("/:commentId", requireUser, deleteCommentById);
 
 export default router;
