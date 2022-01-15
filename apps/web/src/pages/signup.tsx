@@ -20,7 +20,7 @@ import {
 
 import type { SignupInput } from "shared";
 
-import { useSignUp } from "@/hooks/index";
+import { useSignUp } from "@/mutations/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import RedirectLoggedInUsers from "@/hocs/redirectLoggedInUsers";

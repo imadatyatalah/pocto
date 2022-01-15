@@ -10,7 +10,7 @@ import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { styled } from "ui/stitches.config";
 import { mauve } from "@radix-ui/colors";
 
-import { useDeleteComment } from "@/hooks/index";
+import { useDeleteComment } from "@/mutations/index";
 import useUser from "@/stores/useUser";
 
 import type { TComment } from "@/types/index";

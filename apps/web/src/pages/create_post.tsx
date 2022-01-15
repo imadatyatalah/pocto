@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Button, Flex, Heading, Input, Label, Box } from "ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createPostSchema } from "shared";
-import { useCreatePost } from "@/hooks/index";
+import { useCreatePost } from "@/mutations/index";
 
 import type { CreatePostInput } from "shared";
 

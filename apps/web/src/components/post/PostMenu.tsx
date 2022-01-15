@@ -10,7 +10,7 @@ import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { styled } from "ui/stitches.config";
 import { mauve } from "@radix-ui/colors";
 
-import { useDeletePost } from "@/hooks/index";
+import { useDeletePost } from "@/mutations/index";
 import useUser from "@/stores/useUser";
 
 import type { TPost } from "@/types/index";

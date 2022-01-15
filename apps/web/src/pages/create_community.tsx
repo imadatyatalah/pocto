@@ -7,7 +7,7 @@ import { createCommunitySchema } from "shared";
 
 import type { CreateCommunityInput } from "shared";
 
-import { useCreateCommunity } from "@/hooks/index";
+import { useCreateCommunity } from "@/mutations/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 

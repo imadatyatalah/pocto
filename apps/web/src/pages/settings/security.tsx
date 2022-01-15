@@ -17,7 +17,7 @@ import {
 
 import type { ChangePasswordInput } from "shared";
 
-import { useUpdatePassword } from "@/hooks/index";
+import { useUpdatePassword } from "@/mutations/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";

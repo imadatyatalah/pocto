@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 import type { CreateCommentInput } from "shared";
 
-import { useCreateComment } from "@/hooks/index";
+import { useCreateComment } from "@/mutations/index";
 
 const CommentForm = ({ postId }) => {
   const { mutate: createComment, isLoading } = useCreateComment(postId);

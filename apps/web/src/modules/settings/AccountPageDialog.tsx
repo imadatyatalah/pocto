@@ -10,7 +10,7 @@ import {
   AlertDialogCancel,
 } from "ui";
 
-import { useDeleteAccount } from "@/hooks/index";
+import { useDeleteAccount } from "@/mutations/index";
 
 const AccountPageDialog = () => {
   const { mutate: deleteAccount } = useDeleteAccount();

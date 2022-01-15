@@ -6,7 +6,7 @@ import { updateProfileSchema } from "shared";
 
 import type { UpdateProfileInput } from "shared";
 
-import { useUpdateProfile } from "@/hooks/index";
+import { useUpdateProfile } from "@/mutations/index";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";

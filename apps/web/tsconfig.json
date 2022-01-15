@@ -12,6 +12,7 @@
       "@/styles/*": ["src/styles/*"],
       "@/modules/*": ["src/modules/*"],
       "@/layouts/*": ["src/layouts/*"],
+      "@/mutations/*": ["src/mutations/*"],
       "@/components/*": ["src/components/*"]
     }
   },
