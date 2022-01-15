@@ -14,8 +14,8 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
 
     const { replace } = useRouter();
 
-    const { user, logged_in } = useUser(
-      ({ user, logged_in }) => ({ user, logged_in }),
+    const { currentUser, logged_in } = useUser(
+      ({ user, logged_in }) => ({ currentUser: user, logged_in }),
       shallow
     );
 
@@ -26,7 +26,7 @@ const WithAuth = <P extends any>(WrappedComponent: ComponentType<P>) =>
     }, [logged_in, replace]);
 
     return isLoggedIn ? (
-      <WrappedComponent user={user} {...props} />
+      <WrappedComponent currentUser={currentUser} {...props} />
     ) : (
       <Loading />
     );

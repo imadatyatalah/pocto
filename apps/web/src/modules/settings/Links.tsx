@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { useRouter } from "next/router";
 
 import { CLIENT_ROUTES } from "shared/routes";
@@ -13,7 +14,9 @@ const LINKS = [
   { title: "Account security", link: CLIENT_ROUTES.SETTINGS_SECURITY_PAGE },
 ];
 
-const NavLink = ({ title, link }: { title: string; link: string }) => {
+type Props = { title: string; link: string };
+
+const NavLink = ({ title, link }: Props) => {
   const { pathname } = useRouter();
 
   const currentLink = pathname === link;
@@ -31,7 +34,7 @@ const NavLink = ({ title, link }: { title: string; link: string }) => {
   };
 
   return (
-    <Link href={link} passHref key={title}>
+    <Link href={link} passHref>
       <StyledLink css={LinkStyles}>{title}</StyledLink>
     </Link>
   );
@@ -58,10 +61,10 @@ const Links = () => {
         <Separator />
 
         {LINKS.map((props) => (
-          <>
-            <NavLink key={props.title} {...props} />
+          <Fragment key={props.title}>
+            <NavLink {...props} />
             <Separator />
-          </>
+          </Fragment>
         ))}
       </Flex>
     </Box>

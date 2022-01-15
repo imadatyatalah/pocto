@@ -31,11 +31,11 @@ const StyledImage = styled("img", {
 });
 
 type Props = {
-  user: TCurrentUser;
+  currentUser: TCurrentUser;
 };
 
-const LoggedInHeader = ({ user }: Props) => {
-  const currentUserPage = CLIENT_ROUTES.USER_PAGE(user?.username);
+const LoggedInHeader = ({ currentUser }: Props) => {
+  const currentUserPage = CLIENT_ROUTES.USER_PAGE(currentUser?.username);
 
   return (
     <Flex as="nav">
@@ -68,7 +68,7 @@ const LoggedInHeader = ({ user }: Props) => {
                   },
                 }}
               >
-                Signed in as <strong>{user?.username}</strong>
+                Signed in as <strong>{currentUser?.username}</strong>
               </DropdownMenuItem>
             </Link>
 

@@ -1,4 +1,5 @@
 import { Prisma } from "../config/prisma";
+import { commentData } from "./comments";
 
 export const postData = Prisma.validator<Prisma.PostSelect>()({
   id: true,
@@ -15,19 +16,7 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
   },
   comments: {
     orderBy: { createdAt: "desc" },
-    select: {
-      id: true,
-      content: true,
-      createdAt: true,
-      postId: true,
-      user: {
-        select: {
-          id: true,
-          name: true,
-          username: true,
-        },
-      },
-    },
+    select: commentData,
   },
 });
 

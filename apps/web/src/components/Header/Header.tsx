@@ -11,7 +11,7 @@ import useUser from "@/stores/useUser";
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const user = useUser((state) => state.user);
+  const currentUser = useUser((state) => state.user);
   const logged_in = useUser((state) => state.logged_in);
 
   useEffect(() => {
@@ -30,7 +30,11 @@ const Header = () => {
         </Text>
       </Flex>
 
-      {isLoggedIn ? <LoggedInNav user={user} /> : <LoggedOutNav />}
+      {isLoggedIn ? (
+        <LoggedInNav currentUser={currentUser} />
+      ) : (
+        <LoggedOutNav />
+      )}
     </Flex>
   );
 };
