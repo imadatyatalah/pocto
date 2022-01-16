@@ -39,7 +39,7 @@ const Logo = ({ text, ...props }: { text?: string }, ref: any) => {
             fontSize: 22,
             fontWeight: 700,
             ml: 8,
-            color: "#757BC8",
+            color: "$primary1",
             userSelect: "none",
           }}
         >

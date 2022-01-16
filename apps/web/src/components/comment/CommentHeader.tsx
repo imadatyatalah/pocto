@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 import { Flex, Box, Link as StyledLink } from "ui";
-import { styled } from "ui/stitches.config";
 import dayjs from "dayjs";
 
 import type { TComment } from "@/types/index";
 import CommentMenu from "./CommentMenu";
+import Avatar from "../Avatar";
 
 type Props = {
   comment: TComment;
@@ -13,21 +13,16 @@ type Props = {
   userLink: string;
 };
 
-const StyledImage = styled("img", {
-  rounded: "100%",
-});
-
 const CommentHeader = ({ comment, commentLink, userLink }: Props) => {
   return (
     <Flex as="header" align="center" justify="between">
       <Flex>
-        <Box css={{ size: 45, background: "#757bc8", rounded: "100%", mr: 10 }}>
+        <Box
+          css={{ size: 45, background: "$primary1", rounded: "100%", mr: 10 }}
+        >
           <Link href={userLink}>
             <a>
-              <StyledImage
-                src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
-                alt=""
-              />
+              <Avatar />
             </a>
           </Link>
         </Box>

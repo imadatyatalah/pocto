@@ -23,12 +23,12 @@ const StyledButton = styled("button", {
   variants: {
     variant: {
       default: {
-        border: "1px solid #757bc8",
-        backgroundColor: "#757bc8",
+        border: "1px solid $primary1",
+        backgroundColor: "$primary1",
         color: "White",
 
         "&:hover, &:focus": {
-          color: "#757bc8",
+          color: "$primary1",
           backgroundColor: "transparent",
         },
         "&:disabled": {

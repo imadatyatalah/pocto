@@ -2,13 +2,9 @@ import Link from "next/link";
 
 import { Box, Flex, Text, Heading, Button, Link as StyledLink } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
-import { styled } from "ui/stitches.config";
 
 import useUser from "@/stores/useUser";
-
-const StyledImage = styled("img", {
-  rounded: "100%",
-});
+import Avatar from "@/components/Avatar";
 
 const SettingsHeader = () => {
   const currentUser = useUser((state) => state.user);
@@ -28,11 +24,10 @@ const SettingsHeader = () => {
       }}
     >
       <Flex align="center">
-        <Box css={{ size: 50, background: "#757bc8", rounded: "100%", mr: 10 }}>
-          <StyledImage
-            src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
-            alt=""
-          />
+        <Box
+          css={{ size: 50, background: "$primary1", rounded: "100%", mr: 10 }}
+        >
+          <Avatar />
         </Box>
 
         <Box>

@@ -14,6 +14,8 @@ import { styled } from "ui/stitches.config";
 import { blackA, violet } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
 
+import Avatar from "../Avatar";
+
 import type { TCurrentUser } from "@/types/user";
 
 const ImageButton = styled("button", {
@@ -21,13 +23,9 @@ const ImageButton = styled("button", {
   cursor: "pointer",
   rounded: "100%",
   size: 40,
-  backgroundColor: "#757bc8",
+  backgroundColor: "$primary1",
   boxShadow: `0 2px 10px ${blackA.blackA7}`,
   "&:focus": { boxShadow: `0 0 0 2px black` },
-});
-
-const StyledImage = styled("img", {
-  rounded: "100%",
 });
 
 type Props = {
@@ -49,10 +47,7 @@ const LoggedInHeader = ({ currentUser }: Props) => {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <ImageButton>
-              <StyledImage
-                src="https://avatars.githubusercontent.com/u/70093484?s=400&u=3ca81f91aeb92005a4b5bb3bac464ac9a2493bf8&v=4"
-                alt=""
-              />
+              <Avatar />
             </ImageButton>
           </DropdownMenuTrigger>
 

@@ -25,7 +25,7 @@ const Header = () => {
           <Logo text="Pocto" />
         </Link>
 
-        <Text as="sup" css={{ fontWeight: 600, color: "#757bc8" }}>
+        <Text as="sup" css={{ fontWeight: 600, color: "$primary1" }}>
           Alpha
         </Text>
       </Flex>

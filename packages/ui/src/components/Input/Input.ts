@@ -18,11 +18,11 @@ const StyledInput = styled("input", {
         px: 12,
 
         "&:hover": {
-          boxShadow: "0 0 8px #ADA7FF",
+          boxShadow: "0 0 8px $primary5",
         },
 
         "&:focus": {
-          boxShadow: "0 0 8px #8187DC",
+          boxShadow: "0 0 8px $primary2",
           outline: "none",
         },
 
