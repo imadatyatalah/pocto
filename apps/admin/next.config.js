@@ -4,7 +4,6 @@ const withTM = require("next-transpile-modules")(["ui"]);
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  redirects: require("./next-redirects"),
 };
 
 module.exports = withTM(nextConfig);
