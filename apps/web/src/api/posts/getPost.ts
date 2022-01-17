@@ -1,3 +1,4 @@
+import { SERVER_ROUTES } from "shared/routes";
 import { useQuery } from "react-query";
 
 import { instance } from "@/lib/axios";
@@ -5,7 +6,7 @@ import { instance } from "@/lib/axios";
 import type { TPost } from "@/types/index";
 
 export const getPost = async (id: string): Promise<TPost> => {
-  const { data } = await instance.get(`/posts/${id}`);
+  const { data } = await instance.get(SERVER_ROUTES.GET__POST_ROUTE(id));
 
   return data;
 };

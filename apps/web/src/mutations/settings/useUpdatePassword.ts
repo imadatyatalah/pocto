@@ -1,3 +1,4 @@
+import { SERVER_ROUTES } from "shared/routes";
 import { useMutation } from "react-query";
 import toast from "react-hot-toast";
 
@@ -8,7 +9,7 @@ import type { ChangePasswordInput } from "shared";
 const useUpdatePassword = () =>
   useMutation(
     (data: ChangePasswordInput) =>
-      instance.put("/current_user/change_password", data),
+      instance.put(SERVER_ROUTES.UPDATE__PASSWORD_ROUTE, data),
     {
       onSuccess: () => {
         toast.success("Your password was updated successfully!");
