@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   Box,
   DropdownMenu,
@@ -11,6 +13,7 @@ import { styled } from "ui/stitches.config";
 import { mauve } from "@radix-ui/colors";
 
 import { useDeletePost } from "@/mutations/index";
+import DeletePostDialog from "./DeletePostDialog";
 import useUser from "@/stores/useUser";
 
 import type { TPost } from "@/types/index";
@@ -27,11 +30,9 @@ const LeftIcon = styled("div", {
 });
 
 const PostMenu = ({ post }: Props) => {
-  const { mutate: deletePost } = useDeletePost(post.id);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
   const currentUser = useUser((state) => state.user);
-
-  const handleDeletePost = () => deletePost();
 
   return (
     <Box>
@@ -44,14 +45,13 @@ const PostMenu = ({ post }: Props) => {
           </button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent sideOffset={5}>
+        <DropdownMenuContent hidden={isDeleteOpen} sideOffset={5}>
           {post.userId === currentUser?.id ? (
-            <DropdownMenuItem onClick={handleDeletePost}>
-              <LeftIcon>
-                <TrashIcon />
-              </LeftIcon>
-              Delete Post
-            </DropdownMenuItem>
+            <DeletePostDialog
+              isDeleteOpen={isDeleteOpen}
+              setIsDeleteOpen={setIsDeleteOpen}
+              postId={post.id}
+            />
           ) : (
             <DropdownMenuItem>Work in progress...</DropdownMenuItem>
           )}
