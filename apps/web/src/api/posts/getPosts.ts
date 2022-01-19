@@ -5,8 +5,8 @@ import { instance } from "@/lib/axios";
 
 import type { TPost } from "@/types/index";
 
-export const getPosts = async (): Promise<TPost[]> => {
-  const { data } = await instance.get(SERVER_ROUTES.GET__POSTS_ROUTE);
+export const getPosts = async () => {
+  const { data } = await instance.get<TPost[]>(SERVER_ROUTES.GET__POSTS_ROUTE);
 
   return data;
 };

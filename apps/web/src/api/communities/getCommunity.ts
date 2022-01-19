@@ -5,8 +5,10 @@ import { instance } from "@/lib/axios";
 
 import type { TCommunity } from "@/types/index";
 
-export const getCommunity = async (name: string): Promise<TCommunity> => {
-  const { data } = await instance.get(SERVER_ROUTES.GET__COMMUNITY_ROUTE(name));
+export const getCommunity = async (name: string) => {
+  const { data } = await instance.get<TCommunity>(
+    SERVER_ROUTES.GET__COMMUNITY_ROUTE(name)
+  );
 
   return data;
 };
