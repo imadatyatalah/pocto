@@ -20,11 +20,7 @@ const Footer = () => {
       <Box css={{ mt: 10 }}>
         <Text>
           Made with ❤️ by{" "}
-          <StyledLink
-            href="https://imadatyatalah.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <StyledLink href="https://imadatyatalah.vercel.app/" isExternal>
             Imad Atyat-Alah
           </StyledLink>
         </Text>

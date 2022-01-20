@@ -45,7 +45,7 @@ const PostMenu = ({ post }: Props) => {
           </button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent hidden={isDeleteOpen} sideOffset={5}>
+        <DropdownMenuContent hidden={isDeleteOpen} sideOffset={5} align="end">
           {post.userId === currentUser?.id ? (
             <DeletePostDialog
               isDeleteOpen={isDeleteOpen}

@@ -51,7 +51,7 @@ const LoggedInHeader = ({ currentUser }: Props) => {
             </ImageButton>
           </DropdownMenuTrigger>
 
-          <DropdownMenuContent sideOffset={5}>
+          <DropdownMenuContent sideOffset={5} align="end">
             <Link href={currentUserPage} passHref>
               <DropdownMenuItem
                 as="a"

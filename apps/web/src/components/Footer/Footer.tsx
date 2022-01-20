@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Box, Flex, Logo, Link as StyledLink, Text } from "ui";
+import { gray } from "@radix-ui/colors";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
       align="center"
       justify="center"
       direction="column"
-      css={{ padding: 20 }}
+      css={{ padding: 20, backgroundColor: gray.gray3, textAlign: "center" }}
     >
       <div>
         <Link href="/" passHref>
@@ -17,16 +18,39 @@ const Footer = () => {
         </Link>
       </div>
 
-      <Box css={{ mt: 10 }}>
-        <Text>
-          Made with ❤️ by{" "}
-          <StyledLink
-            href="https://imadatyatalah.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Imad Atyat-Alah
-          </StyledLink>
+      <Box css={{ my: 10 }}>
+        <Flex as="ul">
+          <li>
+            <StyledLink
+              href="https://blog.pocto.io"
+              isExternal
+              css={{ fontWeight: 400, mx: 8, mr: 5 }}
+            >
+              Blog
+            </StyledLink>
+          </li>
+
+          <li>
+            <Link href="/privacy" passHref>
+              <StyledLink css={{ fontWeight: 400, mx: 8 }}>
+                Privacy policy
+              </StyledLink>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/terms" passHref>
+              <StyledLink css={{ fontWeight: 400, mx: 8 }}>
+                Terms of service
+              </StyledLink>
+            </Link>
+          </li>
+        </Flex>
+      </Box>
+
+      <Box>
+        <Text css={{ color: "GrayText" }}>
+          &copy; 2022 Pocto. All rights reserved.
         </Text>
       </Box>
     </Flex>

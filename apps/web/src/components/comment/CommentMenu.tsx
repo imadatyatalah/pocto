@@ -45,7 +45,7 @@ const CommentMenu = ({ postId, comment }: Props) => {
           </button>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent sideOffset={5}>
+        <DropdownMenuContent sideOffset={5} align="end">
           {comment.user.id === currentUser?.id ? (
             <DropdownMenuItem onClick={handleDeleteComment}>
               <LeftIcon>

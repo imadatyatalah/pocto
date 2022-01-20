@@ -6,7 +6,7 @@ import { CLIENT_ROUTES } from "shared/routes";
 import { Box, Flex, Link as StyledLink, Separator, Text } from "ui";
 import { gray, violet } from "@radix-ui/colors";
 
-import type * as Stitches from "@stitches/react";
+import type { CSS } from "ui/stitches.config";
 
 const LINKS = [
   { title: "Profile", link: CLIENT_ROUTES.SETTINGS_PROFILE_PAGE },
@@ -21,7 +21,7 @@ const NavLink = ({ title, link }: Props) => {
 
   const currentLink = pathname === link;
 
-  const LinkStyles: Stitches.CSS = {
+  const LinkStyles: CSS = {
     color: "Black",
     background: currentLink && gray.gray3,
     cursor: currentLink && "default",
