@@ -41,9 +41,10 @@ export const signUp = async (
       sameSite: "lax",
     });
 
-    res
-      .status(201)
-      .send({ success: true, message: "You have signed up successfully" });
+    res.status(201).send({
+      success: true,
+      message: "Your account was created successfully!",
+    });
   } catch (err) {
     res
       .status(500)
@@ -103,7 +104,7 @@ export const signin = async (
 
     res
       .status(200)
-      .send({ success: true, message: "You have logged in successfully" });
+      .send({ success: true, message: "You have successfully signed in!" });
   } catch (err) {
     res
       .status(500)

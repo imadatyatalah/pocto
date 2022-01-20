@@ -9,7 +9,10 @@ import type { ChangePasswordInput } from "shared";
 const useUpdatePassword = () =>
   useMutation(
     (data: ChangePasswordInput) =>
-      instance.put(SERVER_ROUTES.UPDATE__PASSWORD_ROUTE, data),
+      instance.put<ChangePasswordInput>(
+        SERVER_ROUTES.UPDATE__PASSWORD_ROUTE,
+        data
+      ),
     {
       onSuccess: () => {
         toast.success("Your password was updated successfully!");

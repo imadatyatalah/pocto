@@ -1,10 +1,10 @@
 {
   "name": "shared",
   "version": "0.0.0",
+  "private": true,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "source": "./src/index.ts",
-  "private": true,
   "files": [
     "dist/**"
   ],

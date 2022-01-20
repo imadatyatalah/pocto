@@ -6,14 +6,19 @@ import toast from "react-hot-toast";
 
 import { instance } from "@/lib/axios";
 
+import type { AxiosResponse } from "axios";
 import type { SignupInput } from "shared";
 
 const useSignUp = () =>
   useMutation(
-    (data: SignupInput) => instance.post(SERVER_ROUTES.SIGN_UP_ROUTE, data),
+    (data: SignupInput) =>
+      instance.post<
+        SignupInput,
+        AxiosResponse<{ error: boolean; message: string }>
+      >(SERVER_ROUTES.SIGN_UP_ROUTE, data),
     {
-      onSuccess: () => {
-        toast.success("Your account was created successfully!");
+      onSuccess: ({ data }) => {
+        toast.success(data.message);
 
         Router.push("/");
       },

@@ -7,7 +7,7 @@ import type { CreatePostInput } from "shared";
 
 const useCreatePost = () =>
   useMutation((data: CreatePostInput) =>
-    instance.post(SERVER_ROUTES.CREATE__POST_ROUTE, data)
+    instance.post<CreatePostInput>(SERVER_ROUTES.CREATE__POST_ROUTE, data)
   );
 
 export default useCreatePost;

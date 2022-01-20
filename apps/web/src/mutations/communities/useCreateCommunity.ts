@@ -7,7 +7,10 @@ import type { CreateCommunityInput } from "shared";
 
 const useCreateCommunity = () =>
   useMutation((data: CreateCommunityInput) =>
-    instance.post(SERVER_ROUTES.CREATE__COMMUNITY_ROUTE, data)
+    instance.post<CreateCommunityInput>(
+      SERVER_ROUTES.CREATE__COMMUNITY_ROUTE,
+      data
+    )
   );
 
 export default useCreateCommunity;

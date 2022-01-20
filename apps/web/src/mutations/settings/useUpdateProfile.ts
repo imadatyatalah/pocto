@@ -9,7 +9,10 @@ import type { UpdateProfileInput } from "shared";
 const useUpdateProfile = () =>
   useMutation(
     (data: UpdateProfileInput) =>
-      instance.put(SERVER_ROUTES.UPDATE__PROFILE_ROUTE, data),
+      instance.put<UpdateProfileInput>(
+        SERVER_ROUTES.UPDATE__PROFILE_ROUTE,
+        data
+      ),
     {
       onSuccess: () => {
         toast.success("Your profile was updated successfully!");

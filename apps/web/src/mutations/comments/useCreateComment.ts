@@ -9,7 +9,10 @@ const useCreateComment = (postId: string) => {
 
   return useMutation(
     (data: CreateCommentInput) =>
-      instance.post(SERVER_ROUTES.CREATE__COMMENT_ROUTE(postId), data),
+      instance.post<CreateCommentInput>(
+        SERVER_ROUTES.CREATE__COMMENT_ROUTE(postId),
+        data
+      ),
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["posts", postId]);
