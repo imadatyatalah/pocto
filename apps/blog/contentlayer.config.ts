@@ -1,8 +1,16 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import readingTime from "reading-time";
 
 import type { ComputedFields } from "contentlayer/source-files";
 
 const computedFields: ComputedFields = {
+  readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
+
+  wordCount: {
+    type: "number",
+    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
+  },
+
   slug: {
     type: "string",
     resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
@@ -18,11 +26,22 @@ const Blog = defineDocumentType(() => ({
     publishedAt: { type: "string", required: true },
     summary: { type: "string", required: true },
     image: { type: "string", required: false },
+    author: { type: "reference", of: Author, embedDocument: true },
   },
   computedFields,
 }));
 
+const Author = defineDocumentType(() => ({
+  name: "Author",
+  filePathPattern: "authors/*.md",
+  bodyType: "none",
+  fields: {
+    name: { type: "string", required: true },
+    authorname: { type: "string", required: true },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Blog],
+  documentTypes: [Blog, Author],
 });

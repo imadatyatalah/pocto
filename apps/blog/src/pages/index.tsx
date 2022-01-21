@@ -18,7 +18,15 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const posts = allBlogs.map((post) =>
-    pick(post, ["slug", "title", "summary", "publishedAt", "image"])
+    pick(post, [
+      "slug",
+      "title",
+      "summary",
+      "publishedAt",
+      "image",
+      "author",
+      "readingTime",
+    ])
   );
 
   const sortedPosts = posts.sort(
