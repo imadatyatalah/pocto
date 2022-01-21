@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Flex, Logo, Text } from "ui";
 
-import { HeaderStyles } from "./Header.styles";
+import { HeaderStyles } from "./styles/Header.styles";
 import LoggedInNav from "./LoggedInNav";
 import LoggedOutNav from "./LoggedOutNav";
 import useUser from "@/stores/useUser";

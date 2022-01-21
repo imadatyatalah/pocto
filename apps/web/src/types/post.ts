@@ -6,6 +6,7 @@ export type TPost = {
   content: string;
   createdAt: string;
   userId: number;
+  _count: { comments: number };
   user: {
     id: number;
     name: string;

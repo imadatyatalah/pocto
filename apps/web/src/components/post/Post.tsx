@@ -1,8 +1,10 @@
 import Link from "next/link";
 
-import { Box, Flex, Heading } from "ui";
+import { Box, Flex, Heading, Text } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 
+import { PostStyles, StyledLinkIcon } from "./styles/Post.styles";
+import ChatIcon from "@/icons/ChatIcon";
 import PostHeader from "./PostHeader";
 
 import type { TPost } from "@/types/index";
@@ -17,7 +19,7 @@ const Post = ({ post }: Props) => {
   const userLink = CLIENT_ROUTES.USER_PAGE(post.user.username);
 
   return (
-    <Flex css={{ my: 20, width: 500 }} as="article">
+    <Flex css={PostStyles} as="article">
       <Box css={{ width: "100%" }}>
         <PostHeader post={post} postLink={postLink} userLink={userLink} />
 
@@ -29,6 +31,20 @@ const Post = ({ post }: Props) => {
           </Link>
 
           <p>{post.content}</p>
+        </Box>
+
+        <Box as="footer" css={{ ml: 57.5, mt: 10 }}>
+          <Box>
+            <Link href={postLink} passHref>
+              <StyledLinkIcon>
+                <ChatIcon />
+
+                <Text as="span" css={{ ml: 4 }}>
+                  {post._count.comments !== 0 ? post._count.comments : null}
+                </Text>
+              </StyledLinkIcon>
+            </Link>
+          </Box>
         </Box>
       </Box>
     </Flex>

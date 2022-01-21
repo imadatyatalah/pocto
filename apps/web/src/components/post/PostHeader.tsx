@@ -16,7 +16,7 @@ type Props = {
 
 const PostHeader = ({ post, postLink, userLink }: Props) => {
   return (
-    <Flex as="header" align="center" justify="between">
+    <Flex as="header" align="start" justify="between">
       <Flex>
         <Box
           css={{ size: 47.5, background: "$primary1", rounded: "100%", mr: 10 }}
