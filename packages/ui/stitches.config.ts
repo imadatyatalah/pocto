@@ -14,11 +14,13 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      primary1: "#757BC8",
-      primary2: "#8187DC",
-      primary3: "#8E94F2",
-      primary4: "#9FA0FF",
-      primary5: "#ADA7FF",
+      primary1: "#29a19c",
+      primary2: "#3DAFA2",
+      primary3: "#52BEA8",
+      primary4: "#66CCAE",
+      primary5: "#7ADAB3",
+      primary6: "#8FE9B9",
+      primary7: "#A3F7BF",
     },
   },
   media: {
