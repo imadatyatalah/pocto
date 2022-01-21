@@ -31,9 +31,9 @@ export const {
   },
   utils: {
     // padding
-    p: (value: any) => ({
-      padding: value,
-    }),
+    // p: (value: any) => ({
+    //   padding: value,
+    // }),
     pt: (value: any) => ({
       paddingTop: value,
     }),
@@ -56,9 +56,9 @@ export const {
     }),
 
     // margin
-    m: (value: any) => ({
-      margin: value,
-    }),
+    // m: (value: any) => ({
+    //   margin: value,
+    // }),
     mt: (value: any) => ({
       marginTop: value,
     }),

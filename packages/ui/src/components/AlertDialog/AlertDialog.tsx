@@ -14,6 +14,7 @@ const contentShow = keyframes({
 });
 
 const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
+  zIndex: 2,
   backgroundColor: blackA.blackA9,
   position: "fixed",
   inset: 0,
@@ -23,6 +24,7 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
 });
 
 const StyledContent = styled(AlertDialogPrimitive.Content, {
+  zIndex: 3,
   backgroundColor: "white",
   borderRadius: 8,
   boxShadow:

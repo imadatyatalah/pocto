@@ -9,7 +9,7 @@ export const HeaderStyles: CSS = {
   backgroundColor: "White",
   position: "sticky",
   top: 0,
-  zIndex: "99",
+  zIndex: 1,
 
   "@md": { px: 40 },
 };

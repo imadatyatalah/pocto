@@ -38,6 +38,8 @@ const Author = defineDocumentType(() => ({
   fields: {
     name: { type: "string", required: true },
     authorname: { type: "string", required: true },
+    bio: { type: "string", required: true },
+    twitterUrl: { type: "string", required: true },
   },
 }));
 
