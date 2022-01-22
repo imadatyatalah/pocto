@@ -11,7 +11,7 @@ import type { CreatePostInput } from "shared";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
-import type { PoctoPage } from "@/types/PoctoPage";
+import type { PoctoPage } from "@/types/index";
 
 const StyledForm = styled("form", {
   width: 400,

@@ -1,12 +1,11 @@
 import Link from "next/link";
 
-import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Box, Flex, Heading, Text } from "ui";
+import { Box, Flex, Heading } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 
-import { PostStyles, StyledLinkIcon } from "./styles/Post.styles";
-import ChatIcon from "@/icons/ChatIcon";
+import { PostStyles } from "./styles/Post.styles";
 import PostHeader from "./PostHeader";
+import PostFooter from "./PostFooter";
 
 import type { TPost } from "@/types/index";
 
@@ -34,21 +33,7 @@ const Post = ({ post }: Props) => {
           <p>{post.content}</p>
         </Box>
 
-        <Box as="footer" css={{ ml: 57.5, mt: 10 }}>
-          <Box>
-            <Link href={postLink} passHref>
-              <StyledLinkIcon>
-                <AccessibleIcon label="Comment">
-                  <ChatIcon />
-                </AccessibleIcon>
-
-                <Text as="span" css={{ ml: 4 }}>
-                  {post._count.comments !== 0 ? post._count.comments : null}
-                </Text>
-              </StyledLinkIcon>
-            </Link>
-          </Box>
-        </Box>
+        <PostFooter commentsCount={post._count.comments} postLink={postLink} />
       </Box>
     </Flex>
   );

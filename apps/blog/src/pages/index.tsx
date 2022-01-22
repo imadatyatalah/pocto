@@ -11,7 +11,11 @@ const Home: NextPage<Props> = ({ posts }) => {
     <>
       <NextSeo title="Home" />
 
-      <section></section>
+      <section>
+        <code>
+          <pre>{JSON.stringify(posts, null, 2)}</pre>
+        </code>
+      </section>
     </>
   );
 };

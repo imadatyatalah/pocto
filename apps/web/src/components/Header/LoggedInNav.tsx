@@ -22,7 +22,7 @@ import {
 import NotificationIcon from "@/icons/NotificationIcon";
 import Avatar from "../Avatar";
 
-import type { TCurrentUser } from "@/types/user";
+import type { TCurrentUser } from "@/types/index";
 
 type Props = {
   currentUser: TCurrentUser;

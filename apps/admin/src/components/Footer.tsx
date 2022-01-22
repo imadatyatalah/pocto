@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { Box, Flex, Logo, Text, Link as StyledLink } from "ui";
+import { Flex, Logo } from "ui";
+import { gray } from "@radix-ui/colors";
 
 const Footer = () => {
   return (
@@ -9,22 +10,13 @@ const Footer = () => {
       align="center"
       justify="center"
       direction="column"
-      css={{ padding: 20 }}
+      css={{ padding: 20, backgroundColor: gray.gray3, textAlign: "center" }}
     >
       <div>
         <Link href="/" passHref>
           <Logo />
         </Link>
       </div>
-
-      <Box css={{ mt: 10 }}>
-        <Text>
-          Made with ❤️ by{" "}
-          <StyledLink href="https://imadatyatalah.vercel.app/" isExternal>
-            Imad Atyat-Alah
-          </StyledLink>
-        </Text>
-      </Box>
     </Flex>
   );
 };
