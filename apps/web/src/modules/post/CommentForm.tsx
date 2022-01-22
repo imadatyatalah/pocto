@@ -50,7 +50,7 @@ const CommentForm = ({ postId }: Props) => {
           size="sm"
           disabled={!isValid || isLoading}
           type="submit"
-          css={{ ml: 20 }}
+          css={{ ml: 10 }}
         >
           Submit
         </Button>

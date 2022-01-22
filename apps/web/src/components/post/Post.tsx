@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Box, Flex, Heading, Text } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 
@@ -37,7 +38,9 @@ const Post = ({ post }: Props) => {
           <Box>
             <Link href={postLink} passHref>
               <StyledLinkIcon>
-                <ChatIcon />
+                <AccessibleIcon label="Comment">
+                  <ChatIcon />
+                </AccessibleIcon>
 
                 <Text as="span" css={{ ml: 4 }}>
                   {post._count.comments !== 0 ? post._count.comments : null}

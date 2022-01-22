@@ -10,23 +10,19 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "ui";
-import { styled } from "ui/stitches.config";
-import { blackA, violet } from "@radix-ui/colors";
+import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { violet } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";
 
+import {
+  StyledLinkIcon,
+  ImageButton,
+  StyledDropDownLink,
+} from "./styles/LoggedInHeader.styles";
+import NotificationIcon from "@/icons/NotificationIcon";
 import Avatar from "../Avatar";
 
 import type { TCurrentUser } from "@/types/user";
-
-const ImageButton = styled("button", {
-  all: "unset",
-  cursor: "pointer",
-  rounded: "100%",
-  size: 40,
-  backgroundColor: "$primary1",
-  boxShadow: `0 2px 10px ${blackA.blackA7}`,
-  "&:focus": { boxShadow: `0 0 0 2px black` },
-});
 
 type Props = {
   currentUser: TCurrentUser;
@@ -36,14 +32,26 @@ const LoggedInHeader = ({ currentUser }: Props) => {
   const currentUserPage = CLIENT_ROUTES.USER_PAGE(currentUser?.username);
 
   return (
-    <Flex as="nav">
-      <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
-        <Button size="sm" as="a">
-          Create Post
-        </Button>
-      </Link>
+    <Flex as="nav" align="center">
+      <Box css={{ display: "none", "@sm": { display: "block" } }}>
+        <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
+          <Button as="a" size="sm">
+            Create Post
+          </Button>
+        </Link>
+      </Box>
 
-      <Box css={{ ml: 20 }}>
+      <Box css={{ mx: 20 }}>
+        <Link href="/notifications" passHref>
+          <StyledLinkIcon>
+            <AccessibleIcon label="Notifications">
+              <NotificationIcon />
+            </AccessibleIcon>
+          </StyledLinkIcon>
+        </Link>
+      </Box>
+
+      <Box>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <ImageButton>
@@ -52,46 +60,56 @@ const LoggedInHeader = ({ currentUser }: Props) => {
           </DropdownMenuTrigger>
 
           <DropdownMenuContent sideOffset={5} align="end">
-            <Link href={currentUserPage} passHref>
-              <DropdownMenuItem
-                as="a"
-                css={{
-                  display: "inline-block",
-                  "&:hover": {
-                    backgroundColor: "transparent",
-                    color: violet.violet11,
-                  },
-                }}
-              >
-                Signed in as <strong>{currentUser?.username}</strong>
-              </DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem
+              css={{
+                "&:hover": {
+                  backgroundColor: "inherit",
+                  color: violet.violet11,
+                },
+              }}
+            >
+              <Link href={currentUserPage} passHref>
+                <StyledDropDownLink>
+                  Signed in as <strong>{currentUser?.username}</strong>
+                </StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
-            <Link href={currentUserPage} passHref>
-              <DropdownMenuItem as="a">Your profile</DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem>
+              <Link href={currentUserPage} passHref>
+                <StyledDropDownLink>Your profile</StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
 
-            <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
-              <DropdownMenuItem as="a">Create Post</DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem>
+              <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
+                <StyledDropDownLink>Create Post</StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
 
-            <Link href={CLIENT_ROUTES.CREATE_COMMUNITY} passHref>
-              <DropdownMenuItem as="a">Create Community</DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem>
+              <Link href={CLIENT_ROUTES.CREATE_COMMUNITY} passHref>
+                <StyledDropDownLink>Create Community</StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
-            <Link href={CLIENT_ROUTES.SETTINGS_PROFILE_PAGE} passHref>
-              <DropdownMenuItem as="a">Settings</DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem>
+              <Link href={CLIENT_ROUTES.SETTINGS_PROFILE_PAGE} passHref>
+                <StyledDropDownLink>Settings</StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
-            <Link href={CLIENT_ROUTES.CONFIRM_SIGNUOUT} passHref>
-              <DropdownMenuItem as="a">Sign Out</DropdownMenuItem>
-            </Link>
+            <DropdownMenuItem>
+              <Link href={CLIENT_ROUTES.CONFIRM_SIGNUOUT} passHref>
+                <StyledDropDownLink>Sign Out</StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </Box>
