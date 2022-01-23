@@ -18,7 +18,9 @@ model User {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  role Role @default(USER)
+  isEmailVerified Boolean @default(false) @map("is_email_verified")
+  isBanned        Boolean @default(false) @map("is_banned")
+  role            Role    @default(USER)
 
   posts       Post[]
   comments    Comment[]
@@ -72,6 +74,9 @@ model Community {
 
   title       String
   description String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   type CommunityType
 
