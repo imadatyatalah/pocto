@@ -47,7 +47,10 @@ const CommentMenu = ({ postId, comment }: Props) => {
 
         <DropdownMenuContent sideOffset={5} align="end">
           {comment.user.id === currentUser?.id ? (
-            <DropdownMenuItem onClick={handleDeleteComment}>
+            <DropdownMenuItem
+              css={{ "&:hover": { backgroundColor: "#EF4444" } }}
+              onClick={handleDeleteComment}
+            >
               <LeftIcon>
                 <TrashIcon />
               </LeftIcon>

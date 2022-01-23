@@ -31,7 +31,10 @@ const DeletePostDialog = ({ isDeleteOpen, setIsDeleteOpen, postId }) => {
   return (
     <AlertDialog open={isDeleteOpen} onOpenChange={setIsDeleteOpen}>
       <AlertDialogTrigger asChild>
-        <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+        <DropdownMenuItem
+          onSelect={(e) => e.preventDefault()}
+          css={{ "&:hover": { backgroundColor: "#EF4444" } }}
+        >
           <LeftIcon>
             <TrashIcon />
           </LeftIcon>

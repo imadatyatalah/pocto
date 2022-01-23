@@ -15,7 +15,7 @@ type Props = {
 
 const CommentHeader = ({ comment, commentLink, userLink }: Props) => {
   return (
-    <Flex as="header" align="center" justify="between">
+    <Flex as="header" align="start" justify="between">
       <Flex>
         <Box
           css={{ size: 45, background: "$primary1", rounded: "100%", mr: 10 }}

@@ -3,7 +3,7 @@ import { gray } from "@radix-ui/colors";
 
 import type { CSS } from "ui/stitches.config";
 
-export const StyledLinkIcon = styled("a", {
+export const StyledIconWrapper = styled("div", {
   display: "inline-flex",
   alignItems: "center",
   color: gray.gray10,
@@ -14,6 +14,7 @@ export const StyledLinkIcon = styled("a", {
     fill: gray.gray10,
     width: 20,
     height: 20,
+    mr: 5,
   },
 
   "&:hover": {

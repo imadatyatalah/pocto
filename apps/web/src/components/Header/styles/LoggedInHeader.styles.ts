@@ -11,7 +11,7 @@ export const StyledLinkIcon = styled("a", {
     height: 20,
 
     "&:hover": {
-      opacity: "75%",
+      opacity: "70%",
     },
   },
 });
