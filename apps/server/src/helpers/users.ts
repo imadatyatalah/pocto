@@ -1,4 +1,5 @@
 import { Prisma } from "../config/prisma";
+import { postData } from "./posts";
 
 export const createUser = (
   email: string,
@@ -44,21 +45,7 @@ export const userData = Prisma.validator<Prisma.UserSelect>()({
   username: true,
   posts: {
     orderBy: { createdAt: "desc" },
-    select: {
-      id: true,
-      title: true,
-      content: true,
-      createdAt: true,
-      userId: true,
-      _count: { select: { comments: true } },
-      user: {
-        select: {
-          id: true,
-          name: true,
-          username: true,
-        },
-      },
-    },
+    select: postData,
   },
   profile: {
     select: { bio: true, website: true, location: true, avatarUrl: true },

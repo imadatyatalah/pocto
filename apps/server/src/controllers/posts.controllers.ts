@@ -10,14 +10,14 @@ import {
 } from "../helpers/posts";
 
 export const createPost = async (
-  req: Request<{}, {}, CreatePostInputServer["body"]>,
+  req: Request<{ communityName?: string }, {}, CreatePostInputServer["body"]>,
   res: Response
 ) => {
   try {
-    const { title, content } = req.body;
+    const { content } = req.body;
 
     const post = await prisma.post.create({
-      data: createPostHelper(title, content, req.user?.id),
+      data: createPostHelper(content, req.user?.id, req.params.communityName),
       select: postData,
     });
 
@@ -68,11 +68,11 @@ export const updatePostById = async (req: Request, res: Response) => {
 
     // Check if the current user is the owner of the post
     if (post?.userId === req.user?.id) {
-      const { title, content } = req.body;
+      const { content } = req.body;
 
       const updatedPost = await prisma.post.update({
         where: findPostById(req.params.id),
-        data: updatePost(title, content),
+        data: updatePost(content),
         select: postData,
       });
 

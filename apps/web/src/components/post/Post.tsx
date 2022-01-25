@@ -24,12 +24,6 @@ const Post = ({ post }: Props) => {
         <PostHeader post={post} postLink={postLink} userLink={userLink} />
 
         <Box css={{ ml: 57.5 }}>
-          <Link href={postLink} passHref>
-            <Heading as="a" size="xl">
-              {post.title}
-            </Heading>
-          </Link>
-
           <p>{post.content}</p>
         </Box>
 

@@ -5,10 +5,16 @@ import { dehydrate, QueryClient } from "react-query";
 import { getPosts, useGetPosts } from "@/api/index";
 import HomePage from "@/modules/home/HomePage";
 
-const Home: NextPage = () => {
+import type { PoctoPage, TCurrentUser } from "@/types/index";
+
+type Props = {
+  currentUser: TCurrentUser;
+};
+
+const Home: PoctoPage<Props> = ({ currentUser }) => {
   const { data: posts } = useGetPosts();
 
-  return <HomePage posts={posts} />;
+  return <HomePage posts={posts} currentUser={currentUser} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

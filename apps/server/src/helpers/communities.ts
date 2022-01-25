@@ -1,4 +1,5 @@
 import { Prisma } from "../config/prisma";
+import { postData } from "./posts";
 
 export const createCommunity = (
   name: string,
@@ -20,6 +21,10 @@ export const communityData = Prisma.validator<Prisma.CommunitySelect>()({
   title: true,
   description: true,
   type: true,
+  posts: {
+    orderBy: { createdAt: "desc" },
+    select: postData,
+  },
 });
 
 export const findCommunityByName = (name: string) => {

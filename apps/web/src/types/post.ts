@@ -2,7 +2,6 @@ import type { TComment } from "./comment";
 
 export type TPost = {
   id: string;
-  title: string;
   content: string;
   createdAt: string;
   userId: number;
@@ -13,4 +12,5 @@ export type TPost = {
     username: string;
   };
   comments: TComment[];
+  community?: { name: string };
 };

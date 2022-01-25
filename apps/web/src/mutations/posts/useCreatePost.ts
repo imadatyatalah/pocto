@@ -1,7 +1,5 @@
-import Router from "next/router";
-
 import { SERVER_ROUTES } from "shared/routes";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 
 import { instance } from "@/lib/axios";
 
@@ -10,18 +8,26 @@ import type { CreatePostInput } from "shared";
 
 import type { TPost } from "@/types/index";
 
-const useCreatePost = () =>
-  useMutation(
+const useCreatePost = (communityName?: string) => {
+  const queryClient = useQueryClient();
+
+  const createPostRoute = communityName
+    ? `${SERVER_ROUTES.CREATE__POST_ROUTE}/${communityName}`
+    : SERVER_ROUTES.CREATE__POST_ROUTE;
+
+  return useMutation(
     (data: CreatePostInput) =>
       instance.post<CreatePostInput, AxiosResponse<TPost>>(
-        SERVER_ROUTES.CREATE__POST_ROUTE,
+        createPostRoute,
         data
       ),
     {
-      onSuccess: ({ data }) => {
-        Router.push(`/post/${data.id}`);
+      onSuccess: () => {
+        queryClient.invalidateQueries(["posts"]);
+        queryClient.invalidateQueries(["communities", communityName]);
       },
     }
   );
+};
 
 export default useCreatePost;

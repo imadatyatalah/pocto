@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Flex, Link as StyledLink, Box } from "ui";
+import { CLIENT_ROUTES } from "shared/routes";
 import dayjs from "dayjs";
 
 import PostMenu from "./PostMenu";
@@ -15,6 +16,9 @@ type Props = {
 };
 
 const PostHeader = ({ post, postLink, userLink }: Props) => {
+  // @ts-ignore
+  const communityLink = CLIENT_ROUTES.COMMUNITY_PAGE(post.community?.name);
+
   return (
     <Flex as="header" align="start" justify="between">
       <Flex>
@@ -41,7 +45,7 @@ const PostHeader = ({ post, postLink, userLink }: Props) => {
                 color: "DimGray",
                 fontSize: 14,
                 fontWeight: 500,
-                ml: 4,
+                mx: 6,
                 "&:hover": {
                   textDecoration: "none",
                 },
@@ -51,7 +55,21 @@ const PostHeader = ({ post, postLink, userLink }: Props) => {
             </StyledLink>
           </Link>
 
-          <div>
+          {post.community?.name ? (
+            <Link href={communityLink} passHref>
+              <StyledLink
+                css={{
+                  color: "Black",
+                  fontSize: 14,
+                  fontWeight: 500,
+                }}
+              >
+                <span>at /c/{post.community?.name}</span>
+              </StyledLink>
+            </Link>
+          ) : null}
+
+          <Flex>
             <Link href={postLink} passHref>
               <StyledLink
                 css={{ color: "DimGray", fontSize: 14, fontWeight: 500 }}
@@ -63,7 +81,7 @@ const PostHeader = ({ post, postLink, userLink }: Props) => {
                 </span>
               </StyledLink>
             </Link>
-          </div>
+          </Flex>
         </div>
       </Flex>
 

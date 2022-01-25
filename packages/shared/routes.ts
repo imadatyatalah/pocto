@@ -9,12 +9,11 @@ export const CLIENT_ROUTES = {
   USER_PAGE: (username = ":username") => `/user/${username}`,
 
   // Posts
-  CREATE_POST: "/create_post",
   POST_PAGE: (id = ":id") => `/post/${id}`,
 
   // Communities
   CREATE_COMMUNITY: "/create_community",
-  COMMUNITY_PAGE: (name = ":name") => `/user/${name}`,
+  COMMUNITY_PAGE: (name = ":name") => `/community/${name}`,
 
   // Settings
   SETTINGS_PROFILE_PAGE: "/settings/profile",
