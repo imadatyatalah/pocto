@@ -22,6 +22,17 @@ export const {
       primary6: "#8FE9B9",
       primary7: "#A3F7BF",
     },
+    space: {
+      1: "5px",
+      2: "10px",
+      3: "15px",
+      4: "20px",
+      5: "25px",
+      6: "35px",
+      7: "45px",
+      8: "65px",
+      9: "80px",
+    },
   },
   media: {
     xs: "(min-width: 480px)",
@@ -33,58 +44,63 @@ export const {
   },
   utils: {
     // padding
-    // p: (value: any) => ({
+    // p: (value: Stitches.PropertyValue<"padding">) => ({
     //   padding: value,
     // }),
-    pt: (value: any) => ({
+    pt: (value: Stitches.PropertyValue<"paddingTop">) => ({
       paddingTop: value,
     }),
-    pr: (value: any) => ({
+    pr: (value: Stitches.PropertyValue<"paddingRight">) => ({
       paddingRight: value,
     }),
-    pb: (value: any) => ({
+    pb: (value: Stitches.PropertyValue<"paddingBottom">) => ({
       paddingBottom: value,
     }),
-    pl: (value: any) => ({
+    pl: (value: Stitches.PropertyValue<"paddingLeft">) => ({
       paddingLeft: value,
     }),
-    px: (value: any) => ({
+    px: (value: Stitches.PropertyValue<"paddingLeft">) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (value: any) => ({
+    py: (value: Stitches.PropertyValue<"paddingTop">) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
 
     // margin
-    // m: (value: any) => ({
+    // m: (value: Stitches.PropertyValue<'margin'>) => ({
     //   margin: value,
     // }),
-    mt: (value: any) => ({
+    mt: (value: Stitches.PropertyValue<"marginTop">) => ({
       marginTop: value,
     }),
-    mr: (value: any) => ({
+    mr: (value: Stitches.PropertyValue<"marginRight">) => ({
       marginRight: value,
     }),
-    mb: (value: any) => ({
+    mb: (value: Stitches.PropertyValue<"marginBottom">) => ({
       marginBottom: value,
     }),
-    ml: (value: any) => ({
+    ml: (value: Stitches.PropertyValue<"marginLeft">) => ({
       marginLeft: value,
     }),
-    mx: (value: any) => ({
+    mx: (value: Stitches.PropertyValue<"marginLeft">) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    my: (value: any) => ({
+    my: (value: Stitches.PropertyValue<"marginTop">) => ({
       marginTop: value,
       marginBottom: value,
     }),
 
-    size: (value: any) => ({
+    size: (value: Stitches.PropertyValue<"width">) => ({
       width: value,
       height: value,
+    }),
+
+    userSelect: (value: Stitches.PropertyValue<"userSelect">) => ({
+      WebkitUserSelect: value,
+      userSelect: value,
     }),
 
     rounded: (value: any) => ({
