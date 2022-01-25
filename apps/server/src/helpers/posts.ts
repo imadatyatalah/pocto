@@ -3,7 +3,6 @@ import { commentData } from "./comments";
 
 export const postData = Prisma.validator<Prisma.PostSelect>()({
   id: true,
-  title: true,
   content: true,
   createdAt: true,
   userId: true,
@@ -19,11 +18,11 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
     orderBy: { createdAt: "desc" },
     select: commentData,
   },
+  community: { select: { name: true } },
 });
 
-export const createPost = (title: string, content: string, userId?: number) => {
+export const createPost = (content: string, userId?: number) => {
   return Prisma.validator<Prisma.PostCreateInput>()({
-    title,
     content,
     user: { connect: { id: userId } },
   });
@@ -35,9 +34,8 @@ export const findPostById = (id: string) => {
   });
 };
 
-export const updatePost = (title: string, content: string) => {
+export const updatePost = (content: string) => {
   return Prisma.validator<Prisma.PostUpdateInput>()({
-    title,
     content,
   });
 };

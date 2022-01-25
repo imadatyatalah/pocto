@@ -7,14 +7,20 @@ import { getCommunity, useGetCommunity } from "@/api/index";
 import CommunityPage from "@/modules/community/CommunityPage";
 import Loading from "@/components/Loading";
 
-const Community: NextPage = () => {
+import type { PoctoPage, TCurrentUser } from "@/types/index";
+
+type Props = {
+  currentUser: TCurrentUser;
+};
+
+const Community: PoctoPage<Props> = ({ currentUser }) => {
   const { isFallback, query } = useRouter();
 
   const { data: community } = useGetCommunity(query.name as string);
 
   if (isFallback) return <Loading />;
 
-  return <CommunityPage community={community} />;
+  return <CommunityPage community={community} currentUser={currentUser} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({

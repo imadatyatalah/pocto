@@ -33,14 +33,6 @@ const LoggedInHeader = ({ currentUser }: Props) => {
 
   return (
     <Flex as="nav" align="center">
-      <Box css={{ display: "none", "@sm": { display: "block" } }}>
-        <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
-          <Button as="a" size="sm">
-            Create Post
-          </Button>
-        </Link>
-      </Box>
-
       <Box css={{ mx: 20 }}>
         <Link href="/notifications" passHref>
           <StyledLinkIcon>
@@ -80,12 +72,6 @@ const LoggedInHeader = ({ currentUser }: Props) => {
             <DropdownMenuItem>
               <Link href={currentUserPage} passHref>
                 <StyledDropDownLink>Your profile</StyledDropDownLink>
-              </Link>
-            </DropdownMenuItem>
-
-            <DropdownMenuItem>
-              <Link href={CLIENT_ROUTES.CREATE_POST} passHref>
-                <StyledDropDownLink>Create Post</StyledDropDownLink>
               </Link>
             </DropdownMenuItem>
 
