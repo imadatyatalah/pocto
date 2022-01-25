@@ -1,10 +1,9 @@
 import { Router } from "express";
-import { createCommunitySchemaServer, createPostSchemaServer } from "shared";
+import { createCommunitySchemaServer } from "shared";
 
 import {
   getCommunityByName,
   createCommunity,
-  createPostInCommunity,
 } from "../controllers/communities.controllers";
 import requireUser from "../middlewares/requireUser";
 import validateResource from "../middlewares/validateResource";
@@ -15,12 +14,6 @@ router.post(
   "/",
   [requireUser, validateResource(createCommunitySchemaServer)],
   createCommunity
-);
-
-router.post(
-  "/:name",
-  [requireUser, validateResource(createPostSchemaServer)],
-  createPostInCommunity
 );
 
 router.get("/:name", getCommunityByName);

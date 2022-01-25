@@ -21,11 +21,23 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
   community: { select: { name: true } },
 });
 
-export const createPost = (content: string, userId?: number) => {
-  return Prisma.validator<Prisma.PostCreateInput>()({
-    content,
-    user: { connect: { id: userId } },
-  });
+export const createPost = (
+  content: string,
+  userId?: number,
+  communityName?: string
+) => {
+  if (communityName) {
+    return Prisma.validator<Prisma.PostCreateInput>()({
+      content,
+      user: { connect: { id: userId } },
+      community: { connect: { name: communityName } },
+    });
+  } else {
+    return Prisma.validator<Prisma.PostCreateInput>()({
+      content,
+      user: { connect: { id: userId } },
+    });
+  }
 };
 
 export const findPostById = (id: string) => {

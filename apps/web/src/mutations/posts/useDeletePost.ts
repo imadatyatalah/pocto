@@ -15,6 +15,7 @@ const useDeletePost = (postId: string) => {
 
         queryClient.invalidateQueries(["posts"]);
         queryClient.invalidateQueries(["users"]);
+        queryClient.invalidateQueries(["communities"]);
       },
     }
   );

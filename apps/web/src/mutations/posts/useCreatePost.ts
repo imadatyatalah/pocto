@@ -12,7 +12,7 @@ const useCreatePost = (communityName?: string) => {
   const queryClient = useQueryClient();
 
   const createPostRoute = communityName
-    ? `/communities/${communityName}`
+    ? `${SERVER_ROUTES.CREATE__POST_ROUTE}/${communityName}`
     : SERVER_ROUTES.CREATE__POST_ROUTE;
 
   return useMutation(

@@ -29,7 +29,10 @@ export const createComment = async (
   }
 };
 
-export const getCommentById = async (req: Request, res: Response) => {
+export const getCommentById = async (
+  req: Request<{ commentId: string }>,
+  res: Response
+) => {
   try {
     const comment = await prisma.comment.findUnique({
       where: { id: req.params.commentId },
@@ -44,7 +47,10 @@ export const getCommentById = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteCommentById = async (req: Request, res: Response) => {
+export const deleteCommentById = async (
+  req: Request<{ commentId: string }>,
+  res: Response
+) => {
   try {
     const comment = await prisma.comment.findUnique({
       where: { id: req.params.commentId },
