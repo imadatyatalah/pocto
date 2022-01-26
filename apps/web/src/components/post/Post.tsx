@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-import { Box, Flex, Heading } from "ui";
+import { Box, Flex } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 
 import { PostStyles } from "./styles/Post.styles";
