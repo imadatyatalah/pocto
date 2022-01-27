@@ -1,7 +1,8 @@
+import { Heading, Box } from "ui";
 import { NextSeo } from "next-seo";
-import { Heading } from "ui";
 
 import PostForm from "@/components/PostForm/PostForm";
+import HeroSection from "@/components/HeroSection";
 import Post from "@/components/post/Post";
 
 import type { TPost, TCurrentUser } from "@/types/index";
@@ -16,15 +17,34 @@ const HomePage = ({ posts, currentUser }: Props) => {
     <>
       <NextSeo title="Home" />
 
-      <section>
-        <Heading as="h1">Home</Heading>
+      <Box as="section">
+        {!currentUser ? <HeroSection /> : null}
 
-        {currentUser ? <PostForm /> : null}
+        <Box
+          css={{
+            display: "flex",
+            justifyContent: "center",
+            "@lg": { display: "grid", gridTemplateColumns: "1fr 0.5fr" },
+          }}
+        >
+          <Box css={{ width: "100%" }}>
+            <Heading as="h2">Home</Heading>
 
-        {posts?.map((post) => (
-          <Post post={post} key={post.id} />
-        ))}
-      </section>
+            {currentUser ? <PostForm /> : null}
+
+            {posts?.map((post) => (
+              <Post post={post} key={post.id} />
+            ))}
+          </Box>
+
+          <Box
+            css={{
+              display: "none",
+              "@lg": { display: "block" },
+            }}
+          ></Box>
+        </Box>
+      </Box>
     </>
   );
 };
