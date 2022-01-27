@@ -23,12 +23,10 @@ const PostPage = ({ post }: Props) => {
 
   return (
     <>
-      <NextSeo title={post?.title} />
+      <NextSeo />
 
       <section>
         <div>
-          <Heading>{post?.title}</Heading>
-
           <p>{post?.content}</p>
         </div>
 

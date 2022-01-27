@@ -7,12 +7,13 @@ const HeroSection = () => {
   return (
     <Box css={{ py: 30, textAlign: "center" }}>
       <Heading as="h1" size="3xl" css={{ fontWeight: 700 }}>
-        Discover the world’s top designers & creatives
+        Discover the world’s top communities
       </Heading>
 
       <Text css={{ my: 14 }}>
-        Dribbble is the leading destination to find & showcase creative work and
-        home to the world's best design professionals.
+        <strong>Pocto</strong> is a network of communities where people can dive
+        into their interests, hobbies and passions. There&apos;s a community for
+        whatever you&apos;re interested in!
       </Text>
 
       <Link href={CLIENT_ROUTES.SIGN_UP} passHref>

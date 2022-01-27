@@ -103,7 +103,7 @@ export const {
       userSelect: value,
     }),
 
-    rounded: (value: any) => ({
+    rounded: (value: Stitches.PropertyValue<"borderRadius">) => ({
       borderRadius: value,
     }),
   },
