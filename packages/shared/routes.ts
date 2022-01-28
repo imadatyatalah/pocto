@@ -47,6 +47,8 @@ export const SERVER_ROUTES = {
 
   // Comments
   CREATE__COMMENT_ROUTE: (postId = ":postId") => `/comments/${postId}`,
+  CREATE__COMMENT_LIKE_ROUTE: (commentId = ":commentId") =>
+    `/comments/${commentId}/likes`,
   DELETE__COMMENT_ROUTE: (commentId = ":commentId") => `/comments/${commentId}`,
 
   // Communities

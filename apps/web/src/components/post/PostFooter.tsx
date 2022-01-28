@@ -5,7 +5,7 @@ import { Box, Text, Flex } from "ui";
 
 import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
 import { StyledIconWrapper } from "./styles/Post.styles";
-import { useToggleLike } from "@/mutations/index";
+import { useTogglePostLike } from "@/mutations/index";
 import ChatIcon from "@/icons/ChatIcon";
 
 type Props = {
@@ -23,7 +23,7 @@ const PostFooter = ({
   commentsCount,
   likesCount,
 }: Props) => {
-  const { mutate: toggleLike } = useToggleLike(postId);
+  const { mutate: toggleLike } = useTogglePostLike(postId);
 
   const handleToggleLike = () => toggleLike();
 

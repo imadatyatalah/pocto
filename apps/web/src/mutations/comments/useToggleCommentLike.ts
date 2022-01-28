@@ -3,18 +3,17 @@ import { SERVER_ROUTES } from "shared/routes";
 
 import { instance } from "@/lib/axios";
 
-const useToggleLike = (postId: string) => {
+const useToggleCommentLike = (commentId: string) => {
   const queryClient = useQueryClient();
 
   return useMutation(
-    () => instance.post(SERVER_ROUTES.CREATE__POST_LIKE_ROUTE(postId)),
+    () => instance.post(SERVER_ROUTES.CREATE__COMMENT_LIKE_ROUTE(commentId)),
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["posts"]);
-        queryClient.invalidateQueries(["communities"]);
       },
     }
   );
 };
 
-export default useToggleLike;
+export default useToggleCommentLike;
