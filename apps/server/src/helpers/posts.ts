@@ -6,7 +6,8 @@ export const postData = Prisma.validator<Prisma.PostSelect>()({
   content: true,
   createdAt: true,
   userId: true,
-  _count: { select: { comments: true } },
+  likes: { select: { userId: true } },
+  _count: { select: { comments: true, likes: true } },
   user: {
     select: {
       id: true,

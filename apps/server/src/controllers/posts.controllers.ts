@@ -120,3 +120,39 @@ export const deletePostById = async (req: Request, res: Response) => {
       .send({ success: false, message: "Something went wrong", error: err });
   }
 };
+
+export const togglePostLike = async (
+  req: Request<{ id: string }>,
+  res: Response
+) => {
+  try {
+    /**
+     * Check is current user already liked current post
+     */
+    const isCULikedPost = await prisma.postLike.findMany({
+      where: { AND: { postId: req.params.id, userId: req.user?.id } },
+    });
+
+    if (isCULikedPost.length === 0) {
+      const addLike = await prisma.postLike.create({
+        data: {
+          like: true,
+          user: { connect: { id: req.user?.id } },
+          post: { connect: { id: req.params.id } },
+        },
+      });
+
+      res.status(200).send(addLike);
+    } else {
+      const removeLike = await prisma.postLike.delete({
+        where: { id: isCULikedPost[0].id },
+      });
+
+      res.status(200).send(removeLike);
+    }
+  } catch (err) {
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
+  }
+};

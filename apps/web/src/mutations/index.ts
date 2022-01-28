@@ -13,6 +13,7 @@ export { default as useCreateCommunity } from "./communities/useCreateCommunity"
 // Posts
 export { default as useCreatePost } from "./posts/useCreatePost";
 export { default as useDeletePost } from "./posts/useDeletePost";
+export { default as useToggleLike } from "./posts/useToggleLike";
 
 // Comments
 export { default as useCreateComment } from "./comments/useCreateComment";

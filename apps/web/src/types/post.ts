@@ -5,7 +5,8 @@ export type TPost = {
   content: string;
   createdAt: string;
   userId: number;
-  _count: { comments: number };
+  likes: { userId: number }[];
+  _count: { comments: number; likes: number };
   user: {
     id: number;
     name: string;
