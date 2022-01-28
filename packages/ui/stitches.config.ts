@@ -13,6 +13,7 @@ export const {
   config,
 } = createStitches({
   theme: {
+    sizes: { full: "100%" },
     colors: {
       primary1: "#29a19c",
       primary2: "#3DAFA2",

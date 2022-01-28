@@ -5,6 +5,8 @@ export const commentData = Prisma.validator<Prisma.CommentSelect>()({
   content: true,
   createdAt: true,
   postId: true,
+  likes: { select: { userId: true } },
+  _count: { select: { likes: true } },
   user: {
     select: {
       id: true,

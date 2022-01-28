@@ -2,6 +2,7 @@ import { Router } from "express";
 import { createCommentSchemaServer } from "shared";
 
 import {
+  toggleCommentLike,
   createComment,
   deleteCommentById,
   getCommentById,
@@ -20,5 +21,7 @@ router.post(
 );
 
 router.delete("/:commentId", requireUser, deleteCommentById);
+
+router.post("/:id/likes", requireUser, toggleCommentLike);
 
 export default router;

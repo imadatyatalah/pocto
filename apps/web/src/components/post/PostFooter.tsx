@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Link from "next/link";
 
 import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
@@ -7,15 +5,27 @@ import { Box, Text, Flex } from "ui";
 
 import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
 import { StyledIconWrapper } from "./styles/Post.styles";
+import { useTogglePostLike } from "@/mutations/index";
 import ChatIcon from "@/icons/ChatIcon";
 
 type Props = {
+  isCULikedPost: boolean;
+  postId: string;
   postLink: string;
   commentsCount: number;
+  likesCount: number;
 };
 
-const PostFooter = ({ postLink, commentsCount }: Props) => {
-  const [isCLicked, setIsClicked] = useState(false);
+const PostFooter = ({
+  isCULikedPost,
+  postId,
+  postLink,
+  commentsCount,
+  likesCount,
+}: Props) => {
+  const { mutate: toggleLike } = useTogglePostLike(postId);
+
+  const handleToggleLike = () => toggleLike();
 
   return (
     <Flex as="footer" align="center" css={{ ml: 57.5, mt: 10 }}>
@@ -26,19 +36,18 @@ const PostFooter = ({ postLink, commentsCount }: Props) => {
               <ChatIcon />
             </AccessibleIcon>
 
-            <Text as="span">{commentsCount !== 0 ? commentsCount : null}</Text>
+            {commentsCount ? <Text as="span">{commentsCount}</Text> : null}
           </StyledIconWrapper>
         </Link>
       </Box>
 
       <Box css={{ mr: 40 }}>
-        <StyledIconWrapper
-          as="button"
-          onClick={() => setIsClicked((prev) => !prev)}
-        >
+        <StyledIconWrapper as="button" onClick={handleToggleLike}>
           <AccessibleIcon label="Like">
-            {isCLicked ? <FilledHeartIcon /> : <OutlinedHeartIcon />}
+            {isCULikedPost ? <FilledHeartIcon /> : <OutlinedHeartIcon />}
           </AccessibleIcon>
+
+          {likesCount ? <Text as="span">{likesCount}</Text> : null}
         </StyledIconWrapper>
       </Box>
     </Flex>

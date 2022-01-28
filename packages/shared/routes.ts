@@ -42,10 +42,13 @@ export const SERVER_ROUTES = {
   GET__POSTS_ROUTE: "/posts",
   GET__POST_ROUTE: (postId = ":postId") => `/posts/${postId}`,
   CREATE__POST_ROUTE: "/posts",
+  CREATE__POST_LIKE_ROUTE: (postId = ":postId") => `/posts/${postId}/likes`,
   DELETE__POST_ROUTE: (postId = ":postId") => `/posts/${postId}`,
 
   // Comments
   CREATE__COMMENT_ROUTE: (postId = ":postId") => `/comments/${postId}`,
+  CREATE__COMMENT_LIKE_ROUTE: (commentId = ":commentId") =>
+    `/comments/${commentId}/likes`,
   DELETE__COMMENT_ROUTE: (commentId = ":commentId") => `/comments/${commentId}`,
 
   // Communities

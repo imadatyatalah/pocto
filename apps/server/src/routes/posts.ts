@@ -2,6 +2,7 @@ import { Router } from "express";
 import { createPostSchemaServer } from "shared";
 
 import {
+  togglePostLike,
   createPost,
   deletePostById,
   getPostById,
@@ -26,5 +27,7 @@ router.get("/", getPosts);
 router.put("/:id", [requireUser], updatePostById);
 
 router.delete("/:id", requireUser, deletePostById);
+
+router.post("/:id/likes", requireUser, togglePostLike);
 
 export default router;
