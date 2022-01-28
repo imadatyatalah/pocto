@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 
 import { prisma } from "../config/prisma";
-import { findProfileByUserId } from "../helpers/profiles";
 import {
   findUserById,
   findUserByUsername,
@@ -116,23 +115,38 @@ export const updateProfile = async (
 
 export const deleteAccount = async (req: Request, res: Response) => {
   try {
+    const deletePostsLikes = prisma.postLike.deleteMany({
+      where: { userId: req.user?.id },
+    });
+
+    const deleteCommentsLikes = prisma.commentLike.deleteMany({
+      where: { userId: req.user?.id },
+    });
+
+    const deleteComments = prisma.comment.deleteMany({
+      where: { userId: req.user?.id },
+    });
+
     const deleteProfile = prisma.profile.delete({
-      where: findProfileByUserId(req.user?.id),
+      where: { userId: req.user?.id },
     });
 
     const deleteUser = prisma.user.delete({
-      where: findUserById(req.user?.id),
+      where: { id: req.user?.id },
     });
 
     const deletePosts = prisma.post.deleteMany({
-      where: { userId: { equals: req.user?.id } },
+      where: { userId: req.user?.id },
     });
 
     const deleteCommunities = prisma.community.deleteMany({
-      where: { userId: { equals: req.user?.id } },
+      where: { userId: req.user?.id },
     });
 
     await prisma.$transaction([
+      deletePostsLikes,
+      deleteCommentsLikes,
+      deleteComments,
       deletePosts,
       deleteCommunities,
       deleteProfile,

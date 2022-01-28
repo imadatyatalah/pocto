@@ -58,12 +58,20 @@ export const deleteCommentById = async (
 
     // Check if the current user is the owner of the comment
     if (comment?.userId === req.user?.id) {
-      const deletedComment = await prisma.comment.delete({
-        where: { id: req.params.commentId },
-        select: commentData,
+      const deleteLikes = prisma.commentLike.deleteMany({
+        where: { commentId: comment?.id },
       });
 
-      res.status(200).send(deletedComment);
+      const deleteComment = prisma.comment.delete({
+        where: { id: req.params.commentId },
+      });
+
+      await prisma.$transaction([deleteLikes, deleteComment]);
+
+      res.status(200).send({
+        success: true,
+        message: "You have deleted your comment successfully",
+      });
     } else {
       res.status(403).send({ success: false, message: "Forbidden" });
     }

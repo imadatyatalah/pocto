@@ -87,7 +87,10 @@ export const updatePostById = async (req: Request, res: Response) => {
   }
 };
 
-export const deletePostById = async (req: Request, res: Response) => {
+export const deletePostById = async (
+  req: Request<{ id: string }>,
+  res: Response
+) => {
   try {
     const post = await prisma.post.findUnique({
       where: findPostById(req.params.id),
@@ -96,16 +99,20 @@ export const deletePostById = async (req: Request, res: Response) => {
 
     // Check if the current user is the owner of the post
     if (post?.userId === req.user?.id) {
-      const deletedComments = prisma.comment.deleteMany({
+      const deleteLikes = prisma.postLike.deleteMany({
         where: { postId: { equals: post?.id } },
       });
 
-      const deletedPost = prisma.post.delete({
+      const deleteComments = prisma.comment.deleteMany({
+        where: { postId: { equals: post?.id } },
+      });
+
+      const deletePost = prisma.post.delete({
         where: findPostById(req.params.id),
         select: postData,
       });
 
-      await prisma.$transaction([deletedComments, deletedPost]);
+      await prisma.$transaction([deleteLikes, deleteComments, deletePost]);
 
       res.status(200).send({
         success: true,
