@@ -5,7 +5,9 @@ import { findUserByUsername, userData } from "../../helpers/users";
 
 export const getUsers = async (req: Request, res: Response) => {
   try {
-    const users = await prisma.user.findMany({ select: userData });
+    const users = await prisma.user.findMany({
+      select: { isBanned: true, ...userData },
+    });
 
     res.status(200).send(users);
   } catch (err) {
