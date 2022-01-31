@@ -34,6 +34,7 @@ export const currentUserData = Prisma.validator<Prisma.UserSelect>()({
   id: true,
   name: true,
   username: true,
+  role: true,
   profile: {
     select: { bio: true, website: true, location: true, avatarUrl: true },
   },
@@ -43,6 +44,7 @@ export const userData = Prisma.validator<Prisma.UserSelect>()({
   id: true,
   name: true,
   username: true,
+  role: true,
   posts: {
     orderBy: { createdAt: "desc" },
     select: postData,
