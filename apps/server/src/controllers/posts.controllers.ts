@@ -99,7 +99,7 @@ export const deletePostById = async (
 
     // Check if the current user is the owner of the post
     if (post?.userId === req.user?.id) {
-      const deleteLikes = prisma.postLike.deleteMany({
+      const deletePostLikes = prisma.postLike.deleteMany({
         where: { postId: { equals: post?.id } },
       });
 
@@ -112,7 +112,7 @@ export const deletePostById = async (
         select: postData,
       });
 
-      await prisma.$transaction([deleteLikes, deleteComments, deletePost]);
+      await prisma.$transaction([deletePostLikes, deleteComments, deletePost]);
 
       res.status(200).send({
         success: true,

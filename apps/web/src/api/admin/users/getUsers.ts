@@ -1,3 +1,5 @@
+// @TODO: Delete this file when Admin app is ready
+
 import { useQuery } from "react-query";
 
 import { instance } from "@/lib/axios";

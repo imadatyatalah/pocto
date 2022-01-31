@@ -1,3 +1,5 @@
+// @TODO: Delete this file when Admin app is ready
+
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 

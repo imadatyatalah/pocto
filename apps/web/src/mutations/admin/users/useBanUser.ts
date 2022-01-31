@@ -1,8 +1,17 @@
-import { useMutation } from "react-query";
+// @TODO: Delete this file when Admin app is ready
+
+import { useMutation, useQueryClient } from "react-query";
 
 import { instance } from "@/lib/axios";
 
-const useBanUser = (username: string) =>
-  useMutation(() => instance.put(`/admin/users/${username}`));
+const useBanUser = (username: string) => {
+  const queryClient = useQueryClient();
+
+  return useMutation(() => instance.put(`/admin/users/${username}`), {
+    onSuccess: () => {
+      queryClient.invalidateQueries(["users"]);
+    },
+  });
+};
 
 export default useBanUser;
