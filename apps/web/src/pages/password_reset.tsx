@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { styled } from "ui/stitches.config";
 import { NextSeo } from "next-seo";
@@ -9,7 +10,6 @@ import { passwordResetSchema } from "shared";
 
 import type { PasswordResetInput } from "shared";
 
-import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const StyledForm = styled("form", {

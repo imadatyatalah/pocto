@@ -1,7 +1,7 @@
-import type { PoctoPage } from "@/types/index";
-
 import { NextSeo } from "next-seo";
 import { Heading } from "ui";
+
+import type { PoctoPage } from "@/types/index";
 
 const Notifications: PoctoPage = () => {
   return (

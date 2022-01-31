@@ -1,13 +1,13 @@
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ErrorMessage } from "@hookform/error-message";
 import { Box, Heading, Separator, Label, Input, Button } from "ui";
 import { updateProfileSchema } from "shared";
 
 import type { UpdateProfileInput } from "shared";
 
 import { useUpdateProfile } from "@/mutations/index";
-import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";
 
@@ -32,19 +32,19 @@ const Profile: PoctoPage<{ currentUser: TCurrentUser }> = ({ currentUser }) => {
       type: "text",
       id: "bio",
       name: "Bio",
-      defaultValue: currentUser.profile?.bio,
+      defaultValue: currentUser.profile.bio,
     },
     {
       type: "text",
       id: "website",
       name: "Website",
-      defaultValue: currentUser.profile?.website,
+      defaultValue: currentUser.profile.website,
     },
     {
       type: "text",
       id: "location",
       name: "Location",
-      defaultValue: currentUser.profile?.location,
+      defaultValue: currentUser.profile.location,
     },
   ];
 

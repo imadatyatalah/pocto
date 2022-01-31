@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps } from "next";
 
 import { dehydrate, QueryClient } from "react-query";
 

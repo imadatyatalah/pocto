@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ErrorMessage } from "@hookform/error-message";
 import { changePasswordSchema } from "shared";
 import { CLIENT_ROUTES } from "shared/routes";
 import {
@@ -18,7 +19,6 @@ import {
 import type { ChangePasswordInput } from "shared";
 
 import { useUpdatePassword } from "@/mutations/index";
-import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 import Layout from "@/modules/settings/Layout";
 

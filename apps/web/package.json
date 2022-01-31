@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.0",
     "@hookform/resolvers": "^2.8.8",
     "axios": "^0.25.0",
     "dayjs": "^1.10.7",

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { styled } from "ui/stitches.config";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ErrorMessage } from "@hookform/error-message";
 import { signinSchema } from "shared";
 import { CLIENT_ROUTES } from "shared/routes";
 import { Button, Input, Label, Box, Link as StyledLink } from "ui";
@@ -10,7 +11,6 @@ import { Button, Input, Label, Box, Link as StyledLink } from "ui";
 import type { SigninInput } from "shared";
 
 import { useSignIn } from "@/mutations/index";
-import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const StyledForm = styled("form", {
@@ -30,7 +30,7 @@ const Inputs = [
   },
 ];
 
-const SigninForm = () => {
+const SignInForm = () => {
   const { mutate: signIn, isLoading } = useSignIn();
 
   const {
@@ -85,4 +85,4 @@ const SigninForm = () => {
   );
 };
 
-export default SigninForm;
+export default SignInForm;

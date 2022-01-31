@@ -3,13 +3,13 @@ import Link from "next/link";
 import { styled } from "ui/stitches.config";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ErrorMessage } from "@hookform/error-message";
 import { signupSchema } from "shared";
 import { Button, Input, Label, Box, Text, Link as StyledLink } from "ui";
 
 import type { SignupInput } from "shared";
 
 import { useSignUp } from "@/mutations/index";
-import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const Inputs = [
@@ -28,7 +28,7 @@ const StyledForm = styled("form", {
   width: 400,
 });
 
-const SignupForm = () => {
+const SignUpForm = () => {
   const { mutate: signUp, isLoading } = useSignUp();
 
   const {
@@ -90,4 +90,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default SignUpForm;
