@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import { Box, Heading, Text, Separator } from "ui";
 
-import AccountPageDialog from "@/modules/settings/AccountPageDialog";
+import DeleteAccountDialog from "@/modules/settings/account/DeleteAccountDialog";
 import Layout from "@/modules/settings/Layout";
 
 import type { PoctoPage } from "@/types/index";
@@ -21,7 +21,7 @@ const Account: PoctoPage = () => {
           certain.
         </Text>
 
-        <AccountPageDialog />
+        <DeleteAccountDialog />
       </Box>
     </>
   );

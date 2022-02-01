@@ -12,7 +12,7 @@ import {
 
 import { useDeleteAccount } from "@/mutations/index";
 
-const AccountPageDialog = () => {
+const DeleteAccountDialog = () => {
   const { mutate: deleteAccount } = useDeleteAccount();
 
   const handleDeleteAccount = () => deleteAccount();
@@ -58,4 +58,4 @@ const AccountPageDialog = () => {
   );
 };
 
-export default AccountPageDialog;
+export default DeleteAccountDialog;
