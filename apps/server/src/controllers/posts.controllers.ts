@@ -10,14 +10,19 @@ import {
 } from "../helpers/posts";
 
 export const createPost = async (
-  req: Request<{ communityName?: string }, {}, CreatePostInputServer["body"]>,
+  req: Request<
+    {},
+    {},
+    CreatePostInputServer["body"],
+    { communityName?: string }
+  >,
   res: Response
 ) => {
   try {
     const { content } = req.body;
 
     const post = await prisma.post.create({
-      data: createPostHelper(content, req.user?.id, req.params.communityName),
+      data: createPostHelper(content, req.user?.id, req.query.communityName),
       select: postData,
     });
 

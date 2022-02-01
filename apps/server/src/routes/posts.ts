@@ -15,7 +15,7 @@ import validateResource from "../middlewares/validateResource";
 const router = Router();
 
 router.post(
-  "/:communityName?",
+  "/",
   [requireUser, validateResource(createPostSchemaServer)],
   createPost
 );
