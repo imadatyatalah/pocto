@@ -61,3 +61,8 @@ export const SERVER_ROUTES = {
   UPDATE__PASSWORD_ROUTE: "/current_user/change_password",
   UPDATE__PROFILE_ROUTE: "/current_user/update_profile",
 };
+
+export const BLOG_ROUTES = {
+  AUTHOR_PAGE: (authorname = ":authorname") => `/author/${authorname}`,
+  POST_PAGE: (slug = ":slug") => `/blog/${slug}`,
+};

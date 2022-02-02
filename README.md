@@ -16,16 +16,16 @@
 
 ## Structure
 
-| Codebase                               | Description   |
-| :------------------------------------- | :------------ |
-| [apps/web](apps/web)                   | Web App       |
-| [apps/server](apps/server)             | Express API   |
-| [apps/blog](apps/blog)                 | Blog App      |
-| [apps/admin](apps/admin)               | Admin App     |
-| [packages/ui](packages/ui)             | Design System |
-| [packages/shared](packages/shared)     | Shared        |
-| [packages/config](packages/config)     | Config        |
-| [packages/tsconfig](packages/tsconfig) | tsconfig      |
+| Codebase                               | Description                                   |
+| :------------------------------------- | :-------------------------------------------- |
+| [apps/web](apps/web)                   | Web App                                       |
+| [apps/server](apps/server)             | Express API                                   |
+| [apps/blog](apps/blog)                 | Blog App                                      |
+| [apps/admin](apps/admin)               | Admin App                                     |
+| [packages/ui](packages/ui)             | Design System                                 |
+| [packages/shared](packages/shared)     | Shared                                        |
+| [packages/config](packages/config)     | `ESLint` configurations                       |
+| [packages/tsconfig](packages/tsconfig) | `tsconfig.json`s used throughout the monorepo |
 
 <div align="center">
   <sub>Built with ❤️ by <a href="https://imadatyatalah.vercel.app">Imad Atyat-Alah</a></sub>

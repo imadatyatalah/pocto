@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Heading, Box, Text, Button } from "ui";
 import { CLIENT_ROUTES } from "shared/routes";
 
+/**
+ * This component should be displayed only to non logged-in users.
+ *
+ * It plays the role of a landing page.
+ */
 const HeroSection = () => {
   return (
     <Box css={{ py: 30, textAlign: "center" }}>

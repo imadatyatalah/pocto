@@ -10,6 +10,7 @@ const useTogglePostLike = (postId: string) => {
     () => instance.post(SERVER_ROUTES.CREATE__POST_LIKE_ROUTE(postId)),
     {
       onSuccess: () => {
+        queryClient.invalidateQueries(["users"]);
         queryClient.invalidateQueries(["posts"]);
         queryClient.invalidateQueries(["communities"]);
       },

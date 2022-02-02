@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 
 import { dehydrate, QueryClient } from "react-query";
 

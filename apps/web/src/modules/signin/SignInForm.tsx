@@ -51,13 +51,13 @@ const SignInForm = () => {
           >
             {name}
 
-            {additionalLink && (
+            {additionalLink ? (
               <Link href={additionalLink.path} passHref>
                 <StyledLink css={{ fontWeight: 400, float: "right" }}>
                   {additionalLink.title}
                 </StyledLink>
               </Link>
-            )}
+            ) : null}
           </Label>
 
           <Input
