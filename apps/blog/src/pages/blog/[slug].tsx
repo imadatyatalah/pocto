@@ -4,6 +4,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { allBlogs } from ".contentlayer/data";
 
 import MDXComponents from "@/components/MDXComponents";
+import BlogLayout from "@/layouts/BlogLayout";
 
 import type { Blog } from ".contentlayer/types";
 
@@ -12,7 +13,11 @@ type Props = { post: Blog };
 const BlogPost: NextPage<Props> = ({ post }) => {
   const Component = useMDXComponent(post.body.code);
 
-  return <Component components={{ ...MDXComponents }} />;
+  return (
+    <BlogLayout post={post}>
+      <Component components={{ ...MDXComponents }} />
+    </BlogLayout>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
