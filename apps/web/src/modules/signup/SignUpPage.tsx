@@ -5,7 +5,7 @@ import { CLIENT_ROUTES } from "shared/routes";
 import { Flex, Heading, Link as StyledLink } from "ui";
 
 import RedirectLoggedInUsers from "@/hocs/redirectLoggedInUsers";
-import SignupForm from "@/modules/signup/SignUpForm";
+import SignupForm from "./SignUpForm";
 
 const SignUpPage = () => {
   return (
