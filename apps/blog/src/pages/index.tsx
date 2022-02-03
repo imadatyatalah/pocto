@@ -1,23 +1,14 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
 
-import { NextSeo } from "next-seo";
 import { pick } from "@contentlayer/client";
 import { allBlogs } from ".contentlayer/data";
+
+import HomePage from "@/modules/home/HomePage";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ posts }) => {
-  return (
-    <>
-      <NextSeo title="Home" />
-
-      <section>
-        <code>
-          <pre>{JSON.stringify(posts, null, 2)}</pre>
-        </code>
-      </section>
-    </>
-  );
+  return <HomePage posts={posts} />;
 };
 
 export const getStaticProps = async () => {

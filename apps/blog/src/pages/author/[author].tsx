@@ -1,8 +1,9 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 
-import { NextSeo } from "next-seo";
 import { pick } from "@contentlayer/client";
 import { allBlogs, allAuthors } from ".contentlayer/data";
+
+import AuthorPage from "@/modules/author/AuthorPage";
 
 import type { Author } from ".contentlayer/types";
 
@@ -12,13 +13,7 @@ type Props = {
 };
 
 const Author: NextPage<Props> = ({ author, posts }) => {
-  return (
-    <>
-      <NextSeo title={author.name} />
-
-      <section></section>
-    </>
-  );
+  return <AuthorPage author={author} posts={posts} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
