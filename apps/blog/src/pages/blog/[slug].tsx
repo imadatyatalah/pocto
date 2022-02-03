@@ -12,7 +12,7 @@ type Props = { post: Blog };
 const BlogPost: NextPage<Props> = ({ post }) => {
   const Component = useMDXComponent(post.body.code);
 
-  return <Component components={{ ...MDXComponents } as any} />;
+  return <Component components={{ ...MDXComponents }} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
