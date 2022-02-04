@@ -27,6 +27,11 @@
 | [packages/config](packages/config)     | `ESLint` configurations                       |
 | [packages/tsconfig](packages/tsconfig) | `tsconfig.json`s used throughout the monorepo |
 
+## Branches
+
+- main -> Production branch, Don't touch it.
+- staging -> PR this branch for everything.
+
 <div align="center">
   <sub>Built with ❤️ by <a href="https://imadatyatalah.vercel.app">Imad Atyat-Alah</a></sub>
 </div>

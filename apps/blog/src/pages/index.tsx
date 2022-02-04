@@ -1,8 +1,8 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
 
-import { pick } from "@contentlayer/client";
 import { allBlogs } from ".contentlayer/data";
 
+import { BlogPostData, sortPostsByDate } from "@/lib/blogPost";
 import HomePage from "@/modules/home/HomePage";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
@@ -12,21 +12,9 @@ const Home: NextPage<Props> = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-  const posts = allBlogs.map((post) =>
-    pick(post, [
-      "slug",
-      "title",
-      "summary",
-      "publishedAt",
-      "image",
-      "author",
-      "readingTime",
-    ])
-  );
+  const posts = allBlogs.map((post) => BlogPostData(post));
 
-  const sortedPosts = posts.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  );
+  const sortedPosts = sortPostsByDate(posts);
 
   return { props: { posts: sortedPosts } };
 };

@@ -6,9 +6,9 @@ import { gray, grayDark } from "@radix-ui/colors";
 import { styled } from "ui/stitches.config";
 import { BLOG_ROUTES } from "shared/routes";
 
-import type { Blog } from ".contentlayer/types";
-
 import BlogPostFooter from "./BlogPostFooter";
+
+import type { TBlogPost } from "@/lib/blogPost";
 
 const StyledImage = styled(Image, {
   borderRadius: "0.5rem",
@@ -16,16 +16,7 @@ const StyledImage = styled(Image, {
   borderBottomRightRadius: 0,
 });
 
-type Props = Pick<
-  Blog,
-  | "slug"
-  | "title"
-  | "summary"
-  | "publishedAt"
-  | "image"
-  | "author"
-  | "readingTime"
->;
+type Props = TBlogPost;
 
 const BlogPost = ({
   author,

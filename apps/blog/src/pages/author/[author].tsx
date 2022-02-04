@@ -1,16 +1,13 @@
-import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
+import type { NextPage, GetStaticPaths, InferGetStaticPropsType } from "next";
 
-import { pick } from "@contentlayer/client";
 import { allBlogs, allAuthors } from ".contentlayer/data";
 
+import { BlogPostData, sortPostsByDate } from "@/lib/blogPost";
 import AuthorPage from "@/modules/author/AuthorPage";
 
 import type { Author } from ".contentlayer/types";
 
-type Props = {
-  author: Author;
-  posts: any;
-};
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Author: NextPage<Props> = ({ author, posts }) => {
   return <AuthorPage author={author} posts={posts} />;
@@ -25,28 +22,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const author = allAuthors.find(
     (author) => author.authorname === params.author
   );
 
   const posts = allBlogs
-    .map((post) =>
-      pick(post, [
-        "slug",
-        "title",
-        "summary",
-        "publishedAt",
-        "image",
-        "author",
-        "readingTime",
-      ])
-    )
+    .map((post) => BlogPostData(post))
     .filter((post) => post.author.authorname === params.author);
 
-  const sortedPosts = posts.sort(
-    (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  );
+  const sortedPosts = sortPostsByDate(posts);
 
   return { props: { author, posts: sortedPosts } };
 };
