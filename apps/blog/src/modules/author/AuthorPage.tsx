@@ -5,9 +5,11 @@ import type { Author } from ".contentlayer/types";
 
 import BlogPost from "@/components/BlogPost";
 
+import type { TBlogPost } from "@/lib/blogPost";
+
 type Props = {
   author: Author;
-  posts: any;
+  posts: TBlogPost[];
 };
 
 const AuthorPage = ({ author, posts }: Props) => {
@@ -24,7 +26,7 @@ const AuthorPage = ({ author, posts }: Props) => {
           css={{ my: 14 }}
         >
           {posts.map((post) => (
-            <BlogPost {...post} key={post.slug} />
+            <BlogPost post={post} key={post.slug} />
           ))}
         </Grid>
       </section>

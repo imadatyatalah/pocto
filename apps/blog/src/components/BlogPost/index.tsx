@@ -16,21 +16,25 @@ const StyledImage = styled(Image, {
   borderBottomRightRadius: 0,
 });
 
-type Props = TBlogPost;
+type Props = {
+  post: TBlogPost;
+};
 
-const BlogPost = ({
-  author,
-  slug,
-  image,
-  title,
-  summary,
-  publishedAt,
-  readingTime,
-}: Props) => {
+const BlogPost = ({ post }: Props) => {
   const { hovered, ref } = useHover();
 
+  const {
+    author: { authorname },
+    slug,
+    image,
+    title,
+    summary,
+    publishedAt,
+    readingTime,
+  } = post;
+
   // LINKS
-  const authorLink = BLOG_ROUTES.AUTHOR_PAGE(author.authorname);
+  const authorLink = BLOG_ROUTES.AUTHOR_PAGE(authorname);
   const postLink = BLOG_ROUTES.POST_PAGE(slug);
 
   return (
@@ -67,7 +71,7 @@ const BlogPost = ({
       </Link>
 
       <BlogPostFooter
-        author={author}
+        authorname={authorname}
         authorLink={authorLink}
         publishedAt={publishedAt}
         readingTime={readingTime.text}
