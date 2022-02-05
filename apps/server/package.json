@@ -10,7 +10,12 @@
     "dev": "tsc -w & nodemon ./dist/server.js",
     "start": "tsc & node ./dist/server.js",
     "build": "tsc",
-    "lint": "tsc --noEmit && TIMING=1 eslint src --fix"
+    "lint": "tsc --noEmit && TIMING=1 eslint src --fix",
+    "prisma:studio": "npx prisma studio",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:reset": "npx prisma migrate reset",
+    "prisma:push": "npx prisma db push",
+    "prisma:seed": "npx prisma db seed"
   },
   "dependencies": {
     "@prisma/client": "^3.8.1",

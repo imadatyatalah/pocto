@@ -26,6 +26,8 @@
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "9.0.0",
     "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
     "tsconfig": "*",
     "typescript": "^4.5.5"
   }

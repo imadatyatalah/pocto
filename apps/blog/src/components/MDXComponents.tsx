@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 
-import { Flex, Link as StyledLink } from "ui";
+import { Flex, Heading, Link as StyledLink } from "ui";
 import { styled } from "ui/stitches.config";
 
 const StyledImage = styled(Image, {
@@ -30,6 +30,33 @@ const CustomImage = (props: ImageProps) => (
 );
 
 const MDXComponents = {
+  // Headings
+  h2: ({ children }) => (
+    <Heading as="h2" size="2xl">
+      {children}
+    </Heading>
+  ),
+  h3: ({ children }) => (
+    <Heading as="h3" size="xl">
+      {children}
+    </Heading>
+  ),
+  h4: ({ children }) => (
+    <Heading as="h4" size="lg">
+      {children}
+    </Heading>
+  ),
+  h5: ({ children }) => (
+    <Heading as="h5" size="base">
+      {children}
+    </Heading>
+  ),
+  h6: ({ children }) => (
+    <Heading as="h6" size="sm">
+      {children}
+    </Heading>
+  ),
+
   a: CustomLink,
   Image: CustomImage,
 };
