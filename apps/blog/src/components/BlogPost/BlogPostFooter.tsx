@@ -17,7 +17,19 @@ const Avatar = () => {
   );
 };
 
-const BlogPostFooter = ({ authorLink, author, readingTime, publishedAt }) => {
+type Props = {
+  authorLink: string;
+  authorname: string;
+  readingTime: string;
+  publishedAt: string;
+};
+
+const BlogPostFooter = ({
+  authorLink,
+  authorname,
+  readingTime,
+  publishedAt,
+}: Props) => {
   return (
     <Flex as="footer" css={{ pb: 10, px: 16 }}>
       <Box css={{ size: 45, background: "$primary1", rounded: "100%", mr: 10 }}>
@@ -31,7 +43,7 @@ const BlogPostFooter = ({ authorLink, author, readingTime, publishedAt }) => {
       <div>
         <Link href={authorLink} passHref>
           <StyledLink css={{ fontWeight: 500, color: "Black" }}>
-            {author.authorname}
+            {authorname}
           </StyledLink>
         </Link>
 

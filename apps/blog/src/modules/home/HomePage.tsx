@@ -32,7 +32,7 @@ const HomePage = ({ posts }: Props) => {
           css={{ my: 14 }}
         >
           {posts.map((post) => (
-            <BlogPost {...post} key={post.slug} />
+            <BlogPost post={post} key={post.slug} />
           ))}
         </Grid>
       </section>
