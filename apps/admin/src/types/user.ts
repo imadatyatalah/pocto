@@ -1,17 +1,17 @@
 import type { TPost } from "./post";
 import type { TProfile } from "./profile";
 
-export type TUser = {
+export interface TUser {
   id: number;
   name: string;
   username: string;
   posts: TPost[];
   profile: TProfile;
-};
+}
 
-export type TCurrentUser = {
+export interface TCurrentUser {
   id: number;
   name: string;
   username: string;
   profile: TProfile;
-};
+}

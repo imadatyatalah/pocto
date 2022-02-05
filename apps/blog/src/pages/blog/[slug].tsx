@@ -8,7 +8,9 @@ import BlogLayout from "@/layouts/BlogLayout";
 
 import type { Blog } from ".contentlayer/types";
 
-type Props = { post: Blog };
+interface Props {
+  post: Blog;
+}
 
 const BlogPost: NextPage<Props> = ({ post }) => {
   const Component = useMDXComponent(post.body.code);

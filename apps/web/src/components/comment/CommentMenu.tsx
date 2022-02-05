@@ -15,10 +15,10 @@ import useUser from "@/stores/useUser";
 
 import type { TComment } from "@/types/index";
 
-type Props = {
+interface Props {
   comment: TComment;
   postId: string;
-};
+}
 
 const LeftIcon = styled("div", {
   pr: 4,

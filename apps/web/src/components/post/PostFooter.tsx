@@ -8,13 +8,13 @@ import { StyledIconWrapper } from "./styles/Post.styles";
 import { useTogglePostLike } from "@/mutations/index";
 import ChatIcon from "@/icons/ChatIcon";
 
-type Props = {
+interface Props {
   isCULikedPost: boolean;
   postId: string;
   postLink: string;
   commentsCount: number;
   likesCount: number;
-};
+}
 
 const PostFooter = ({
   isCULikedPost,

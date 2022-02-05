@@ -7,11 +7,11 @@ import type { TComment } from "@/types/index";
 import CommentMenu from "./CommentMenu";
 import Avatar from "../Avatar";
 
-type Props = {
+interface Props {
   comment: TComment;
   commentLink: string;
   userLink: string;
-};
+}
 
 const CommentHeader = ({ comment, commentLink, userLink }: Props) => {
   return (

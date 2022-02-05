@@ -7,20 +7,19 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "ui";
-import { DotsHorizontalIcon, TrashIcon } from "@radix-ui/react-icons";
+import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { styled } from "ui/stitches.config";
 import { mauve } from "@radix-ui/colors";
 
-import { useDeletePost } from "@/mutations/index";
 import DeletePostDialog from "./DeletePostDialog";
 import useUser from "@/stores/useUser";
 
 import type { TPost } from "@/types/index";
 
-type Props = {
+interface Props {
   post: TPost;
-};
+}
 
 const LeftIcon = styled("div", {
   pr: 4,

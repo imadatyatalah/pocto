@@ -5,11 +5,11 @@ import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
 import { StyledIconWrapper } from "./styles/Comment.styles";
 import { useToggleCommentLike } from "@/mutations/index";
 
-type Props = {
+interface Props {
   isCULikedComment: boolean;
   commentId: string;
   likesCount: number;
-};
+}
 
 const CommentFooter = ({ isCULikedComment, commentId, likesCount }: Props) => {
   const { mutate: toggleLike } = useToggleCommentLike(commentId);

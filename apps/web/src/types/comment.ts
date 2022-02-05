@@ -1,4 +1,4 @@
-export type TComment = {
+export interface TComment {
   id: string;
   content: string;
   createdAt: string;
@@ -10,4 +10,4 @@ export type TComment = {
     name: string;
     username: string;
   };
-};
+}

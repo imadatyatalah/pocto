@@ -7,10 +7,10 @@ import BlogPost from "@/components/BlogPost";
 
 import type { TBlogPost } from "@/lib/blogPost";
 
-type Props = {
+interface Props {
   author: Author;
   posts: TBlogPost[];
-};
+}
 
 const AuthorPage = ({ author, posts }: Props) => {
   return (

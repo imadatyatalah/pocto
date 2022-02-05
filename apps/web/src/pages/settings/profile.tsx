@@ -5,9 +5,9 @@ import ProfileForm from "@/modules/settings/profile/ProfileForm";
 
 import type { TCurrentUser, PoctoPage } from "@/types/index";
 
-type Props = {
+interface Props {
   currentUser: TCurrentUser;
-};
+}
 
 const Profile: PoctoPage<Props> = ({ currentUser }) => {
   return (

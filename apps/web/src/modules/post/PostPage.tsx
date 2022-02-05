@@ -8,9 +8,9 @@ import Comment from "@/components/comment/Comment";
 
 import type { TPost } from "@/types/index";
 
-type Props = {
+interface Props {
   post?: TPost;
-};
+}
 
 const PostPage = ({ post }: Props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

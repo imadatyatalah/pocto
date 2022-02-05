@@ -8,9 +8,9 @@ import useUser from "@/stores/useUser";
 
 import type { TComment } from "@/types/index";
 
-type Props = {
+interface Props {
   comment: TComment;
-};
+}
 
 const Comment = ({ comment }: Props) => {
   const currentUser = useUser((state) => state.user);
