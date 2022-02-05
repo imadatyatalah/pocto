@@ -1,5 +1,7 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import readingTime from "reading-time";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import type { ComputedFields } from "contentlayer/source-files";
 
@@ -46,4 +48,17 @@ const Author = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "data",
   documentTypes: [Blog, Author],
+  mdx: {
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ["anchor"],
+          },
+        },
+      ],
+    ],
+  },
 });
