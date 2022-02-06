@@ -16,9 +16,9 @@ const StyledImage = styled(Image, {
   borderBottomRightRadius: 0,
 });
 
-type Props = {
+interface Props {
   post: TBlogPost;
-};
+}
 
 const BlogPost = ({ post }: Props) => {
   const { hovered, ref } = useHover();

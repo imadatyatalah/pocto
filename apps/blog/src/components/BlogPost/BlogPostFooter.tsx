@@ -17,12 +17,12 @@ const Avatar = () => {
   );
 };
 
-type Props = {
+interface Props {
   authorLink: string;
   authorname: string;
   readingTime: string;
   publishedAt: string;
-};
+}
 
 const BlogPostFooter = ({
   authorLink,

@@ -3,9 +3,9 @@ import { Box } from "ui";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
 const GlobalLayout = ({ children }: Props) => {
   return (

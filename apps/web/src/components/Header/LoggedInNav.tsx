@@ -24,9 +24,9 @@ import Avatar from "../Avatar";
 
 import type { TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   currentUser: TCurrentUser;
-};
+}
 
 const LoggedInHeader = ({ currentUser }: Props) => {
   const currentUserPage = CLIENT_ROUTES.USER_PAGE(currentUser?.username);

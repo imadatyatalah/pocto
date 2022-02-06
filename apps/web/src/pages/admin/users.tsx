@@ -8,9 +8,9 @@ import UserCard from "@/components/admin/UserCard";
 
 import type { PoctoPage, TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   currentUser: TCurrentUser;
-};
+}
 
 const Users: PoctoPage<Props> = ({ currentUser }) => {
   const { replace } = useRouter();

@@ -8,9 +8,9 @@ import useUser from "@/stores/useUser";
 
 import type { TPost } from "@/types/index";
 
-type Props = {
+interface Props {
   post: TPost;
-};
+}
 
 const Post = ({ post }: Props) => {
   const currentUser = useUser((state) => state.user);

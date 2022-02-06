@@ -11,9 +11,9 @@ import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 import type { TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   currentUser: TCurrentUser;
-};
+}
 
 const ProfileForm = ({ currentUser }: Props) => {
   const { mutate: updateProfile, isLoading } = useUpdateProfile();

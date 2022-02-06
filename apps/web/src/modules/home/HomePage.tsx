@@ -7,10 +7,10 @@ import HeroSection from "./HeroSection";
 
 import type { TPost, TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   posts?: TPost[];
   currentUser?: TCurrentUser;
-};
+}
 
 const HomePage = ({ posts, currentUser }: Props) => {
   return (

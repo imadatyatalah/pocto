@@ -5,7 +5,7 @@ import type { Blog } from ".contentlayer/types";
 
 import BlogPost from "@/components/BlogPost";
 
-type Props = {
+interface Props {
   posts: Pick<
     Blog,
     | "slug"
@@ -16,7 +16,7 @@ type Props = {
     | "author"
     | "readingTime"
   >[];
-};
+}
 
 const HomePage = ({ posts }: Props) => {
   return (

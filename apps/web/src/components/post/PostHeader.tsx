@@ -9,11 +9,11 @@ import Avatar from "../Avatar";
 
 import type { TPost } from "@/types/index";
 
-type Props = {
+interface Props {
   post: TPost;
   postLink: string;
   userLink: string;
-};
+}
 
 const PostHeader = ({ post, postLink, userLink }: Props) => {
   // @ts-ignore

@@ -7,9 +7,9 @@ import HomePage from "@/modules/home/HomePage";
 
 import type { PoctoPage, TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   currentUser: TCurrentUser;
-};
+}
 
 const Home: PoctoPage<Props> = ({ currentUser }) => {
   const { data: posts } = useGetPosts();

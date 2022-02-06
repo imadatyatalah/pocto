@@ -6,10 +6,10 @@ import Post from "@/components/post/Post";
 
 import type { TCommunity, TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   community?: TCommunity;
   currentUser?: TCurrentUser;
-};
+}
 
 const CommunityPage = ({ community, currentUser }: Props) => {
   return (

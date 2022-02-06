@@ -6,9 +6,9 @@ import Post from "@/components/post/Post";
 
 import type { TUser } from "@/types/index";
 
-type Props = {
+interface Props {
   user?: TUser;
-};
+}
 
 const UserPage = ({ user }: Props) => {
   return (

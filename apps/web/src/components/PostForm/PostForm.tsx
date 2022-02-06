@@ -7,7 +7,9 @@ import type { CreatePostInput } from "shared";
 
 import { useCreatePost } from "@/mutations/index";
 
-type Props = { communityName?: string };
+interface Props {
+  communityName?: string;
+}
 
 const PostForm = ({ communityName }: Props) => {
   const { mutate: createPost, isLoading } = useCreatePost(communityName);

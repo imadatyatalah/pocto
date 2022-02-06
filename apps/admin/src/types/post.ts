@@ -1,6 +1,6 @@
 import type { TComment } from "./comment";
 
-export type TPost = {
+export interface TPost {
   id: string;
   content: string;
   createdAt: string;
@@ -13,4 +13,4 @@ export type TPost = {
   };
   comments: TComment[];
   community?: { name: string };
-};
+}

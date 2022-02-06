@@ -1,19 +1,19 @@
 import type { TPost } from "./post";
 import type { TProfile } from "./profile";
 
-export type TUser = {
+export interface TUser {
   id: number;
   name: string;
   username: string;
   role: "USER" | "ADMIN";
   posts: TPost[];
   profile: TProfile;
-};
+}
 
-export type TCurrentUser = {
+export interface TCurrentUser {
   id: number;
   name: string;
   username: string;
   role: "USER" | "ADMIN";
   profile: TProfile;
-};
+}

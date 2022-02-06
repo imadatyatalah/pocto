@@ -7,7 +7,9 @@ import type { CreateCommentInput } from "shared";
 
 import { useCreateComment } from "@/mutations/index";
 
-type Props = { postId: string };
+interface Props {
+  postId: string;
+}
 
 const CommentForm = ({ postId }: Props) => {
   const { mutate: createComment, isLoading } = useCreateComment(postId);

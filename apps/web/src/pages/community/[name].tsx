@@ -9,9 +9,9 @@ import Loading from "@/components/Loading";
 
 import type { PoctoPage, TCurrentUser } from "@/types/index";
 
-type Props = {
+interface Props {
   currentUser: TCurrentUser;
-};
+}
 
 const Community: PoctoPage<Props> = ({ currentUser }) => {
   const { isFallback, query } = useRouter();

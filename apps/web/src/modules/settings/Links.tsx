@@ -14,7 +14,10 @@ const LINKS = [
   { title: "Account security", link: CLIENT_ROUTES.SETTINGS_SECURITY_PAGE },
 ];
 
-type Props = { title: string; link: string };
+interface Props {
+  title: string;
+  link: string;
+}
 
 const NavLink = ({ title, link }: Props) => {
   const { pathname } = useRouter();

@@ -1,9 +1,9 @@
 import type { TPost } from "./post";
 
-export type TCommunity = {
+export interface TCommunity {
   name: string;
   title: string;
   description: string;
   type: "PUBLIC";
   posts: TPost[];
-};
+}
