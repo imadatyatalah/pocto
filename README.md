@@ -10,9 +10,23 @@
 
 <div align="center">
 
+[Report Bug][issues-link]
+·
+[Request Feature][issues-link]
+
+</div>
+
+<div align="center">
+
 ![][typescript-image]
 
 </div>
+
+## Built With
+
+- [Turborepo](https://turborepo.org/)
+- [Next.js](https://nextjs.org/)
+- [Express.js](htthttps://expressjs.com/)
 
 ## Structure
 
@@ -37,3 +51,4 @@
 </div>
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
+[issues-link]: https://github.com/imadatyatalah/pocto/issues

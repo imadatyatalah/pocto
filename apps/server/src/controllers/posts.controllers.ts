@@ -108,6 +108,17 @@ export const deletePostById = async (
         where: { postId: { equals: post?.id } },
       });
 
+      /**
+       * Gets all post comments and returns an array of comments ids
+       */
+      const getPostCommentsIds = post?.comments.map((comment) => {
+        return { commentId: comment["id"] };
+      });
+
+      const deletePostCommentsLikes = prisma.commentLike.deleteMany({
+        where: { OR: getPostCommentsIds },
+      });
+
       const deleteComments = prisma.comment.deleteMany({
         where: { postId: { equals: post?.id } },
       });
@@ -117,7 +128,12 @@ export const deletePostById = async (
         select: postData,
       });
 
-      await prisma.$transaction([deletePostLikes, deleteComments, deletePost]);
+      await prisma.$transaction([
+        deletePostLikes,
+        deletePostCommentsLikes,
+        deleteComments,
+        deletePost,
+      ]);
 
       res.status(200).send({
         success: true,
