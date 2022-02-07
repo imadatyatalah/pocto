@@ -26,7 +26,7 @@
 
 - [Turborepo](https://turborepo.org/)
 - [Next.js](https://nextjs.org/)
-- [Express.js](htthttps://expressjs.com/)
+- [Express.js](https://expressjs.com/)
 
 ## Structure
 
