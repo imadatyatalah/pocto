@@ -2,9 +2,18 @@ import { forwardRef } from "react";
 
 import { Flex, Text } from "./index";
 
-const Logo = ({ text, ...props }: { text?: string }, ref: any) => {
+interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  /**
+   *  The text that will be shown besides the svg logo
+   */
+  text?: string;
+}
+
+const Logo = forwardRef<HTMLAnchorElement, LogoProps>((props, ref) => {
+  const { text, ...rest } = props;
+
   return (
-    <Flex as="a" align="center" ref={ref} {...props}>
+    <Flex as="a" align="center" ref={ref} {...rest}>
       <svg
         width="40"
         height="40"
@@ -48,6 +57,6 @@ const Logo = ({ text, ...props }: { text?: string }, ref: any) => {
       ) : null}
     </Flex>
   );
-};
+});
 
-export default forwardRef(Logo);
+export default Logo;

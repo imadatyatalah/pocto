@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 import { styled } from "../../../stitches.config";
 
 import type { CSS } from "../../../stitches.config";
@@ -18,14 +20,17 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   isExternal?: boolean;
 }
 
-const Link = ({ isExternal, ...rest }: LinkProps) => {
+const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
+  const { isExternal, ...rest } = props;
+
   return (
     <StyledLink
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
+      ref={ref}
       {...rest}
     />
   );
-};
+});
 
 export default Link;
