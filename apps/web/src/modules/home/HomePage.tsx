@@ -5,20 +5,20 @@ import PostForm from "@/components/PostForm/PostForm";
 import Post from "@/components/post/Post";
 import HeroSection from "./HeroSection";
 
-import type { TPost, TCurrentUser } from "@/types/index";
+import type { TPost } from "@/types/index";
 
 interface Props {
   posts?: TPost[];
-  currentUser?: TCurrentUser;
+  isLoggedIn: boolean;
 }
 
-const HomePage = ({ posts, currentUser }: Props) => {
+const HomePage = ({ posts, isLoggedIn }: Props) => {
   return (
     <>
       <NextSeo title="Home" />
 
       <Box as="section">
-        {!currentUser ? <HeroSection /> : null}
+        {!isLoggedIn ? <HeroSection /> : null}
 
         <Box
           css={{
@@ -30,7 +30,7 @@ const HomePage = ({ posts, currentUser }: Props) => {
           <Box css={{ width: "$full" }}>
             <Heading as="h2">Home</Heading>
 
-            {currentUser ? <PostForm /> : null}
+            {isLoggedIn ? <PostForm /> : null}
 
             {posts?.map((post) => (
               <Post post={post} key={post.id} />

@@ -66,7 +66,13 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <GlobalLayout>
-            {getLayout(<Component currentUser={currentUser} {...pageProps} />)}
+            {getLayout(
+              <Component
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+                {...pageProps}
+              />
+            )}
             <CustomToaster />
           </GlobalLayout>
         </Hydrate>
