@@ -8,10 +8,10 @@ import dayjs from "dayjs";
 
 import type { Blog } from ".contentlayer/types";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   post: Blog;
-};
+}
 
 const BlogLayout = ({ children, post }: Props) => {
   const { title, summary, author, publishedAt, readingTime } = post;
