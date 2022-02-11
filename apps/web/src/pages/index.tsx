@@ -9,12 +9,13 @@ import type { PoctoPage, TCurrentUser } from "@/types/index";
 
 interface Props {
   currentUser: TCurrentUser;
+  isLoggedIn: boolean;
 }
 
-const Home: PoctoPage<Props> = ({ currentUser }) => {
+const Home: PoctoPage<Props> = ({ isLoggedIn }) => {
   const { data: posts } = useGetPosts();
 
-  return <HomePage posts={posts} currentUser={currentUser} />;
+  return <HomePage isLoggedIn={isLoggedIn} posts={posts} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
