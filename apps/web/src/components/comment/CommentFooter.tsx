@@ -2,7 +2,7 @@ import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Box, Text, Flex } from "ui";
 
 import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
-import { StyledIconWrapper } from "./styles/Comment.styles";
+import { StyledIconWrapper } from "./styles/CommentFooter.styles";
 import { useToggleCommentLike } from "@/mutations/index";
 
 interface Props {

@@ -4,7 +4,7 @@ import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Box, Text, Flex } from "ui";
 
 import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
-import { StyledIconWrapper } from "./styles/Post.styles";
+import { StyledIconWrapper } from "./styles/PostFooter.styles";
 import { useTogglePostLike } from "@/mutations/index";
 import ChatIcon from "@/icons/ChatIcon";
 
