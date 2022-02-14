@@ -18,7 +18,7 @@ const AuthorPage = ({ author, posts }: Props) => {
       <NextSeo title={author.name} />
 
       <section>
-        <Heading as="h1">{author.name}</Heading>
+        <Heading>{author.name}</Heading>
 
         <Grid
           columns={{ "@sm": "2", "@lg": "3", "@xl": "4" }}

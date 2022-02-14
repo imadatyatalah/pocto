@@ -25,9 +25,7 @@ const BlogLayout = ({ children, post }: Props) => {
 
       <article>
         <Box css={{ textAlign: "center" }}>
-          <Heading as="h1" size="3xl">
-            {title}
-          </Heading>
+          <Heading size="3xl">{title}</Heading>
 
           <Box css={{ mt: 6 }}>
             <Text css={{ color: gray.gray11 }}>

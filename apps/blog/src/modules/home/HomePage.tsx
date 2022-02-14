@@ -24,7 +24,7 @@ const HomePage = ({ posts }: Props) => {
       <NextSeo title="Home" />
 
       <section>
-        <Heading as="h1">Home</Heading>
+        <Heading>Home</Heading>
 
         <Grid
           columns={{ "@sm": "2", "@lg": "3", "@xl": "4" }}
