@@ -11,7 +11,7 @@ const CreateCommunity: PoctoPage = () => {
       <NextSeo title="Create a community" />
 
       <Flex direction="column" align="center" as="section">
-        <Heading as="h1" css={{ float: "left", width: 400 }}>
+        <Heading css={{ float: "left", width: 400 }}>
           Create a community
         </Heading>
 

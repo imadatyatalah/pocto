@@ -33,9 +33,7 @@ const PasswordReset: NextPage = () => {
 
       <Flex direction="column" align="center" as="section">
         <Box css={{ float: "left", width: 400 }}>
-          <Heading as="h1" css={{ mb: 10 }}>
-            Forgot Password?
-          </Heading>
+          <Heading css={{ mb: 10 }}>Forgot Password?</Heading>
 
           <p>
             Enter the email address you used when you joined and we’ll send you

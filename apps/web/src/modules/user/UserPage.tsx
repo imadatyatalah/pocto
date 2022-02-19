@@ -17,7 +17,7 @@ const UserPage = ({ user }: Props) => {
 
       <section>
         <div>
-          <Heading as="h1">{user?.name}</Heading>
+          <Heading>{user?.name}</Heading>
 
           <p>{user?.profile?.bio}</p>
         </div>
