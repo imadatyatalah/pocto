@@ -16,6 +16,13 @@ export const createCommunity = (
   });
 };
 
+export const simpleCommunityData = Prisma.validator<Prisma.CommunitySelect>()({
+  name: true,
+  title: true,
+  description: true,
+  type: true,
+});
+
 export const communityData = Prisma.validator<Prisma.CommunitySelect>()({
   name: true,
   title: true,

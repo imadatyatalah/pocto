@@ -7,6 +7,7 @@ import {
   deleteAccount,
   updateProfile,
 } from "../controllers/users.controllers";
+import { getRecommendedCommunities } from "../controllers/communities.controllers";
 import requireUser from "../middlewares/requireUser";
 import validateResource from "../middlewares/validateResource";
 
@@ -27,5 +28,7 @@ router.put(
   [requireUser, validateResource(updateProfileSchemaServer)],
   updateProfile
 );
+
+router.get("/recommended_communities", getRecommendedCommunities);
 
 export default router;
