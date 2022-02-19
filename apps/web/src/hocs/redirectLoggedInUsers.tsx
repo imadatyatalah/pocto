@@ -13,7 +13,7 @@ const WelcomeBack = () => {
       <NextSeo title="Welcome back" />
 
       <Flex direction="column" justify="center" css={{ minHeight: "100vh" }}>
-        <Heading as="h1" size="3xl" css={{ mb: 16, fontWeight: 500 }}>
+        <Heading size="3xl" css={{ mb: 16, fontWeight: 500 }}>
           Welcome back!
         </Heading>
 

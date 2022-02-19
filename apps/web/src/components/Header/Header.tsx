@@ -21,9 +21,11 @@ const Header = () => {
   return (
     <Flex as="header" justify="between" align="center" css={HeaderStyles}>
       <Flex align="end">
-        <Link href="/" passHref>
-          <Logo text="Pocto" />
-        </Link>
+        <h1>
+          <Link href="/" passHref>
+            <Logo text="Pocto" aria-label="Pocto" />
+          </Link>
+        </h1>
 
         <Text as="sup" css={{ fontWeight: 600, color: "$primary1" }}>
           Alpha

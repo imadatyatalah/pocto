@@ -13,9 +13,7 @@ const SignInPage = () => {
       <NextSeo title="Sign In" />
 
       <Flex direction="column" align="center" as="section">
-        <Heading as="h1" css={{ float: "left", width: 400 }}>
-          Sign In to Pocto
-        </Heading>
+        <Heading css={{ float: "left", width: 400 }}>Sign In to Pocto</Heading>
 
         <SigninForm />
 

@@ -31,7 +31,7 @@ const SettingsHeader = () => {
         </Box>
 
         <Box>
-          <Heading as="h1" size="xl">
+          <Heading size="xl">
             <Link href={currentUserPage} passHref>
               <StyledLink css={{ color: "inherit" }}>
                 {currentUser?.name}

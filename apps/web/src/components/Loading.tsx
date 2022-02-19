@@ -9,7 +9,7 @@ const Loading = () => {
       css={{ minHeight: "100vh" }}
     >
       <div>
-        <Heading as="h1" size="3xl" css={{ fontWeight: "700" }}>
+        <Heading size="3xl" css={{ fontWeight: "700" }}>
           Loading...
         </Heading>
       </div>

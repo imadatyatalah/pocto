@@ -17,7 +17,7 @@ const CommunityPage = ({ community, currentUser }: Props) => {
       <NextSeo title={community?.title} />
 
       <section>
-        <Heading as="h1">{community?.title}</Heading>
+        <Heading>{community?.title}</Heading>
 
         {currentUser ? <PostForm communityName={community?.name} /> : null}
 

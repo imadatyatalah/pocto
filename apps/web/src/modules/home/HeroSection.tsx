@@ -11,7 +11,7 @@ import { CLIENT_ROUTES } from "shared/routes";
 const HeroSection = () => {
   return (
     <Box css={{ py: 30, textAlign: "center" }}>
-      <Heading as="h1" size="3xl" css={{ fontWeight: 700 }}>
+      <Heading size="3xl" css={{ fontWeight: 700 }}>
         Discover the world’s top communities
       </Heading>
 

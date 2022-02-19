@@ -9,7 +9,7 @@ const Notifications: PoctoPage = () => {
       <NextSeo title="Notifications" />
 
       <section>
-        <Heading as="h1">Notifications</Heading>
+        <Heading>Notifications</Heading>
       </section>
     </>
   );
