@@ -1,9 +1,12 @@
 import type { TPost } from "./post";
 
-export interface TCommunity {
+export interface TSimpleCommunity {
   name: string;
   title: string;
   description: string;
   type: "PUBLIC";
+}
+
+export interface TCommunity extends TSimpleCommunity {
   posts: TPost[];
 }
