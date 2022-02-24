@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { Box, Flex, Heading, Text } from "ui";
+import { Box, Flex, Heading, Text } from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 import { gray } from "@radix-ui/colors";
 

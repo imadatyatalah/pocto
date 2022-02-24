@@ -1,0 +1,15 @@
+{
+  "name": "@pocto/hooks",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "config": "*",
+    "tsconfig": "*",
+    "typescript": "4.5.5"
+  }
+}

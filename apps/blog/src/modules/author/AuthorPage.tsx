@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { Heading, Grid } from "ui";
+import { Heading, Grid } from "@pocto/core";
 
 import type { Author } from ".contentlayer/types";
 

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ErrorMessage } from "@hookform/error-message";
-import { Box, Heading, Separator, Label, Input, Button } from "ui";
+import { Box, Heading, Separator, Label, Input, Button } from "@pocto/core";
 import { updateProfileSchema } from "shared";
 
 import type { UpdateProfileInput } from "shared";

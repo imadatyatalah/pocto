@@ -4,10 +4,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "ui";
+} from "@pocto/core";
 import { DotsHorizontalIcon, TrashIcon } from "@radix-ui/react-icons";
 import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 import { mauve } from "@radix-ui/colors";
 
 import { useDeleteComment } from "@/mutations/index";

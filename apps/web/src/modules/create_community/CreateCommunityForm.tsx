@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ErrorMessage } from "@hookform/error-message";
-import { styled } from "ui/stitches.config";
-import { Button, Input, Label, Box } from "ui";
+import { styled } from "@pocto/core/stitches.config";
+import { Button, Input, Label, Box } from "@pocto/core";
 import { createCommunitySchema } from "shared";
 
 import type { CreateCommunityInput } from "shared";

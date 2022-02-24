@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { NextSeo } from "next-seo";
 import { CLIENT_ROUTES } from "shared/routes";
-import { Flex, Heading, Link as StyledLink } from "ui";
+import { Flex, Heading, Link as StyledLink } from "@pocto/core";
 
 import RedirectLoggedInUsers from "@/hocs/redirectLoggedInUsers";
 import SigninForm from "./SignInForm";

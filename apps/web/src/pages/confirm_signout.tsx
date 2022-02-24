@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { Button, Flex, Heading } from "ui";
+import { Button, Flex, Heading } from "@pocto/core";
 
 import type { PoctoPage } from "@/types/index";
 

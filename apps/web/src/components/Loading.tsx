@@ -1,4 +1,4 @@
-import { Flex, Heading } from "ui";
+import { Flex, Heading } from "@pocto/core";
 
 const Loading = () => {
   return (

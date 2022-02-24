@@ -3,10 +3,10 @@ import { Fragment } from "react";
 import { useRouter } from "next/router";
 
 import { CLIENT_ROUTES } from "shared/routes";
-import { Box, Flex, Link as StyledLink, Separator, Text } from "ui";
+import { Box, Flex, Link as StyledLink, Separator, Text } from "@pocto/core";
 import { gray, violet } from "@radix-ui/colors";
 
-import type { CSS } from "ui/stitches.config";
+import type { CSS } from "@pocto/core/stitches.config";
 
 const LINKS = [
   { title: "Profile", link: CLIENT_ROUTES.SETTINGS_PROFILE_PAGE },

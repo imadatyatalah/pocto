@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Flex, Box, Link as StyledLink } from "ui";
+import { Flex, Box, Link as StyledLink } from "@pocto/core";
 import dayjs from "dayjs";
 
 import type { TComment } from "@/types/index";

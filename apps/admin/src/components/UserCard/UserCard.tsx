@@ -1,4 +1,4 @@
-import { Heading, Flex, Button } from "ui";
+import { Heading, Flex, Button } from "@pocto/core";
 
 import { useBanUser } from "@/mutations/index";
 

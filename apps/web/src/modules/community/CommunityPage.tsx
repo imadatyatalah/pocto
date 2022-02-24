@@ -1,4 +1,4 @@
-import { Heading } from "ui";
+import { Heading } from "@pocto/core";
 import { NextSeo } from "next-seo";
 
 import PostForm from "@/components/PostForm/PostForm";

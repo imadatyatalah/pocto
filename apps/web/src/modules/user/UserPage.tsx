@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 
-import { Heading } from "ui";
+import { Heading } from "@pocto/core";
 
 import Post from "@/components/post/Post";
 

@@ -1,4 +1,4 @@
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 import { blackA } from "@radix-ui/colors";
 
 export const StyledDropDownLink = styled("a", {

@@ -1,6 +1,6 @@
 import { gray } from "@radix-ui/colors";
 
-import { CSS } from "ui/stitches.config";
+import type { CSS } from "@pocto/core/stitches.config";
 
 export const CommentStyles: CSS = {
   my: 10,
