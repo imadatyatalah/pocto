@@ -25,9 +25,12 @@ const getRecommendedCommunities = async () => {
 };
 
 const CommunitiesToJoinCard = () => {
-  const { data, isLoading, isError } = useQuery(
-    ["current_user", "recommended_communities"],
-    () => getRecommendedCommunities()
+  const {
+    data: communities,
+    isLoading,
+    isError,
+  } = useQuery(["current_user", "recommended_communities"], () =>
+    getRecommendedCommunities()
   );
 
   if (isLoading) {
@@ -54,7 +57,7 @@ const CommunitiesToJoinCard = () => {
         <Separator />
       </Box>
 
-      {data?.map((community) => (
+      {communities?.map((community) => (
         <CommunityCard community={community} key={community.name} />
       ))}
     </Box>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { NextSeo } from "next-seo";
-import { Heading } from "ui";
 
 import useUser from "@/stores/useUser";
 import CommentForm from "./CommentForm";
