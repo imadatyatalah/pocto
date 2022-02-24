@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 
-import { Flex, Heading, Link as StyledLink } from "ui";
-import { styled } from "ui/stitches.config";
+import { Flex, Heading, Link as StyledLink } from "@pocto/core";
+import { styled } from "@pocto/core/stitches.config";
 
 const StyledImage = styled(Image, {
   borderRadius: "0.5rem",

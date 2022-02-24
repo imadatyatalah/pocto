@@ -1,4 +1,4 @@
-import { Box } from "ui";
+import { Box } from "@pocto/core";
 
 import SettingsHeader from "./SettingsHeader";
 import Links from "./Links";

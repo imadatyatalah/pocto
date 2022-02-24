@@ -1,4 +1,4 @@
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 import { mauve } from "@radix-ui/colors";
 import { TrashIcon } from "@radix-ui/react-icons";
 import {
@@ -12,7 +12,7 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
   DropdownMenuItem,
-} from "ui";
+} from "@pocto/core";
 
 import { useDeletePost } from "@/mutations/index";
 

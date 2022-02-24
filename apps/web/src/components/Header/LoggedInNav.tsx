@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "ui";
+} from "@pocto/core";
 import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { violet } from "@radix-ui/colors";
 import { CLIENT_ROUTES } from "shared/routes";

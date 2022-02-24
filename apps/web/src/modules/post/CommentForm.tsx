@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Box, Button, Input, Flex } from "ui";
+import { Box, Button, Input, Flex } from "@pocto/core";
 import { createCommentSchema } from "shared";
 import { useForm } from "react-hook-form";
 

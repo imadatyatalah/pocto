@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Heading, Box, Flex, Text, useHover } from "ui";
+import { Heading, Box, Flex, Text } from "@pocto/core";
+import { useHover } from "@pocto/hooks";
 import { gray, grayDark } from "@radix-ui/colors";
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 import { BLOG_ROUTES } from "shared/routes";
 
 import BlogPostFooter from "./BlogPostFooter";

@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-import { Box, Flex, Text, Heading, Button, Link as StyledLink } from "ui";
+import {
+  Box,
+  Flex,
+  Text,
+  Heading,
+  Button,
+  Link as StyledLink,
+} from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 
 import useUser from "@/stores/useUser";

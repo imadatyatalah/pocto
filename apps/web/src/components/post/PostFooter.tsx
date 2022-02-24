@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Box, Text, Flex } from "ui";
+import { Box, Text, Flex } from "@pocto/core";
 
 import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
 import { StyledIconWrapper } from "./styles/PostFooter.styles";

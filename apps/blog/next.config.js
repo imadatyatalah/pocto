@@ -1,5 +1,8 @@
 const { withContentlayer } = require("next-contentlayer");
-const withTM = require("next-transpile-modules")(["ui"]);
+const withTM = require("next-transpile-modules")([
+  "@pocto/core",
+  "@pocto/hooks",
+]);
 const withPlugins = require("next-compose-plugins");
 
 /** @type {import('next').NextConfig} */

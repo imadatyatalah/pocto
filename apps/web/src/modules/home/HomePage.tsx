@@ -1,4 +1,5 @@
-import { Heading, Box, useMediaQuery } from "ui";
+import { Heading, Box } from "@pocto/core";
+import { useMediaQuery } from "@pocto/hooks";
 import { NextSeo } from "next-seo";
 
 import CommunitiesToJoinCard from "@/components/CommunitiesToJoinCard/CommunitiesToJoinCard";

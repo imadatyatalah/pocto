@@ -1,4 +1,4 @@
-import { Box } from "ui";
+import { Box } from "@pocto/core";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";

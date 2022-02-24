@@ -2,7 +2,7 @@ import { ComponentType, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { Heading, Flex, Link as StyledLink, Text } from "ui";
+import { Heading, Flex, Link as StyledLink, Text } from "@pocto/core";
 import { NextSeo } from "next-seo";
 
 import useUser from "@/stores/useUser";

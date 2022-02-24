@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pocto/core": "*",
+    "@pocto/hooks": "*",
     "@hookform/error-message": "^2.0.0",
     "@hookform/resolvers": "^2.8.8",
     "axios": "^0.25.0",
@@ -21,7 +23,6 @@
     "react-hot-toast": "^2.2.0",
     "react-query": "^3.34.15",
     "shared": "*",
-    "ui": "*",
     "zustand": "^3.7.0"
   },
   "devDependencies": {

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { Heading, Box, Flex, Separator, Link as StyledLink } from "ui";
+import { Heading, Box, Flex, Separator, Link as StyledLink } from "@pocto/core";
 import { useQuery } from "react-query";
 import { gray } from "@radix-ui/colors";
 
-import type { CSS } from "ui/stitches.config";
+import type { CSS } from "@pocto/core/stitches.config";
 
 import { instance } from "@/lib/axios";
 import CommunityCard from "./CommunityCard";
@@ -34,11 +34,11 @@ const CommunitiesToJoinCard = () => {
   );
 
   if (isLoading) {
-    return "Loading...";
+    return <div>Loading...</div>;
   }
 
   if (isError) {
-    return "Something wrong happened!";
+    return <div>Something wrong happened!</div>;
   }
 
   return (

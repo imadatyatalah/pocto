@@ -1,4 +1,4 @@
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 
 const StyledErrorMessage = styled("p", { color: "Red" });
 

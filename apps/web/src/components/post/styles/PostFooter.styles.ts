@@ -1,4 +1,4 @@
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 import { gray } from "@radix-ui/colors";
 
 export const StyledIconWrapper = styled("div", {

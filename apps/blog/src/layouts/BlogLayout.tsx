@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Heading, Text, Box, Link as StyledLink } from "ui";
+import { Heading, Text, Box, Link as StyledLink } from "@pocto/core";
 import { BLOG_ROUTES } from "shared/routes";
 import { gray } from "@radix-ui/colors";
 import { NextSeo } from "next-seo";

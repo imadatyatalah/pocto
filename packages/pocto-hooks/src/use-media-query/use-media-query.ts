@@ -26,10 +26,11 @@ function getInitialValue(query: string) {
   return false;
 }
 
-function useMediaQuery(query: string) {
+export function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(getInitialValue(query));
   const queryRef = useRef<MediaQueryList>();
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if ("matchMedia" in window) {
       queryRef.current = window.matchMedia(query);
@@ -42,5 +43,3 @@ function useMediaQuery(query: string) {
 
   return matches;
 }
-
-export default useMediaQuery;

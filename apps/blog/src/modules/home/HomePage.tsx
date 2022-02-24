@@ -1,4 +1,4 @@
-import { Grid, Heading } from "ui";
+import { Grid, Heading } from "@pocto/core";
 import { NextSeo } from "next-seo";
 
 import type { Blog } from ".contentlayer/types";

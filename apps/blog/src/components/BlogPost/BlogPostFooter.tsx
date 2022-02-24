@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { Box, Flex, Text, Link as StyledLink } from "ui";
-import { styled } from "ui/stitches.config";
+import { Box, Flex, Text, Link as StyledLink } from "@pocto/core";
+import { styled } from "@pocto/core/stitches.config";
 import dayjs from "dayjs";
 
 const StyledAvatar = styled("img", {

@@ -1,11 +1,18 @@
 import Link from "next/link";
 
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ErrorMessage } from "@hookform/error-message";
 import { signupSchema } from "shared";
-import { Button, Input, Label, Box, Text, Link as StyledLink } from "ui";
+import {
+  Button,
+  Input,
+  Label,
+  Box,
+  Text,
+  Link as StyledLink,
+} from "@pocto/core";
 
 import type { SignupInput } from "shared";
 
