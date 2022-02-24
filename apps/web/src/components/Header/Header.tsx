@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import { Flex, Logo, Text } from "ui";
+import { Flex, Logo, Text } from "@pocto/core";
 
 import { HeaderStyles } from "./styles/Header.styles";
 import LoggedInNav from "./LoggedInNav";

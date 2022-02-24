@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Heading, Box, Text, Button } from "ui";
+import { Heading, Box, Text, Button } from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 
 /**

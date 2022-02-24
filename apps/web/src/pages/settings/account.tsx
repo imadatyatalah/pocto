@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { Box, Heading, Text, Separator } from "ui";
+import { Box, Heading, Text, Separator } from "@pocto/core";
 
 import DeleteAccountDialog from "@/modules/settings/account/DeleteAccountDialog";
 import Layout from "@/modules/settings/Layout";

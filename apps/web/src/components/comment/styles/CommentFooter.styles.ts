@@ -1,6 +1,6 @@
 import { gray } from "@radix-ui/colors";
 
-import { styled } from "ui/stitches.config";
+import { styled } from "@pocto/core/stitches.config";
 
 export const StyledIconWrapper = styled("div", {
   display: "inline-flex",

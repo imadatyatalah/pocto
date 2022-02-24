@@ -35,7 +35,7 @@ const Logo = forwardRef<HTMLAnchorElement, LogoProps>((props, ref) => {
             y2="0"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#29a19c" />
+            <stop stopColor="#29A19C" />
             <stop offset="1" stopColor="#66CCAE" />
           </linearGradient>
         </defs>

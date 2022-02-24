@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Flex, Logo } from "ui";
+import { Flex, Logo } from "@pocto/core";
 import { gray } from "@radix-ui/colors";
 
 const Footer = () => {

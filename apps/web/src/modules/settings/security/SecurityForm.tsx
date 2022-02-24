@@ -13,7 +13,7 @@ import {
   Separator,
   Box,
   Link as StyledLink,
-} from "ui";
+} from "@pocto/core";
 
 import type { ChangePasswordInput } from "shared";
 

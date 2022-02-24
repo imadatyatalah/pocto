@@ -1,4 +1,4 @@
-import { Box, Flex } from "ui";
+import { Box, Flex } from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 
 import { PostStyles } from "./styles/Post.styles";

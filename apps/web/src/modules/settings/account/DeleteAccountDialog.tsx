@@ -8,7 +8,7 @@ import {
   AlertDialogTrigger,
   AlertDialogAction,
   AlertDialogCancel,
-} from "ui";
+} from "@pocto/core";
 
 import { useDeleteAccount } from "@/mutations/index";
 

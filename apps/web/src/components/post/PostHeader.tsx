@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Flex, Link as StyledLink, Box } from "ui";
+import { Flex, Link as StyledLink, Box } from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 import dayjs from "dayjs";
 

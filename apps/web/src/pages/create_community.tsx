@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { Flex, Heading } from "ui";
+import { Flex, Heading } from "@pocto/core";
 
 import CreateCommunityForm from "@/modules/create_community/CreateCommunityForm";
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { Flex, Text, Link as StyledLink } from "ui";
-import { styled } from "ui/stitches.config";
+import { Flex, Text, Link as StyledLink } from "@pocto/core";
+import { styled } from "@pocto/core/stitches.config";
 import { CLIENT_ROUTES } from "shared/routes";
 
 const StyledNavLink = styled(StyledLink, {

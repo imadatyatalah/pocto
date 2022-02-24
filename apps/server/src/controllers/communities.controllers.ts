@@ -5,6 +5,7 @@ import {
   communityData,
   createCommunity as createCommunityHelper,
   findCommunityByName,
+  simpleCommunityData,
 } from "../helpers/communities";
 
 import type { CreateCommunityInputServer } from "shared";
@@ -37,6 +38,23 @@ export const getCommunityByName = async (req: Request, res: Response) => {
     });
 
     res.status(200).send(community);
+  } catch (err) {
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
+  }
+};
+
+export const getRecommendedCommunities = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const communities = await prisma.community.findMany({
+      select: simpleCommunityData,
+    });
+
+    res.status(200).send(communities);
   } catch (err) {
     res
       .status(500)

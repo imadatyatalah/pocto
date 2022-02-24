@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Flex, Logo, Text } from "ui";
+import { Flex, Logo, Text } from "@pocto/core";
 
 const Header = () => {
   return (

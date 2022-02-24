@@ -10,6 +10,7 @@ export type { TComment } from "./comment";
 
 // Communities
 export type { TCommunity } from "./community";
+export type { TSimpleCommunity } from "./community";
 
 // Pages
 export type { PoctoPage } from "./PoctoPage";

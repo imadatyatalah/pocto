@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-import { Box, Flex, Logo, Text, Link as StyledLink } from "ui";
+import { Box, Flex, Logo, Text, Link as StyledLink } from "@pocto/core";
 import { TwitterLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { gray } from "@radix-ui/colors";
-import { CSS } from "ui/stitches.config";
+
+import type { CSS } from "@pocto/core/stitches.config";
 
 const IconsStyles: CSS = {
   color: "inherit",

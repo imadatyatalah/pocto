@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { NextPage } from "next";
 
 import { NextSeo } from "next-seo";
-import { Box, Button, Flex, Heading } from "ui";
+import { Box, Button, Flex, Heading } from "@pocto/core";
 
 const Custom404: NextPage = () => {
   return (
