@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { getCssText } from "@pocto/core/stitches.config";
 
 class MyDocument extends Document {
   render() {
@@ -11,6 +12,11 @@ class MyDocument extends Document {
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
+          />
+
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
         </Head>
         <body>
