@@ -1,11 +1,11 @@
 import type { NextPage, GetStaticPaths, InferGetStaticPropsType } from "next";
 
-import { allBlogs, allAuthors } from ".contentlayer/data";
+import { allBlogs, allAuthors } from "contentlayer/generated";
 
 import { BlogPostData, sortPostsByDate } from "@/lib/blogPost";
 import AuthorPage from "@/modules/author/AuthorPage";
 
-import type { Author } from ".contentlayer/types";
+import type { Author } from "contentlayer/generated";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

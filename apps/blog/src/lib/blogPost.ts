@@ -1,6 +1,6 @@
 import { pick } from "@contentlayer/client";
 
-import type { Blog } from ".contentlayer/types";
+import type { Blog } from "contentlayer/generated";
 
 export const BlogPostData = (post: Blog) =>
   pick(post, [
