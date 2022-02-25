@@ -1,7 +1,7 @@
 import { Grid, Heading } from "@pocto/core";
 import { NextSeo } from "next-seo";
 
-import type { Blog } from ".contentlayer/types";
+import type { Blog } from "contentlayer/generated";
 
 import BlogPost from "@/components/BlogPost";
 

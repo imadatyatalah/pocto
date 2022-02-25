@@ -6,7 +6,7 @@ import { gray } from "@radix-ui/colors";
 import { NextSeo } from "next-seo";
 import dayjs from "dayjs";
 
-import type { Blog } from ".contentlayer/types";
+import type { Blog } from "contentlayer/generated";
 
 interface Props {
   children: React.ReactNode;

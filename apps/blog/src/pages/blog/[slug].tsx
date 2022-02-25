@@ -1,12 +1,12 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { allBlogs } from ".contentlayer/data";
+import { allBlogs } from "contentlayer/generated";
 
 import MDXComponents from "@/components/MDXComponents";
 import BlogLayout from "@/layouts/BlogLayout";
 
-import type { Blog } from ".contentlayer/types";
+import type { Blog } from "contentlayer/generated";
 
 interface Props {
   post: Blog;

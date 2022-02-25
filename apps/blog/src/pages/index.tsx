@@ -1,6 +1,6 @@
 import type { NextPage, InferGetStaticPropsType } from "next";
 
-import { allBlogs } from ".contentlayer/data";
+import { allBlogs } from "contentlayer/generated";
 
 import { BlogPostData, sortPostsByDate } from "@/lib/blogPost";
 import HomePage from "@/modules/home/HomePage";
