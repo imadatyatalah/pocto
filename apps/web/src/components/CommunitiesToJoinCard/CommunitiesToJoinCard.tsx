@@ -48,7 +48,7 @@ const CommunitiesToJoinCard = () => {
 
         <div>
           <Link href="/" passHref>
-            <StyledLink css={{ fontWeight: 500 }}>See All</StyledLink>
+            <StyledLink>See All</StyledLink>
           </Link>
         </div>
       </Flex>
