@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createCommunitySchemaServer } from "shared";
+import { createCommunitySchemaAPI } from "shared";
 
 import {
   getCommunityByName,
@@ -12,7 +12,7 @@ const router = Router();
 
 router.post(
   "/",
-  [requireUser, validateResource(createCommunitySchemaServer)],
+  [requireUser, validateResource(createCommunitySchemaAPI)],
   createCommunity
 );
 

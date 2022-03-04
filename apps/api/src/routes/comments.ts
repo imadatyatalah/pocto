@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createCommentSchemaServer } from "shared";
+import { createCommentSchemaAPI } from "shared";
 
 import {
   toggleCommentLike,
@@ -16,7 +16,7 @@ router.get("/:commentId", getCommentById);
 
 router.post(
   "/:postId",
-  [requireUser, validateResource(createCommentSchemaServer)],
+  [requireUser, validateResource(createCommentSchemaAPI)],
   createComment
 );
 

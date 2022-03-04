@@ -18,7 +18,7 @@ export const signupSchema = object({
 
 export type SignupInput = TypeOf<typeof signupSchema>;
 
-// Server
-export const signupSchemaServer = object({ body: signupSchema });
+// API
+export const signupSchemaAPI = object({ body: signupSchema });
 
-export type SignupInputServer = TypeOf<typeof signupSchemaServer>;
+export type SignupInputAPI = TypeOf<typeof signupSchemaAPI>;

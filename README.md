@@ -33,7 +33,7 @@
 | Codebase                               | Description                                   |
 | :------------------------------------- | :-------------------------------------------- |
 | [apps/web](apps/web)                   | Web App                                       |
-| [apps/server](apps/server)             | Express API                                   |
+| [apps/api](apps/api)                   | Express API                                   |
 | [apps/blog](apps/blog)                 | Blog App                                      |
 | [apps/admin](apps/admin)               | Admin App                                     |
 | [packages/ui](packages/ui)             | Design System                                 |

@@ -1,4 +1,4 @@
-import { SERVER_ROUTES } from "shared/routes";
+import { API_ROUTES } from "shared/routes";
 import { useMutation } from "react-query";
 import toast from "react-hot-toast";
 
@@ -10,7 +10,7 @@ const useUpdatePassword = () =>
   useMutation(
     (data: ChangePasswordInput) =>
       instance.put<ChangePasswordInput>(
-        SERVER_ROUTES.UPDATE__PASSWORD_ROUTE,
+        API_ROUTES.UPDATE__PASSWORD_ROUTE,
         data
       ),
     {

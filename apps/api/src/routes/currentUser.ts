@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { changePasswordSchemaServer, updateProfileSchemaServer } from "shared";
+import { changePasswordSchemaAPI, updateProfileSchemaAPI } from "shared";
 
 import {
   getCurrentUser,
@@ -19,13 +19,13 @@ router.delete("/delete_account", requireUser, deleteAccount);
 
 router.put(
   "/change_password",
-  [requireUser, validateResource(changePasswordSchemaServer)],
+  [requireUser, validateResource(changePasswordSchemaAPI)],
   changePassword
 );
 
 router.put(
   "/update_profile",
-  [requireUser, validateResource(updateProfileSchemaServer)],
+  [requireUser, validateResource(updateProfileSchemaAPI)],
   updateProfile
 );
 

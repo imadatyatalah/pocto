@@ -8,10 +8,10 @@ import {
   simpleCommunityData,
 } from "../helpers/communities";
 
-import type { CreateCommunityInputServer } from "shared";
+import type { CreateCommunityInputAPI } from "shared";
 
 export const createCommunity = async (
-  req: Request<{}, {}, CreateCommunityInputServer["body"]>,
+  req: Request<{}, {}, CreateCommunityInputAPI["body"]>,
   res: Response
 ) => {
   try {

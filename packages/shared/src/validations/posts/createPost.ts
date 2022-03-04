@@ -9,7 +9,7 @@ export const createPostSchema = object({
 
 export type CreatePostInput = TypeOf<typeof createPostSchema>;
 
-// Server
-export const createPostSchemaServer = object({ body: createPostSchema });
+// API
+export const createPostSchemaAPI = object({ body: createPostSchema });
 
-export type CreatePostInputServer = TypeOf<typeof createPostSchemaServer>;
+export type CreatePostInputAPI = TypeOf<typeof createPostSchemaAPI>;

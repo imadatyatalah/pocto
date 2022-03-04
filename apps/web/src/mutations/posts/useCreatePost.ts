@@ -1,4 +1,4 @@
-import { SERVER_ROUTES } from "shared/routes";
+import { API_ROUTES } from "shared/routes";
 import { useMutation, useQueryClient } from "react-query";
 
 import { instance } from "@/lib/axios";
@@ -12,8 +12,8 @@ const useCreatePost = (communityName?: string) => {
   const queryClient = useQueryClient();
 
   const createPostRoute = communityName
-    ? `${SERVER_ROUTES.CREATE__POST_ROUTE}?communityName=${communityName}`
-    : SERVER_ROUTES.CREATE__POST_ROUTE;
+    ? `${API_ROUTES.CREATE__POST_ROUTE}?communityName=${communityName}`
+    : API_ROUTES.CREATE__POST_ROUTE;
 
   return useMutation(
     (data: CreatePostInput) =>

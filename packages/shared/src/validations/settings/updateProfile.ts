@@ -13,7 +13,7 @@ export const updateProfileSchema = object({
 
 export type UpdateProfileInput = TypeOf<typeof updateProfileSchema>;
 
-// Server
-export const updateProfileSchemaServer = object({ body: updateProfileSchema });
+// API
+export const updateProfileSchemaAPI = object({ body: updateProfileSchema });
 
-export type UpdateProfileInputServer = TypeOf<typeof updateProfileSchemaServer>;
+export type UpdateProfileInputAPI = TypeOf<typeof updateProfileSchemaAPI>;

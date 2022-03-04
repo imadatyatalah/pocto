@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createPostSchemaServer } from "shared";
+import { createPostSchemaAPI } from "shared";
 
 import {
   togglePostLike,
@@ -16,7 +16,7 @@ const router = Router();
 
 router.post(
   "/",
-  [requireUser, validateResource(createPostSchemaServer)],
+  [requireUser, validateResource(createPostSchemaAPI)],
   createPost
 );
 

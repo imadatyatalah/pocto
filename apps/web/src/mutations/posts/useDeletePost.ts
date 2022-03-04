@@ -1,4 +1,4 @@
-import { SERVER_ROUTES } from "shared/routes";
+import { API_ROUTES } from "shared/routes";
 import { useMutation, useQueryClient } from "react-query";
 import toast from "react-hot-toast";
 
@@ -8,7 +8,7 @@ const useDeletePost = (postId: string) => {
   const queryClient = useQueryClient();
 
   return useMutation(
-    () => instance.delete(SERVER_ROUTES.DELETE__POST_ROUTE(postId)),
+    () => instance.delete(API_ROUTES.DELETE__POST_ROUTE(postId)),
     {
       onSuccess: () => {
         toast.success("Your post was deleted successfully!");
