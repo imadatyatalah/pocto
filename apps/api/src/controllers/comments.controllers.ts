@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 
-import type { CreateCommentInputServer } from "shared";
+import type { CreateCommentInputAPI } from "shared";
 
 import { prisma } from "../config/prisma";
 import { commentData } from "../helpers/comments";
 
 export const createComment = async (
-  req: Request<{ postId: string }, {}, CreateCommentInputServer["body"]>,
+  req: Request<{ postId: string }, {}, CreateCommentInputAPI["body"]>,
   res: Response
 ) => {
   try {

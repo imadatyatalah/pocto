@@ -7,7 +7,7 @@ export const passwordResetSchema = object({
 
 export type PasswordResetInput = TypeOf<typeof passwordResetSchema>;
 
-// Server
-export const passwordResetSchemaServer = object({ body: passwordResetSchema });
+// API
+export const passwordResetSchemaAPI = object({ body: passwordResetSchema });
 
-export type PasswordResetInputServer = TypeOf<typeof passwordResetSchemaServer>;
+export type PasswordResetInputAPI = TypeOf<typeof passwordResetSchemaAPI>;

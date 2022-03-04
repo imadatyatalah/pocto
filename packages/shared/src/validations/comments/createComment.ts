@@ -9,7 +9,7 @@ export const createCommentSchema = object({
 
 export type CreateCommentInput = TypeOf<typeof createCommentSchema>;
 
-// Server
-export const createCommentSchemaServer = object({ body: createCommentSchema });
+// API
+export const createCommentSchemaAPI = object({ body: createCommentSchema });
 
-export type CreateCommentInputServer = TypeOf<typeof createCommentSchemaServer>;
+export type CreateCommentInputAPI = TypeOf<typeof createCommentSchemaAPI>;

@@ -14,11 +14,9 @@ export const changePasswordSchema = object({
 
 export type ChangePasswordInput = TypeOf<typeof changePasswordSchema>;
 
-// Server
-export const changePasswordSchemaServer = object({
+// API
+export const changePasswordSchemaAPI = object({
   body: changePasswordSchema,
 });
 
-export type ChangePasswordInputServer = TypeOf<
-  typeof changePasswordSchemaServer
->;
+export type ChangePasswordInputAPI = TypeOf<typeof changePasswordSchemaAPI>;

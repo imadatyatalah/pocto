@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import type { CreatePostInputServer } from "shared";
+import type { CreatePostInputAPI } from "shared";
 
 import { prisma } from "../config/prisma";
 import {
@@ -10,12 +10,7 @@ import {
 } from "../helpers/posts";
 
 export const createPost = async (
-  req: Request<
-    {},
-    {},
-    CreatePostInputServer["body"],
-    { communityName?: string }
-  >,
+  req: Request<{}, {}, CreatePostInputAPI["body"], { communityName?: string }>,
   res: Response
 ) => {
   try {

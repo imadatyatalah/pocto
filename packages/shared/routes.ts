@@ -30,7 +30,7 @@ export const CLIENT_ROUTES = {
  *
  * UPDATE__: PUT Request
  */
-export const SERVER_ROUTES = {
+export const API_ROUTES = {
   // Auth
   SIGN_IN_ROUTE: "/auth/signin",
   SIGN_UP_ROUTE: "/auth/signup",

@@ -14,11 +14,9 @@ export const createCommunitySchema = object({
 
 export type CreateCommunityInput = TypeOf<typeof createCommunitySchema>;
 
-// Server
-export const createCommunitySchemaServer = object({
+// API
+export const createCommunitySchemaAPI = object({
   body: createCommunitySchema,
 });
 
-export type CreateCommunityInputServer = TypeOf<
-  typeof createCommunitySchemaServer
->;
+export type CreateCommunityInputAPI = TypeOf<typeof createCommunitySchemaAPI>;

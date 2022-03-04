@@ -8,7 +8,7 @@ export const signinSchema = object({
 
 export type SigninInput = TypeOf<typeof signinSchema>;
 
-// Server
-export const signinSchemaServer = object({ body: signinSchema });
+// API
+export const signinSchemaAPI = object({ body: signinSchema });
 
-export type SigninInputServer = TypeOf<typeof signinSchemaServer>;
+export type SigninInputAPI = TypeOf<typeof signinSchemaAPI>;

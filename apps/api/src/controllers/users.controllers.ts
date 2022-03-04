@@ -10,10 +10,7 @@ import {
   currentUserData,
 } from "../helpers/users";
 
-import type {
-  ChangePasswordInputServer,
-  UpdateProfileInputServer,
-} from "shared";
+import type { ChangePasswordInputAPI, UpdateProfileInputAPI } from "shared";
 
 export const getCurrentUser = async (req: Request, res: Response) => {
   try {
@@ -46,7 +43,7 @@ export const getUserByUsername = async (req: Request, res: Response) => {
 };
 
 export const changePassword = async (
-  req: Request<{}, {}, ChangePasswordInputServer["body"]>,
+  req: Request<{}, {}, ChangePasswordInputAPI["body"]>,
   res: Response
 ) => {
   try {
@@ -93,7 +90,7 @@ export const changePassword = async (
 };
 
 export const updateProfile = async (
-  req: Request<{}, {}, UpdateProfileInputServer["body"]>,
+  req: Request<{}, {}, UpdateProfileInputAPI["body"]>,
   res: Response
 ) => {
   try {

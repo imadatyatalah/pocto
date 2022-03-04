@@ -1,6 +1,6 @@
 import Router from "next/router";
 
-import { SERVER_ROUTES } from "shared/routes";
+import { API_ROUTES } from "shared/routes";
 import { useMutation } from "react-query";
 import toast from "react-hot-toast";
 
@@ -15,7 +15,7 @@ const useSignUp = () =>
       instance.post<
         SignupInput,
         AxiosResponse<{ error: boolean; message: string }>
-      >(SERVER_ROUTES.SIGN_UP_ROUTE, data),
+      >(API_ROUTES.SIGN_UP_ROUTE, data),
     {
       onSuccess: ({ data }) => {
         toast.success(data.message);
