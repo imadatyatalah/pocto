@@ -7,6 +7,7 @@ import { updateProfileSchema } from "shared";
 import type { UpdateProfileInput } from "shared";
 
 import { useUpdateProfile } from "@/mutations/index";
+import { ProfileFormInputs as Inputs } from "./constants";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 import type { TCurrentUser } from "@/types/index";
@@ -28,35 +29,13 @@ const ProfileForm = ({ currentUser }: Props) => {
 
   const onSubmit = (data: UpdateProfileInput) => updateProfile(data);
 
-  const Inputs = [
-    { type: "text", id: "name", name: "Name", defaultValue: currentUser.name },
-    {
-      type: "text",
-      id: "bio",
-      name: "Bio",
-      defaultValue: currentUser.profile.bio,
-    },
-    {
-      type: "text",
-      id: "website",
-      name: "Website",
-      defaultValue: currentUser.profile.website,
-    },
-    {
-      type: "text",
-      id: "location",
-      name: "Location",
-      defaultValue: currentUser.profile.location,
-    },
-  ];
-
   return (
     <Box as="form" css={{ width: "$full" }} onSubmit={handleSubmit(onSubmit)}>
       <Heading>Update profile</Heading>
 
       <Separator css={{ my: 10 }} />
 
-      {Inputs.map(({ id, name, type, defaultValue }) => (
+      {Inputs(currentUser).map(({ id, name, type, defaultValue }) => (
         <Box css={{ my: 20 }} key={id}>
           <Label
             css={{ display: "block", fontWeight: "600", mb: 4 }}

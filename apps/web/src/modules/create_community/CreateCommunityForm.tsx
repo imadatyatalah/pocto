@@ -8,17 +8,12 @@ import { createCommunitySchema } from "shared";
 import type { CreateCommunityInput } from "shared";
 
 import { useCreateCommunity } from "@/mutations/index";
+import { CreateCommunityFormInputs as Inputs } from "./constants";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
 });
-
-const Inputs = [
-  { type: "text", id: "name", name: "Name" },
-  { type: "text", id: "description", name: "Description" },
-  { type: "text", id: "title", name: "Title" },
-];
 
 const CreateCommunityForm = () => {
   const { mutate: createCommunity, isLoading } = useCreateCommunity();

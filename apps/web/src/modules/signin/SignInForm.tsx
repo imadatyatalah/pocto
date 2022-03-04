@@ -5,30 +5,17 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ErrorMessage } from "@hookform/error-message";
 import { signinSchema } from "shared";
-import { CLIENT_ROUTES } from "shared/routes";
 import { Button, Input, Label, Box, Link as StyledLink } from "@pocto/core";
 
 import type { SigninInput } from "shared";
 
 import { useSignIn } from "@/mutations/index";
+import { SignInFormInputs as Inputs } from "./constants";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
 });
-
-const Inputs = [
-  { type: "email", id: "email", name: "Email" },
-  {
-    type: "password",
-    id: "password",
-    name: "Password",
-    additionalLink: {
-      title: "Forgot password?",
-      path: CLIENT_ROUTES.PASSWORD_RESET,
-    },
-  },
-];
 
 const SignInForm = () => {
   const { mutate: signIn, isLoading } = useSignIn();

@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 
 import { Heading } from "@pocto/core";
 
-import Post from "@/components/post/Post";
+import Post from "@/components/Post/Post";
 
 import type { TUser } from "@/types/index";
 

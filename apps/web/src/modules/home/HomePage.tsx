@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 
 import CommunitiesToJoinCard from "@/components/CommunitiesToJoinCard/CommunitiesToJoinCard";
 import PostForm from "@/components/PostForm/PostForm";
-import Post from "@/components/post/Post";
+import Post from "@/components/Post/Post";
 import HeroSection from "./HeroSection";
 
 import type { TPost } from "@/types/index";

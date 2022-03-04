@@ -18,13 +18,8 @@ import {
 import type { ChangePasswordInput } from "shared";
 
 import { useUpdatePassword } from "@/mutations/index";
+import { SecurityFormInputs as Inputs } from "./constants";
 import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
-
-const Inputs = [
-  { type: "password", id: "oldPassword", name: "Old password" },
-  { type: "password", id: "newPassword", name: "New password" },
-  { type: "password", id: "confirmNewPassword", name: "Confirm new password" },
-];
 
 const SecurityForm = () => {
   const { mutate: updatePassword, isLoading } = useUpdatePassword();
