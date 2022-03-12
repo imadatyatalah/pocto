@@ -30,16 +30,17 @@
 
 ## Structure
 
-| Codebase                               | Description                                   |
-| :------------------------------------- | :-------------------------------------------- |
-| [apps/web](apps/web)                   | Web App                                       |
-| [apps/api](apps/api)                   | Express API                                   |
-| [apps/blog](apps/blog)                 | Blog App                                      |
-| [apps/admin](apps/admin)               | Admin App                                     |
-| [packages/ui](packages/ui)             | Design System                                 |
-| [packages/shared](packages/shared)     | Shared                                        |
-| [packages/config](packages/config)     | `ESLint` configurations                       |
-| [packages/tsconfig](packages/tsconfig) | `tsconfig.json`s used throughout the monorepo |
+| Codebase                                     | Description                                   |
+| :------------------------------------------- | :-------------------------------------------- |
+| [apps/web](apps/web)                         | Web App                                       |
+| [apps/api](apps/api)                         | Express API                                   |
+| [apps/blog](apps/blog)                       | Blog App                                      |
+| [apps/admin](apps/admin)                     | Admin App                                     |
+| [packages/pocto-core](packages/pocto-core)   | Design System                                 |
+| [packages/pocto-hooks](packages/pocto-hooks) | Hooks                                         |
+| [packages/shared](packages/shared)           | Shared                                        |
+| [packages/config](packages/config)           | `ESLint` configurations                       |
+| [packages/tsconfig](packages/tsconfig)       | `tsconfig.json`s used throughout the monorepo |
 
 ## Branches
 
