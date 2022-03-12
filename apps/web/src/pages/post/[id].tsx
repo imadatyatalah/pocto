@@ -7,14 +7,21 @@ import { getPost, useGetPost } from "@/api/index";
 import Loading from "@/components/Loading";
 import PostPage from "@/modules/post/PostPage";
 
-const Post: NextPage = () => {
+import type { TCurrentUser } from "@/types/index";
+
+interface Props {
+  currentUser: TCurrentUser;
+  isLoggedIn: boolean;
+}
+
+const Post: NextPage<Props> = ({ isLoggedIn }) => {
   const { isFallback, query } = useRouter();
 
   const { data: post } = useGetPost(query.id as string);
 
   if (isFallback) return <Loading />;
 
-  return <PostPage post={post} />;
+  return <PostPage post={post} isLoggedIn={isLoggedIn} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({
