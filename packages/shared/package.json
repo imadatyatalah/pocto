@@ -13,11 +13,11 @@
     "build": "tsc"
   },
   "dependencies": {
-    "zod": "^3.11.6"
+    "zod": "^3.13.4"
   },
   "devDependencies": {
-    "tsconfig": "*",
     "config": "*",
-    "typescript": "4.5.5"
+    "tsconfig": "*",
+    "typescript": "4.6.2"
   }
 }
