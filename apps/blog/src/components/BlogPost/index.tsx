@@ -50,7 +50,7 @@ const BlogPost = ({ post }: Props) => {
       <Link href={postLink}>
         <a>
           <Flex as="header">
-            <StyledImage src={image} width="1202" height="628" />
+            <StyledImage src={image} width="1920" height="1280" />
           </Flex>
 
           <Box css={{ py: 10, px: 16 }}>
