@@ -10,6 +10,10 @@
 
 <div align="center">
 
+[Website][blog-link]
+·
+[Blog][blog-link]
+·
 [Report Bug][issues-link]
 ·
 [Request Feature][issues-link]
@@ -53,3 +57,4 @@
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [issues-link]: https://github.com/imadatyatalah/pocto/issues
+[blog-link]: https://pocto-blog.vercel.app

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { Box, Flex } from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 
@@ -13,14 +15,18 @@ interface Props {
 }
 
 const Post = ({ post }: Props) => {
+  const [isCULikedPost, setIsCULikedPost] = useState<boolean>();
+
   const currentUser = useUser((state) => state.user);
 
-  /**
-   * Check is current user already liked current post
-   */
-  const isCULikedPost = post.likes?.find(
-    ({ userId }) => userId === currentUser?.id
-  );
+  useEffect(() => {
+    /**
+     * Check is current user already liked current post
+     */
+    setIsCULikedPost(
+      !!post.likes?.find(({ userId }) => userId === currentUser?.id)
+    );
+  }, [currentUser?.id, post.likes]);
 
   // LINKS
   const postLink = CLIENT_ROUTES.POST_PAGE(post.id);
@@ -36,7 +42,7 @@ const Post = ({ post }: Props) => {
         </Box>
 
         <PostFooter
-          isCULikedPost={!!isCULikedPost}
+          isCULikedPost={isCULikedPost}
           postId={post.id}
           commentsCount={post._count.comments}
           likesCount={post._count.likes}
