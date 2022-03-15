@@ -15,7 +15,7 @@ interface Props {
 }
 
 const Post = ({ post }: Props) => {
-  const [isCULikedPost, setIsCULikedPost] = useState<boolean>();
+  const [isCULikedPost, setIsCULikedPost] = useState(false);
 
   const currentUser = useUser((state) => state.user);
 
