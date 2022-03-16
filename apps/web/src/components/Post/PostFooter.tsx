@@ -1,12 +1,17 @@
 import Link from "next/link";
 
 import { Root as AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Box, Text, Flex } from "@pocto/core";
+import {
+  Box,
+  Text,
+  Flex,
+  ChatIcon,
+  FilledHeartIcon,
+  OutlinedHeartIcon,
+} from "@pocto/core";
 
-import { FilledHeartIcon, OutlinedHeartIcon } from "@/icons/HeartIcon";
 import { StyledIconWrapper } from "./styles/PostFooter.styles";
 import { useTogglePostLike } from "@/mutations/index";
-import ChatIcon from "@/icons/ChatIcon";
 
 interface Props {
   isCULikedPost: boolean;

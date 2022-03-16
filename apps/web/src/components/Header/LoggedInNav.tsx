@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   Box,
   Flex,
-  Button,
+  NotificationIcon,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -19,7 +19,6 @@ import {
   ImageButton,
   StyledDropDownLink,
 } from "./styles/LoggedInHeader.styles";
-import NotificationIcon from "@/icons/NotificationIcon";
 import Avatar from "../Avatar";
 
 import type { TCurrentUser } from "@/types/index";
