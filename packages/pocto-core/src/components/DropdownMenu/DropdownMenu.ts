@@ -46,9 +46,9 @@ const StyledContent = styled(DropdownMenuPrimitive.Content, {
 const StyledItem = styled(DropdownMenuPrimitive.Item, {
   all: "unset",
   fontSize: 14,
-  fontWeight: 500,
+  fontWeight: 400,
   lineHeight: 1,
-  color: violet.violet11,
+  color: "Black",
   borderRadius: 4,
   display: "flex",
   alignItems: "center",
@@ -64,7 +64,7 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   },
 
   "&:hover": {
-    backgroundColor: violet.violet9,
+    backgroundColor: "$primary1",
     color: violet.violet1,
   },
 });
