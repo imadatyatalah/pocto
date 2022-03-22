@@ -55,7 +55,7 @@ const LoggedInHeader = ({ currentUser }: Props) => {
               css={{
                 "&:hover": {
                   backgroundColor: "inherit",
-                  color: violet.violet11,
+                  color: "inherit",
                 },
               }}
             >

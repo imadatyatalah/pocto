@@ -9,6 +9,10 @@
   "scripts": {
     "build": "yarn turbo run build",
     "dev": "yarn turbo run dev --parallel",
+    "dev:web": "yarn turbo run dev --scope=web --scope=api --include-dependencies",
+    "dev:api": "yarn turbo run dev --scope=api --include-dependencies",
+    "dev:blog": "yarn turbo run dev --scope=blog",
+    "dev:admin": "yarn turbo run dev --scope=admin --scope=api --include-dependencies",
     "lint": "yarn turbo run lint",
     "prettier:format": "prettier --write .",
     "prettier:check": "prettier --check .",
