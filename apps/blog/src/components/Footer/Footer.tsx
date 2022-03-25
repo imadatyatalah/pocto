@@ -2,18 +2,8 @@ import Link from "next/link";
 
 import { Box, Flex, Logo, Text, Link as StyledLink } from "@pocto/core";
 import { TwitterLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
-import { gray } from "@radix-ui/colors";
 
-import type { CSS } from "@pocto/core/stitches.config";
-
-const IconsStyles: CSS = {
-  color: "inherit",
-  opacity: "80%",
-  "&:hover": {
-    textDecoration: "none",
-    opacity: "100%",
-  },
-};
+import { FooterStyles, IconsStyles } from "./styles/Footer.styles";
 
 const Footer = () => {
   return (
@@ -22,7 +12,7 @@ const Footer = () => {
       align="center"
       justify="center"
       direction="column"
-      css={{ padding: 20, backgroundColor: gray.gray3, textAlign: "center" }}
+      css={FooterStyles}
     >
       <div>
         <Link href="/" passHref>

@@ -13,7 +13,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "zod": "^3.14.1"
+    "zod": "^3.14.2"
   },
   "devDependencies": {
     "config": "*",

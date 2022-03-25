@@ -2,14 +2,11 @@ import Link from "next/link";
 
 import { Flex, Logo, Text } from "@pocto/core";
 
+import { HeaderStyles } from "./styles/Header.styles";
+
 const Header = () => {
   return (
-    <Flex
-      as="header"
-      justify="between"
-      align="center"
-      css={{ px: 20, height: 65, "@md": { px: 40 } }}
-    >
+    <Flex as="header" justify="between" align="center" css={HeaderStyles}>
       <Flex align="end">
         <h1>
           <Link href="/" passHref>
