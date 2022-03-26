@@ -37,7 +37,9 @@ const BlogLayout = ({ children, post }: Props) => {
           </Box>
         </Box>
 
-        <Box css={{ my: 16 }}>{children}</Box>
+        <Box className="pocto-md" css={{ my: 16 }}>
+          {children}
+        </Box>
       </article>
     </>
   );

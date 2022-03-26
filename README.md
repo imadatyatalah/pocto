@@ -32,6 +32,16 @@
 - [Next.js](https://nextjs.org/)
 - [Express.js](https://expressjs.com/)
 
+## Screenshots
+
+### Home Page
+
+![home-page-screenshot](./screenshots/home-page.png)
+
+### Sign in Page
+
+![sign-in-page-screenshot](./screenshots/sign-in-page.png)
+
 ## Structure
 
 | Codebase                                     | Description                                   |
