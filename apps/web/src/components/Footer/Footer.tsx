@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import { Box, Flex, Logo, Link as StyledLink, Text } from "@pocto/core";
-import { gray } from "@radix-ui/colors";
+
+import { FooterStyles, LinkStyles } from "./styles/Footer.styles";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
       align="center"
       justify="center"
       direction="column"
-      css={{ padding: 20, backgroundColor: gray.gray3, textAlign: "center" }}
+      css={FooterStyles}
     >
       <div>
         <Link href="/" passHref>
@@ -22,9 +23,9 @@ const Footer = () => {
         <Flex as="ul">
           <li>
             <StyledLink
-              href="https://blog.pocto.io"
+              href="https://pocto-blog.vercel.app"
               isExternal
-              css={{ fontWeight: 400, mx: 8, mr: 5 }}
+              css={LinkStyles}
             >
               Blog
             </StyledLink>
@@ -32,17 +33,13 @@ const Footer = () => {
 
           <li>
             <Link href="/privacy" passHref>
-              <StyledLink css={{ fontWeight: 400, mx: 8 }}>
-                Privacy policy
-              </StyledLink>
+              <StyledLink css={LinkStyles}>Privacy policy</StyledLink>
             </Link>
           </li>
 
           <li>
             <Link href="/terms" passHref>
-              <StyledLink css={{ fontWeight: 400, mx: 8 }}>
-                Terms of service
-              </StyledLink>
+              <StyledLink css={LinkStyles}>Terms of service</StyledLink>
             </Link>
           </li>
         </Flex>
