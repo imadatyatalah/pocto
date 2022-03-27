@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ErrorMessage } from "@hookform/error-message";
 import { changePasswordSchema } from "shared";
 import { CLIENT_ROUTES } from "shared/routes";
 import {
@@ -19,7 +18,7 @@ import type { ChangePasswordInput } from "shared";
 
 import { useUpdatePassword } from "@/mutations/index";
 import { SecurityFormInputs as Inputs } from "./constants";
-import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import ErrorMessageComponent from "@/components/Form/ErrorMessage";
 
 const SecurityForm = () => {
   const { mutate: updatePassword, isLoading } = useUpdatePassword();
@@ -55,13 +54,7 @@ const SecurityForm = () => {
             id={id}
             {...register(id as keyof ChangePasswordInput)}
           />
-          <ErrorMessage
-            errors={errors}
-            name={id}
-            render={({ message }) => (
-              <StyledErrorMessage>{message}</StyledErrorMessage>
-            )}
-          />
+          <ErrorMessageComponent errors={errors} name={id} />
         </Box>
       ))}
 

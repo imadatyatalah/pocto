@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ErrorMessage } from "@hookform/error-message";
 import { styled } from "@pocto/core/stitches.config";
 import { Button, Input, Label, Box } from "@pocto/core";
 import { createCommunitySchema } from "shared";
@@ -9,7 +8,7 @@ import type { CreateCommunityInput } from "shared";
 
 import { useCreateCommunity } from "@/mutations/index";
 import { CreateCommunityFormInputs as Inputs } from "./constants";
-import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import ErrorMessageComponent from "@/components/Form/ErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -45,13 +44,7 @@ const CreateCommunityForm = () => {
             id={id}
             {...register(id as keyof CreateCommunityInput)}
           />
-          <ErrorMessage
-            errors={errors}
-            name={id}
-            render={({ message }) => (
-              <StyledErrorMessage>{message}</StyledErrorMessage>
-            )}
-          />
+          <ErrorMessageComponent errors={errors} name={id} />
         </Box>
       ))}
 

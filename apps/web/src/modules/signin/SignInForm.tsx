@@ -3,7 +3,6 @@ import Link from "next/link";
 import { styled } from "@pocto/core/stitches.config";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ErrorMessage } from "@hookform/error-message";
 import { signinSchema } from "shared";
 import { Button, Input, Label, Box, Link as StyledLink } from "@pocto/core";
 
@@ -11,7 +10,7 @@ import type { SigninInput } from "shared";
 
 import { useSignIn } from "@/mutations/index";
 import { SignInFormInputs as Inputs } from "./constants";
-import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import ErrorMessageComponent from "@/components/Form/ErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -53,13 +52,7 @@ const SignInForm = () => {
             id={id}
             {...register(id as keyof SigninInput)}
           />
-          <ErrorMessage
-            errors={errors}
-            name={id}
-            render={({ message }) => (
-              <StyledErrorMessage>{message}</StyledErrorMessage>
-            )}
-          />
+          <ErrorMessageComponent errors={errors} name={id} />
         </Box>
       ))}
 

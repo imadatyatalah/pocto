@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ErrorMessage } from "@hookform/error-message";
 import { Box, Heading, Separator, Label, Input, Button } from "@pocto/core";
 import { updateProfileSchema } from "shared";
 
@@ -8,7 +7,7 @@ import type { UpdateProfileInput } from "shared";
 
 import { useUpdateProfile } from "@/mutations/index";
 import { ProfileFormInputs as Inputs } from "./constants";
-import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import ErrorMessageComponent from "@/components/Form/ErrorMessage";
 
 import type { TCurrentUser } from "@/types/index";
 
@@ -51,13 +50,7 @@ const ProfileForm = ({ currentUser }: Props) => {
             id={id}
             {...register(id as keyof UpdateProfileInput)}
           />
-          <ErrorMessage
-            errors={errors}
-            name={id}
-            render={({ message }) => (
-              <StyledErrorMessage>{message}</StyledErrorMessage>
-            )}
-          />
+          <ErrorMessageComponent errors={errors} name={id} />
         </Box>
       ))}
 
