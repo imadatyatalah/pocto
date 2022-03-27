@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 import { styled } from "@pocto/core/stitches.config";
 import { NextSeo } from "next-seo";
@@ -10,7 +9,7 @@ import { passwordResetSchema } from "shared";
 
 import type { PasswordResetInput } from "shared";
 
-import StyledErrorMessage from "@/components/ErrorMessage/StyledErrorMessage";
+import ErrorMessageComponent from "@/components/Form/ErrorMessage";
 
 const StyledForm = styled("form", {
   width: 400,
@@ -52,13 +51,7 @@ const PasswordReset: NextPage = () => {
 
             <Input isFullWidth type="email" id="email" {...register("email")} />
 
-            <ErrorMessage
-              errors={errors}
-              name="email"
-              render={({ message }) => (
-                <StyledErrorMessage>{message}</StyledErrorMessage>
-              )}
-            />
+            <ErrorMessageComponent errors={errors} name="email" />
           </Box>
 
           <Box css={{ my: 20 }}>
