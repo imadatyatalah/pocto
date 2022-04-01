@@ -4,6 +4,7 @@ import { Box, Flex } from "@pocto/core";
 import { CLIENT_ROUTES } from "shared/routes";
 
 import { PostStyles } from "./styles/Post.styles";
+import LoginDialog from "../LoginDialog/LoginDialog";
 import PostHeader from "./PostHeader";
 import PostFooter from "./PostFooter";
 import useUser from "@/stores/useUser";
@@ -47,6 +48,7 @@ const Post = ({ post }: Props) => {
           commentsCount={post._count.comments}
           likesCount={post._count.likes}
           postLink={postLink}
+          currentUser={currentUser}
         />
       </Box>
     </Flex>
