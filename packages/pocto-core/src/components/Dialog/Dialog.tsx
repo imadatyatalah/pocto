@@ -1,5 +1,3 @@
-import React from "react";
-
 import { blackA, mauve } from "@radix-ui/colors";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 
@@ -16,6 +14,7 @@ const contentShow = keyframes({
 });
 
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
+  zIndex: 2,
   backgroundColor: blackA.blackA9,
   position: "fixed",
   inset: 0,
@@ -25,6 +24,7 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 });
 
 const StyledContent = styled(DialogPrimitive.Content, {
+  zIndex: 3,
   backgroundColor: "white",
   borderRadius: 8,
   boxShadow:
@@ -60,12 +60,13 @@ const StyledTitle = styled(DialogPrimitive.Title, {
 });
 
 const StyledDescription = styled(DialogPrimitive.Description, {
-  margin: "10px 0 20px",
+  mb: 20,
   color: mauve.mauve11,
   fontSize: 15,
   lineHeight: 1.5,
 });
 
+// Exports
 export const Dialog = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogContent = Content;

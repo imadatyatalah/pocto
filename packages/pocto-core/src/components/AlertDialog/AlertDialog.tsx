@@ -43,7 +43,7 @@ const StyledContent = styled(AlertDialogPrimitive.Content, {
   "&:focus": { outline: "none" },
 });
 
-const Content = ({ children, ...props }: any) => {
+const Content = ({ children, ...props }: { children: React.ReactNode }) => {
   return (
     <AlertDialogPrimitive.Portal>
       <StyledOverlay />
