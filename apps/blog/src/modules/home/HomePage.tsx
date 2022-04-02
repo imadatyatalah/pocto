@@ -1,21 +1,12 @@
 import { Grid, Heading } from "@pocto/core";
 import { NextSeo } from "next-seo";
 
-import type { Blog } from "contentlayer/generated";
-
 import BlogPost from "@/components/BlogPost";
 
+import type { TBlogPost } from "@/lib/blogPost";
+
 interface Props {
-  posts: Pick<
-    Blog,
-    | "slug"
-    | "title"
-    | "summary"
-    | "publishedAt"
-    | "image"
-    | "author"
-    | "readingTime"
-  >[];
+  posts: TBlogPost[];
 }
 
 const HomePage = ({ posts }: Props) => {

@@ -62,7 +62,7 @@
 - staging -> PR this branch for everything.
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://imadatyatalah.vercel.app">Imad Atyat-Alah</a></sub>
+  <sub>Built with ❤️ by <a href="https://imadatyatalah.vercel.app">Imad Atyat-Allah</a></sub>
 </div>
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
