@@ -6,22 +6,12 @@ import { gray } from "@radix-ui/colors";
 
 import type { CSS } from "@pocto/core/stitches.config";
 
-import { instance } from "@/lib/axios";
+import { getRecommendedCommunities } from "./api/getRecommendedCommunities";
 import CommunityCard from "./CommunityCard";
-
-import type { TSimpleCommunity } from "@/types/index";
 
 const CommunitiesToJoinStyles: CSS = {
   border: `1px solid ${gray.gray6}`,
   rounded: 8,
-};
-
-const getRecommendedCommunities = async () => {
-  const { data } = await instance.get<TSimpleCommunity[]>(
-    "/current_user/recommended_communities"
-  );
-
-  return data;
 };
 
 const CommunitiesToJoinCard = () => {

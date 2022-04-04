@@ -4,7 +4,7 @@ import type { CSS } from "@pocto/core/stitches.config";
 
 export const FooterStyles: CSS = {
   padding: 20,
-  backgroundColor: gray.gray3,
+  borderTop: `1px solid ${gray.gray6}`,
   textAlign: "center",
 };
 

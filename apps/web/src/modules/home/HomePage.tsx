@@ -2,7 +2,7 @@ import { Heading, Box } from "@pocto/core";
 import { useMediaQuery } from "@pocto/hooks";
 import { NextSeo } from "next-seo";
 
-import CommunitiesToJoinCard from "@/components/CommunitiesToJoinCard/CommunitiesToJoinCard";
+import CommunitiesToJoinCard from "@/components/CommunitiesToJoinCard";
 import PostForm from "@/components/PostForm/PostForm";
 import Post from "@/components/Post/Post";
 import HeroSection from "./HeroSection";

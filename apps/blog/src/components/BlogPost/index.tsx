@@ -43,7 +43,7 @@ const BlogPost = ({ post }: Props) => {
       as="article"
       ref={ref}
       css={{
-        border: `1px solid ${gray.gray8}`,
+        border: `1px solid ${gray.gray6}`,
         rounded: "0.5rem",
       }}
     >
