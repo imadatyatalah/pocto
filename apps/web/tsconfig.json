@@ -2,19 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/lib/*": ["src/lib/*"],
-      "@/api/*": ["src/api/*"],
-      "@/hocs/*": ["src/hocs/*"],
-      "@/pages/*": ["src/pages/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/icons/*": ["src/icons/*"],
-      "@/types/*": ["src/types/*"],
-      "@/stores/*": ["src/stores/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/modules/*": ["src/modules/*"],
-      "@/layouts/*": ["src/layouts/*"],
-      "@/mutations/*": ["src/mutations/*"],
-      "@/components/*": ["src/components/*"]
+      "@/*": ["./src/*"],
+
     }
   },
   "extends": "tsconfig/nextjs.json",
