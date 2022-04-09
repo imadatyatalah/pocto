@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-import { Heading, Box, Flex, Separator, Link as StyledLink } from "@pocto/core";
+import {
+  Heading,
+  Box,
+  Flex,
+  Separator,
+  Text,
+  Link as StyledLink,
+} from "@pocto/core";
 import { useQuery } from "react-query";
 import { gray } from "@radix-ui/colors";
 
@@ -47,9 +54,15 @@ const CommunitiesToJoinCard = () => {
         <Separator />
       </Box>
 
-      {communities?.map((community) => (
-        <CommunityCard community={community} key={community.name} />
-      ))}
+      {communities.length ? (
+        communities?.map((community) => (
+          <CommunityCard community={community} key={community.name} />
+        ))
+      ) : (
+        <Text css={{ textAlign: "center", py: 8 }}>
+          We found nothing for you :(
+        </Text>
+      )}
     </Box>
   );
 };
