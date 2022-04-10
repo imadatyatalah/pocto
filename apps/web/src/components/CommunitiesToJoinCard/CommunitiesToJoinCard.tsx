@@ -13,7 +13,7 @@ import { gray } from "@radix-ui/colors";
 
 import type { CSS } from "@pocto/core/stitches.config";
 
-import { getRecommendedCommunities } from "./api/getRecommendedCommunities";
+import { useGetRecommendedCommunities } from "./api/getRecommendedCommunities";
 import CommunityCard from "./CommunityCard";
 
 const CommunitiesToJoinStyles: CSS = {
@@ -26,9 +26,7 @@ const CommunitiesToJoinCard = () => {
     data: communities,
     isLoading,
     isError,
-  } = useQuery(["current_user", "recommended_communities"], () =>
-    getRecommendedCommunities()
-  );
+  } = useGetRecommendedCommunities();
 
   if (isLoading) {
     return <div>Loading...</div>;
