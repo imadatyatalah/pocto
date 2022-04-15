@@ -75,6 +75,12 @@ const LoggedInHeader = ({ currentUser }: Props) => {
             </DropdownMenuItem>
 
             <DropdownMenuItem>
+              <Link href={CLIENT_ROUTES.SETTINGS_COMMUNITIES} passHref>
+                <StyledDropDownLink>Your communities</StyledDropDownLink>
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
               <Link href={CLIENT_ROUTES.CREATE_COMMUNITY} passHref>
                 <StyledDropDownLink>Create Community</StyledDropDownLink>
               </Link>
