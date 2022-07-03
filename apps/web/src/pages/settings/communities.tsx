@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import { CLIENT_ROUTES } from "shared/routes";
+import { Box, Flex, Heading, Link as StyledLink } from "@pocto/core";
 import { NextSeo } from "next-seo";
 
 import { useGetMyCommunities } from "@/api/index";
@@ -21,9 +25,22 @@ const Communities: PoctoPage = () => {
       <NextSeo title="Communities" />
 
       <section>
-        <code>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </code>
+        {data.length ? (
+          data.map((community) => (
+            <Box key={community.title}>
+              <Heading as="h3">{community.name}</Heading>
+            </Box>
+          ))
+        ) : (
+          <Flex justify="center">
+            <Heading as="h3">
+              You don&apos;t have any community yet,{" "}
+              <Link href={CLIENT_ROUTES.CREATE_COMMUNITY} passHref>
+                <StyledLink>Create one here</StyledLink>
+              </Link>
+            </Heading>
+          </Flex>
+        )}
       </section>
     </>
   );
