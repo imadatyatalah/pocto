@@ -12,6 +12,7 @@ const LINKS = [
   { title: "Profile", link: CLIENT_ROUTES.SETTINGS_PROFILE_PAGE },
   { title: "Account", link: CLIENT_ROUTES.SETTINGS_ACCOUNT_PAGE },
   { title: "Account security", link: CLIENT_ROUTES.SETTINGS_SECURITY_PAGE },
+  { title: "Communities", link: CLIENT_ROUTES.SETTINGS_COMMUNITIES },
 ];
 
 interface Props {

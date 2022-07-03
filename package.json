@@ -23,8 +23,8 @@
     "@commitlint/config-conventional": "^16.2.1",
     "husky": ">=6",
     "lint-staged": ">=12.3.7",
-    "prettier": "^2.6.0",
-    "turbo": "1.1.9"
+    "prettier": "^2.6.2",
+    "turbo": "1.2.1"
   },
   "engines": {
     "npm": ">=7.0.0",

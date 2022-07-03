@@ -45,6 +45,20 @@ export const getCommunityByName = async (req: Request, res: Response) => {
   }
 };
 
+export const getMyCommunities = async (req: Request, res: Response) => {
+  try {
+    const communities = await prisma.community.findMany({
+      where: { userId: req.user?.id },
+    });
+
+    res.status(200).send(communities);
+  } catch (err) {
+    res
+      .status(500)
+      .send({ success: false, message: "Something went wrong", error: err });
+  }
+};
+
 export const getRecommendedCommunities = async (
   req: Request,
   res: Response

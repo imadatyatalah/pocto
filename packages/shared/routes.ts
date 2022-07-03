@@ -19,6 +19,7 @@ export const CLIENT_ROUTES = {
   SETTINGS_PROFILE_PAGE: "/settings/profile",
   SETTINGS_ACCOUNT_PAGE: "/settings/account",
   SETTINGS_SECURITY_PAGE: "/settings/security",
+  SETTINGS_COMMUNITIES: "/settings/communities",
 };
 
 /**
@@ -60,6 +61,7 @@ export const API_ROUTES = {
   DELETE__ACCOUNT_ROUTE: "/current_user/delete_account",
   UPDATE__PASSWORD_ROUTE: "/current_user/change_password",
   UPDATE__PROFILE_ROUTE: "/current_user/update_profile",
+  GET_MY_COMMUNITIES: "/current_user/my_communities",
 };
 
 export const BLOG_ROUTES = {

@@ -7,7 +7,10 @@ import {
   deleteAccount,
   updateProfile,
 } from "../controllers/users.controllers";
-import { getRecommendedCommunities } from "../controllers/communities.controllers";
+import {
+  getMyCommunities,
+  getRecommendedCommunities,
+} from "../controllers/communities.controllers";
 import requireUser from "../middlewares/requireUser";
 import validateResource from "../middlewares/validateResource";
 
@@ -30,5 +33,7 @@ router.put(
 );
 
 router.get("/recommended_communities", getRecommendedCommunities);
+
+router.get("/my_communities", requireUser, getMyCommunities);
 
 export default router;

@@ -1,12 +1,19 @@
 import Link from "next/link";
 
-import { Heading, Box, Flex, Separator, Link as StyledLink } from "@pocto/core";
+import {
+  Heading,
+  Box,
+  Flex,
+  Separator,
+  Text,
+  Link as StyledLink,
+} from "@pocto/core";
 import { useQuery } from "react-query";
 import { gray } from "@radix-ui/colors";
 
 import type { CSS } from "@pocto/core/stitches.config";
 
-import { getRecommendedCommunities } from "./api/getRecommendedCommunities";
+import { useGetRecommendedCommunities } from "./api/getRecommendedCommunities";
 import CommunityCard from "./CommunityCard";
 
 const CommunitiesToJoinStyles: CSS = {
@@ -19,9 +26,7 @@ const CommunitiesToJoinCard = () => {
     data: communities,
     isLoading,
     isError,
-  } = useQuery(["current_user", "recommended_communities"], () =>
-    getRecommendedCommunities()
-  );
+  } = useGetRecommendedCommunities();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -47,9 +52,15 @@ const CommunitiesToJoinCard = () => {
         <Separator />
       </Box>
 
-      {communities?.map((community) => (
-        <CommunityCard community={community} key={community.name} />
-      ))}
+      {communities.length ? (
+        communities?.map((community) => (
+          <CommunityCard community={community} key={community.name} />
+        ))
+      ) : (
+        <Text css={{ textAlign: "center", py: 8 }}>
+          We found nothing for you :(
+        </Text>
+      )}
     </Box>
   );
 };

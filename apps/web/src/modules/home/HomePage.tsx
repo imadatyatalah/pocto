@@ -1,4 +1,4 @@
-import { Heading, Box } from "@pocto/core";
+import { Heading, Box, Text } from "@pocto/core";
 import { useMediaQuery } from "@pocto/hooks";
 import { NextSeo } from "next-seo";
 
@@ -44,9 +44,11 @@ const HomePage = ({ posts, isLoggedIn }: Props) => {
 
             {isLoggedIn ? <PostForm /> : null}
 
-            {posts?.map((post) => (
-              <Post post={post} key={post.id} />
-            ))}
+            {posts.length ? (
+              posts?.map((post) => <Post post={post} key={post.id} />)
+            ) : (
+              <Text css={{ py: 8 }}>We found nothing for you :(</Text>
+            )}
           </Box>
 
           <Box

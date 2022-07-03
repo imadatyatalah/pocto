@@ -11,4 +11,4 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = withPlugins([withContentlayer(), withTM], nextConfig);
+module.exports = withPlugins([withContentlayer, withTM], nextConfig);
